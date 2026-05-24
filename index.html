@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnosofia Labs - Tu Subdominio Gratis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        h1 { color: #38bdf8; margin-bottom: 0.5rem; font-size: 2rem; }
+        p { color: #94a3b8; margin-bottom: 2rem; font-size: 0.95rem; }
+        .form-group { text-align: left; margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600; }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 2px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        input:focus { border-color: #38bdf8; outline: none; }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover { background-color: #0369a1; }
+        #resultado { margin-top: 1.5rem; font-weight: 600; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Σοφία Tecnosofia</h1>
+    <p>¡Crea tu subdominio gratuito para tu proyecto escolar en segundos!</p>
+    
+    <form id="dnsForm">
+        <div class="form-group">
+            <label for="subdomain">1. Elige tu nombre de subdominio:</label>
+            <input type="text" id="subdomain" placeholder="ejemplo: mateo" required>
+        </div>
+        <div class="form-group">
+            <label for="target">2. Pega tu dirección de Vercel:</label>
+            <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app" required>
+        </div>
+        <button type="submit">🚀 ¡Activar mi Dominio!</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    document.getElementById('dnsForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.style.color = '#e2e8f0';
+        resultadoDiv.innerText = 'Procesando con el robot de Cloudflare... ⏳';
+
+        const subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
+        let target = document.getElementById('target').value.trim().toLowerCase();
+        
+        // Limpiar el enlace de Vercel por si pegan el https://
+        target = target.replace(/^(https?:\/\/)?(www\.)?/, '');
+
+        try {
+            const response = await fetch('/api/create-dns', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ subdomain, target })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                resultadoDiv.style.color = '#4ade80';
+                resultadoDiv.innerHTML = `¡Éxito total! 🎉<br>Tu dominio <strong>${subdomain}.tecnosofia.xyz</strong> ya está vivo. Ahora conéctalo en tu panel de Vercel.`;
+            } else {
+                resultadoDiv.style.color = '#f87171';
+                resultadoDiv.innerText = `Error: ${data.error || 'No se pudo crear.'}`;
+            }
+        } catch (err) {
+            resultadoDiv.style.color = '#f87171';
+            resultadoDiv.innerText = 'Hubo un problema de conexión con el servidor.';
+        }
+    });
+</script>
+
+</body>
+</html>
