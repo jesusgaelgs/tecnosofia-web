@@ -67,6 +67,16 @@
         }
         #result { margin-top: 1rem; font-weight: 600; font-size: .9rem; text-align: center; min-height: 1.2rem; }
         code { color: #38bdf8; font-size: .8rem; }
+        
+        /* Estilo nuevo para la imagen de referencia */
+        .img-ref {
+            max-width: 100%;
+            border-radius: 6px;
+            margin-top: 10px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -97,9 +107,10 @@
     <ol>
         <li><strong>Copia tu nuevo enlace oficial:</strong> será el nombre elegido seguido de <code>.tecnosofia.xyz</code> (ej: <code>mateo.tecnosofia.xyz</code>).</li>
         <li>Abre tu panel de <strong>Vercel</strong> y entra al proyecto.</li>
-        <li>En la barra superior, haz clic en <strong>Settings</strong>.</li>
-        <li>En el menú izquierdo selecciona <strong>Domains</strong>.</li>
-        <li>Escribe tu dominio completo y haz clic en <strong>Add</strong>.</li>
+        <li>En el menú izquierdo selecciona directamente <strong>Domains</strong>.</li>
+        <li>Haz clic en <strong>Add Existing</strong>, escribe tu dominio completo y confirma.
+            <img src="Adddomain.png" alt="Botón Add Existing en Vercel" class="img-ref">
+        </li>
     </ol>
 
     <div class="tip">
