@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnosofia Labs - Tu Subdominio Gratis</title>
+    <title>Tecnosofia - Tu Subdominio Gratis</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -17,65 +17,98 @@
             padding: 2rem 1rem;
         }
         .wrap {
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: .5rem; text-align: center; }
+        .subtitle { color: #94a3b8; font-size: 1rem; text-align: center; margin-bottom: 2rem; }
+        
+        /* Estilos de las tarjetas de pasos */
+        .step-card {
             background-color: #1e293b;
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            max-width: 480px;
+            margin-bottom: 2rem;
+            border-top: 4px solid #38bdf8;
         }
-        h1 { color: #38bdf8; font-size: 1.8rem; margin-bottom: .25rem; text-align: center; }
-        .subtitle { color: #94a3b8; font-size: .9rem; text-align: center; margin-bottom: 1.5rem; }
+        .step-card.warning {
+            border-top: 4px solid #f59e0b; /* Color ámbar para llamar la atención */
+        }
+        .step-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            color: #f8fafc;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        .step-number {
+            background-color: #38bdf8;
+            color: #0f172a;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+        .step-card.warning .step-number {
+            background-color: #f59e0b;
+        }
+
+        /* Formulario */
         .fg { margin-bottom: 1.25rem; }
-        label { display: block; margin-bottom: .4rem; color: #cbd5e1; font-weight: 600; font-size: .9rem; }
+        label { display: block; margin-bottom: .4rem; color: #cbd5e1; font-weight: 600; font-size: .95rem; }
         input {
             width: 100%;
-            padding: .65rem .75rem;
+            padding: .75rem;
             border-radius: .5rem;
             border: 2px solid #334155;
             background: #0f172a;
             color: #fff;
-            font-size: .95rem;
+            font-size: 1rem;
         }
         input:focus { border-color: #38bdf8; outline: none; }
         button {
             width: 100%;
-            padding: .75rem;
+            padding: .85rem;
             background: #0284c7;
             color: #fff;
             border: none;
             border-radius: .5rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
+            margin-top: 10px;
         }
         button:hover { background: #0369a1; }
-        .divider { border: none; border-top: 1px solid #334155; margin: 1.5rem 0; }
-        h2 { color: #38bdf8; font-size: 1.1rem; font-weight: 700; text-align: center; margin-bottom: .75rem; }
-        .desc { color: #cbd5e1; font-size: .875rem; line-height: 1.6; text-align: center; margin-bottom: 1rem; }
-        ol { padding-left: 1.25rem; color: #cbd5e1; font-size: .875rem; line-height: 1.8; }
-        ol li { margin-bottom: .5rem; }
-        .tip {
-            background: #0f172a;
-            padding: .875rem;
-            border-radius: .5rem;
-            border-left: 4px solid #38bdf8;
-            font-size: .8rem;
-            color: #94a3b8;
-            margin-top: 1rem;
-            line-height: 1.6;
-        }
-        #result { margin-top: 1rem; font-weight: 600; font-size: .9rem; text-align: center; min-height: 1.2rem; }
-        code { color: #38bdf8; font-size: .8rem; }
+        #result { margin-top: 1.5rem; font-weight: 600; font-size: 1rem; text-align: center; min-height: 1.2rem; padding: 10px; border-radius: 8px;}
         
-        /* Estilo nuevo para la imagen de referencia */
+        /* Instrucciones */
+        .desc { color: #cbd5e1; font-size: .95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        ol { padding-left: 1.25rem; color: #cbd5e1; font-size: .95rem; line-height: 1.8; }
+        ol li { margin-bottom: .8rem; }
+        code { color: #38bdf8; font-size: .9rem; background: #0f172a; padding: 2px 6px; border-radius: 4px;}
         .img-ref {
             max-width: 100%;
             border-radius: 6px;
-            margin-top: 10px;
+            margin-top: 15px;
             border: 1px solid #334155;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             display: block;
+        }
+        .tip {
+            background: #0f172a;
+            padding: 1rem;
+            border-radius: .5rem;
+            border-left: 4px solid #f59e0b;
+            font-size: .9rem;
+            color: #94a3b8;
+            margin-top: 1.5rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -83,47 +116,60 @@
 
 <div class="wrap">
     <h1>Σοφία Tecnosofia</h1>
-    <p class="subtitle">¡Crea tu subdominio gratuito para tu proyecto escolar en segundos!</p>
+    <p class="subtitle">Sigue estos 2 sencillos pasos para activar tu subdominio.</p>
 
-    <form id="dnsForm">
-        <div class="fg">
-            <label for="subdomain">1. Elige tu nombre de subdominio:</label>
-            <input type="text" id="subdomain" placeholder="ejemplo: mateo" required>
+    <div class="step-card">
+        <div class="step-title">
+            <div class="step-number">1</div>
+            Elige y registra tu nombre
         </div>
-        <div class="fg">
-            <label for="target">2. Pega tu dirección de Vercel:</label>
-            <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app" required>
-        </div>
-        <button type="submit">🚀 ¡Activar mi Dominio!</button>
-    </form>
+        
+        <form id="dnsForm">
+            <div class="fg">
+                <label for="subdomain">Nombre que deseas (ejemplo: mateo):</label>
+                <input type="text" id="subdomain" placeholder="Escribe solo tu nombre" required>
+            </div>
+            <div class="fg">
+                <label for="target">Tu dirección actual de Vercel:</label>
+                <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app" required>
+            </div>
+            <button type="submit">🚀 Crear registro</button>
+        </form>
 
-    <div id="result"></div>
-
-    <hr class="divider">
-
-    <h2>🚀 ¡Paso final obligatorio!</h2>
-    <p class="desc">Hacer clic en el botón activa tu nombre en internet, pero debes avisarle a tu servidor (Vercel) que reciba las visitas. Si te saltas este paso, tu página dará <strong>Error 404</strong>.</p>
-
-    <ol>
-        <li><strong>Copia tu nuevo enlace oficial:</strong> será el nombre elegido seguido de <code>.tecnosofia.xyz</code> (ej: <code>mateo.tecnosofia.xyz</code>).</li>
-        <li>Abre tu panel de <strong>Vercel</strong> y entra al proyecto.</li>
-        <li>En el menú izquierdo selecciona directamente <strong>Domains</strong>.</li>
-        <li>Haz clic en <strong>Add Existing</strong>, escribe tu dominio completo y confirma.
-            <img src="Adddomain.png" alt="Botón Add Existing en Vercel" class="img-ref">
-        </li>
-    </ol>
-
-    <div class="tip">
-        💡 <strong>Tip:</strong> Si Vercel pregunta si deseas redireccionar o agregar configuraciones raíz, selecciona únicamente el subdominio exacto que registraste. ¡Aparecerán palomitas azules y tu página estará en vivo!
+        <div id="result"></div>
     </div>
+
+    <div class="step-card warning">
+        <div class="step-title">
+            <div class="step-number">2</div>
+            Conéctalo en Vercel (¡Obligatorio!)
+        </div>
+        
+        <p class="desc">Si cierras esta página sin hacer este paso, tu nuevo enlace mostrará un <strong>Error 404</strong> porque Vercel no sabrá qué página mostrar.</p>
+
+        <ol>
+            <li>Abre tu panel de <strong>Vercel</strong> y entra a tu proyecto.</li>
+            <li>En el menú lateral izquierdo, haz clic en la opción <strong>Domains</strong>.</li>
+            <li>Haz clic en el botón <strong>Add Existing</strong>.</li>
+            <li>Escribe tu nuevo dominio completo (por ejemplo: <code>mateo.tecnosofia.xyz</code>) y confirma.</li>
+        </ol>
+
+        <img src="Adddomain.png" alt="Botón Add Existing en Vercel" class="img-ref">
+
+        <div class="tip">
+            💡 <strong>Nota:</strong> Si Vercel te pregunta si deseas redireccionar configuraciones, selecciona <strong>únicamente el subdominio exacto</strong>. Cuando veas las palomitas azules, ¡tu página estará en vivo!
+        </div>
+    </div>
+
 </div>
 
 <script>
     document.getElementById('dnsForm').addEventListener('submit', async e => {
         e.preventDefault();
         const res = document.getElementById('result');
+        res.style.backgroundColor = '#0f172a';
         res.style.color = '#e2e8f0';
-        res.innerText = 'Procesando con el robot de Cloudflare... ⏳';
+        res.innerText = 'Procesando con el sistema... ⏳';
 
         const subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
         let target = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
@@ -137,21 +183,21 @@
             const data = await r.json();
             if (data.success) {
                 res.style.color = '#4ade80';
-                res.innerHTML = `¡Éxito total! 🎉<br>Tu dominio <strong>${subdomain}.tecnosofia.xyz</strong> ya está vivo. Ahora conéctalo en Vercel.`;
+                res.style.border = '1px solid #4ade80';
+                res.innerHTML = `¡Registro exitoso! 🎉<br>Tu enlace oficial es: <strong>${subdomain}.tecnosofia.xyz</strong><br><br>👉 Ahora baja al <strong>Paso 2</strong> para terminar.`;
             } else {
                 res.style.color = '#f87171';
-                res.innerText = `Error: ${data.error || 'No se pudo crear.'}`;
+                res.style.border = '1px solid #f87171';
+                res.innerText = `Error: ${data.error || 'No se pudo crear el registro.'}`;
             }
         } catch {
             res.style.color = '#f87171';
+            res.style.border = '1px solid #f87171';
             res.innerText = 'Hubo un problema de conexión con el servidor.';
         }
     });
 </script>
 
-<!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
-<!-- End Cloudflare Web Analytics -->
-
 </body>
 </html>
