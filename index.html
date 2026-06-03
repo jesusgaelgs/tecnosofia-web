@@ -127,6 +127,7 @@
 
     <div class="card">
         
+        <!-- PANTALLA 1: Pregunta inicial -->
         <div id="step-1" class="step active">
             <h2>¡Hola! Vamos a crear tu enlace 🚀</h2>
             <p class="desc">Para darte tu propio espacio en internet, primero necesitamos saber si ya subiste los archivos de tu página a Vercel.</p>
@@ -139,6 +140,7 @@
             </div>
         </div>
 
+        <!-- PANTALLA 2: El nombre -->
         <div id="step-2" class="step">
             <h2>Elige tu nombre</h2>
             <p class="desc">¡Excelente! Escribe cómo quieres que se llame tu nuevo enlace (por ejemplo: tu nombre, tu proyecto o tu negocio).</p>
@@ -151,6 +153,7 @@
             <button type="button" class="btn-text" onclick="irAlPaso(1)">⬅ Volver atrás</button>
         </div>
 
+        <!-- PANTALLA 3: Conexión -->
         <div id="step-3" class="step">
             <h2>Conecta tu página</h2>
             <p class="desc">¡Gran nombre! Para terminar, pega aquí el enlace temporal que te dio Vercel (el que termina en .vercel.app).</p>
@@ -163,11 +166,13 @@
             <button type="button" class="btn-text" onclick="irAlPaso(2)">⬅ Volver atrás</button>
         </div>
 
+        <!-- PANTALLA 4: Cargando -->
         <div id="step-loading" class="step">
             <h2>⏳ Estamos construyendo tu enlace...</h2>
             <p class="desc">Los robots están trabajando. Esto tomará solo unos segundos.</p>
         </div>
 
+        <!-- PANTALLA 5: Éxito y Paso Final en Vercel -->
         <div id="step-success" class="step">
             <div class="success-box">
                 ¡Felicidades! 🎉<br>Tu enlace oficial es:<br>
@@ -180,7 +185,7 @@
             <ol>
                 <li>Abre tu panel de <strong>Vercel</strong> y entra a tu proyecto.</li>
                 <li>En el menú de la izquierda, selecciona la opción <strong>Domains</strong>.</li>
-                <li>Haz clic en el botón <strong>Add Existing</strong> y pega tu enlace oficial completo.
+                <li>Haz clic en el botón <strong>Add Existing</strong> y te pedirá que escribas el dominio completo que te acabamos de generar.
                     <img src="Adddomain.png" alt="Botón de Vercel" class="img-ref">
                 </li>
             </ol>
@@ -192,6 +197,7 @@
             <button type="button" class="btn-secondary" style="margin-top:20px;" onclick="location.reload()">Hacer otro registro</button>
         </div>
 
+        <!-- PANTALLA 6: Error -->
         <div id="step-error" class="step">
             <h2>Ocurrió un problema 😕</h2>
             <p class="desc" id="error-msg">No pudimos crear el enlace. Por favor revisa que la información sea correcta.</p>
@@ -255,6 +261,9 @@
     }
 </script>
 
+<!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
 </body>
 </html>
