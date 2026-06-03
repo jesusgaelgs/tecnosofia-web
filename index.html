@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnosofia - Tu Subdominio Gratis</title>
+    <title>Tecnosofia - Tu espacio en internet</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -18,63 +18,47 @@
         }
         .wrap {
             width: 100%;
-            max-width: 600px;
+            max-width: 550px;
+            margin-top: 20px;
         }
-        h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: .5rem; text-align: center; }
-        .subtitle { color: #94a3b8; font-size: 1rem; text-align: center; margin-bottom: 2rem; }
+        h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: 2rem; text-align: center; font-weight: bold; }
         
-        /* Estilos de las tarjetas de pasos */
-        .step-card {
+        /* Contenedor principal estilo tarjeta */
+        .card {
             background-color: #1e293b;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 1rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-            margin-bottom: 2rem;
             border-top: 4px solid #38bdf8;
         }
-        .step-card.warning {
-            border-top: 4px solid #f59e0b; /* Color ámbar para llamar la atención */
-        }
-        .step-title {
-            display: flex;
-            align-items: center;
-            font-size: 1.3rem;
-            color: #f8fafc;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-        .step-number {
-            background-color: #38bdf8;
-            color: #0f172a;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            margin-right: 15px;
-            font-size: 1.1rem;
-        }
-        .step-card.warning .step-number {
-            background-color: #f59e0b;
-        }
 
-        /* Formulario */
-        .fg { margin-bottom: 1.25rem; }
-        label { display: block; margin-bottom: .4rem; color: #cbd5e1; font-weight: 600; font-size: .95rem; }
+        /* Lógica para ocultar/mostrar pasos */
+        .step { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Textos de la entrevista */
+        h2 { color: #f8fafc; font-size: 1.4rem; margin-bottom: 1rem; text-align: center; }
+        .desc { color: #cbd5e1; font-size: 1rem; line-height: 1.6; text-align: center; margin-bottom: 2rem; }
+        
+        /* Campos de texto */
+        .fg { margin-bottom: 1.5rem; }
         input {
             width: 100%;
-            padding: .75rem;
+            padding: 1rem;
             border-radius: .5rem;
             border: 2px solid #334155;
             background: #0f172a;
             color: #fff;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            text-align: center;
         }
         input:focus { border-color: #38bdf8; outline: none; }
+        
+        /* Botones */
         button {
             width: 100%;
-            padding: .85rem;
+            padding: 1rem;
             background: #0284c7;
             color: #fff;
             border: none;
@@ -82,120 +66,193 @@
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: background 0.2s;
         }
         button:hover { background: #0369a1; }
-        #result { margin-top: 1.5rem; font-weight: 600; font-size: 1rem; text-align: center; min-height: 1.2rem; padding: 10px; border-radius: 8px;}
         
-        /* Instrucciones */
-        .desc { color: #cbd5e1; font-size: .95rem; line-height: 1.6; margin-bottom: 1.5rem; }
-        ol { padding-left: 1.25rem; color: #cbd5e1; font-size: .95rem; line-height: 1.8; }
+        button.btn-secondary {
+            background: transparent;
+            border: 2px solid #334155;
+            color: #cbd5e1;
+        }
+        button.btn-secondary:hover { background: #334155; color: #fff; }
+
+        button.btn-text {
+            background: transparent;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            padding: 0.5rem;
+            margin-top: 10px;
+        }
+        button.btn-text:hover { color: #cbd5e1; background: transparent; text-decoration: underline; }
+
+        /* Mensajes de ayuda e instrucciones finales */
+        .tip {
+            background: #0f172a;
+            padding: 1.2rem;
+            border-radius: .5rem;
+            border-left: 4px solid #f59e0b;
+            font-size: .95rem;
+            color: #cbd5e1;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+        .success-box {
+            background: #0f172a;
+            padding: 1.5rem;
+            border-radius: .5rem;
+            border: 1px solid #4ade80;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .success-box strong { color: #4ade80; font-size: 1.2rem;}
+        
+        ol { padding-left: 1.25rem; color: #cbd5e1; font-size: .95rem; line-height: 1.8; margin-bottom: 1.5rem;}
         ol li { margin-bottom: .8rem; }
         code { color: #38bdf8; font-size: .9rem; background: #0f172a; padding: 2px 6px; border-radius: 4px;}
         .img-ref {
             max-width: 100%;
             border-radius: 6px;
-            margin-top: 15px;
+            margin-top: 10px;
             border: 1px solid #334155;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             display: block;
-        }
-        .tip {
-            background: #0f172a;
-            padding: 1rem;
-            border-radius: .5rem;
-            border-left: 4px solid #f59e0b;
-            font-size: .9rem;
-            color: #94a3b8;
-            margin-top: 1.5rem;
-            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
 <div class="wrap">
-    <h1>Σοφία Tecnosofia</h1>
-    <p class="subtitle">Sigue estos 2 sencillos pasos para activar tu subdominio.</p>
+    <h1>Tecnosofia</h1>
 
-    <div class="step-card">
-        <div class="step-title">
-            <div class="step-number">1</div>
-            Elige y registra tu nombre
-        </div>
+    <div class="card">
         
-        <form id="dnsForm">
-            <div class="fg">
-                <label for="subdomain">Nombre que deseas (ejemplo: mateo):</label>
-                <input type="text" id="subdomain" placeholder="Escribe solo tu nombre" required>
+        <div id="step-1" class="step active">
+            <h2>¡Hola! Vamos a crear tu enlace 🚀</h2>
+            <p class="desc">Para darte tu propio espacio en internet, primero necesitamos saber si ya subiste los archivos de tu página a Vercel.</p>
+            
+            <button type="button" onclick="irAlPaso(2)">Sí, ya tengo mi página en Vercel</button>
+            <button type="button" class="btn-secondary" onclick="mostrarAyuda()">Aún no, ¿qué es Vercel?</button>
+            
+            <div id="help-box" style="display:none;" class="tip">
+                💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. Para continuar, primero necesitas crear una cuenta ahí y subir tu página. ¡Cuando te den tu enlace temporal, regresa aquí!
             </div>
+        </div>
+
+        <div id="step-2" class="step">
+            <h2>Elige tu nombre</h2>
+            <p class="desc">¡Excelente! Escribe cómo quieres que se llame tu nuevo enlace (por ejemplo: tu nombre, tu proyecto o tu negocio).</p>
+            
             <div class="fg">
-                <label for="target">Tu dirección actual de Vercel:</label>
-                <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app" required>
+                <input type="text" id="subdomain" placeholder="ejemplo: mateo">
             </div>
-            <button type="submit">🚀 Crear registro</button>
-        </form>
-
-        <div id="result"></div>
-    </div>
-
-    <div class="step-card warning">
-        <div class="step-title">
-            <div class="step-number">2</div>
-            Conéctalo en Vercel (¡Obligatorio!)
+            
+            <button type="button" onclick="irAlPaso(3)">Siguiente 👉</button>
+            <button type="button" class="btn-text" onclick="irAlPaso(1)">⬅ Volver atrás</button>
         </div>
-        
-        <p class="desc">Si cierras esta página sin hacer este paso, tu nuevo enlace mostrará un <strong>Error 404</strong> porque Vercel no sabrá qué página mostrar.</p>
 
-        <ol>
-            <li>Abre tu panel de <strong>Vercel</strong> y entra a tu proyecto.</li>
-            <li>En el menú lateral izquierdo, haz clic en la opción <strong>Domains</strong>.</li>
-            <li>Haz clic en el botón <strong>Add Existing</strong>.</li>
-            <li>Escribe tu nuevo dominio completo (por ejemplo: <code>mateo.tecnosofia.xyz</code>) y confirma.</li>
-        </ol>
-
-        <img src="Adddomain.png" alt="Botón Add Existing en Vercel" class="img-ref">
-
-        <div class="tip">
-            💡 <strong>Nota:</strong> Si Vercel te pregunta si deseas redireccionar configuraciones, selecciona <strong>únicamente el subdominio exacto</strong>. Cuando veas las palomitas azules, ¡tu página estará en vivo!
+        <div id="step-3" class="step">
+            <h2>Conecta tu página</h2>
+            <p class="desc">¡Gran nombre! Para terminar, pega aquí el enlace temporal que te dio Vercel (el que termina en .vercel.app).</p>
+            
+            <div class="fg">
+                <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app">
+            </div>
+            
+            <button type="button" id="btn-crear" onclick="crearDominio()">🪄 ¡Crear mi página web!</button>
+            <button type="button" class="btn-text" onclick="irAlPaso(2)">⬅ Volver atrás</button>
         </div>
-    </div>
 
+        <div id="step-loading" class="step">
+            <h2>⏳ Estamos construyendo tu enlace...</h2>
+            <p class="desc">Los robots están trabajando. Esto tomará solo unos segundos.</p>
+        </div>
+
+        <div id="step-success" class="step">
+            <div class="success-box">
+                ¡Felicidades! 🎉<br>Tu enlace oficial es:<br>
+                <strong id="final-link">...</strong>
+            </div>
+
+            <h2>⚠️ ÚLTIMO PASO OBLIGATORIO</h2>
+            <p class="desc">Tu nombre ya existe, pero debes avisarle a Vercel que reciba las visitas o dará <strong>Error 404</strong>. Solo sigue estos pasos:</p>
+
+            <ol>
+                <li>Abre tu panel de <strong>Vercel</strong> y entra a tu proyecto.</li>
+                <li>En el menú de la izquierda, selecciona la opción <strong>Domains</strong>.</li>
+                <li>Haz clic en el botón <strong>Add Existing</strong> y pega tu enlace oficial completo.
+                    <img src="Adddomain.png" alt="Botón de Vercel" class="img-ref">
+                </li>
+            </ol>
+
+            <div class="tip">
+                💡 Si Vercel te pregunta si deseas redireccionar configuraciones, elige añadir <strong>únicamente tu subdominio exacto</strong>. ¡Saldrán palomitas azules y habrás terminado!
+            </div>
+            
+            <button type="button" class="btn-secondary" style="margin-top:20px;" onclick="location.reload()">Hacer otro registro</button>
+        </div>
+
+        <div id="step-error" class="step">
+            <h2>Ocurrió un problema 😕</h2>
+            <p class="desc" id="error-msg">No pudimos crear el enlace. Por favor revisa que la información sea correcta.</p>
+            <button type="button" class="btn-secondary" onclick="irAlPaso(2)">Intentar de nuevo</button>
+        </div>
+
+    </div>
 </div>
 
 <script>
-    document.getElementById('dnsForm').addEventListener('submit', async e => {
-        e.preventDefault();
-        const res = document.getElementById('result');
-        res.style.backgroundColor = '#0f172a';
-        res.style.color = '#e2e8f0';
-        res.innerText = 'Procesando con el sistema... ⏳';
+    // Función para cambiar de pantallas
+    function irAlPaso(numero) {
+        document.querySelectorAll('.step').forEach(pantalla => pantalla.classList.remove('active'));
+        document.getElementById('step-' + numero).classList.add('active');
+    }
 
-        const subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
-        let target = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+    // Mostrar el mensaje de ayuda de Vercel
+    function mostrarAyuda() {
+        document.getElementById('help-box').style.display = 'block';
+    }
+
+    // Lógica para enviar los datos a Cloudflare
+    async function crearDominio() {
+        const subdomainInput = document.getElementById('subdomain').value.trim().toLowerCase();
+        let targetInput = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+
+        // Validaciones básicas antes de enviar
+        if(!subdomainInput || !targetInput) {
+            alert('Por favor llena los datos de nombre y enlace de Vercel.');
+            return;
+        }
+
+        // Mostrar pantalla de carga
+        document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
+        document.getElementById('step-loading').classList.add('active');
 
         try {
-            const r = await fetch('/api/create-dns', {
+            const respuesta = await fetch('/api/create-dns', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ subdomain, target })
+                body: JSON.stringify({ subdomain: subdomainInput, target: targetInput })
             });
-            const data = await r.json();
+            const data = await respuesta.json();
+            
             if (data.success) {
-                res.style.color = '#4ade80';
-                res.style.border = '1px solid #4ade80';
-                res.innerHTML = `¡Registro exitoso! 🎉<br>Tu enlace oficial es: <strong>${subdomain}.tecnosofia.xyz</strong><br><br>👉 Ahora baja al <strong>Paso 2</strong> para terminar.`;
+                // Si funciona, muestra la pantalla final
+                document.getElementById('final-link').innerText = `${subdomainInput}.tecnosofia.xyz`;
+                document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
+                document.getElementById('step-success').classList.add('active');
             } else {
-                res.style.color = '#f87171';
-                res.style.border = '1px solid #f87171';
-                res.innerText = `Error: ${data.error || 'No se pudo crear el registro.'}`;
+                // Si hay error (ej: nombre ya ocupado)
+                document.getElementById('error-msg').innerText = `Error: ${data.error || 'Nombre no disponible.'}`;
+                document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
+                document.getElementById('step-error').classList.add('active');
             }
         } catch {
-            res.style.color = '#f87171';
-            res.style.border = '1px solid #f87171';
-            res.innerText = 'Hubo un problema de conexión con el servidor.';
+            document.getElementById('error-msg').innerText = 'Hubo un problema de conexión con nuestro servidor.';
+            document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
+            document.getElementById('step-error').classList.add('active');
         }
-    });
+    }
 </script>
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
