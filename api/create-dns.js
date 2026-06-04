@@ -1,14 +1,13 @@
 // /api/create-dns.js
 // Vercel Serverless Function — Node.js
 // Dependencias: npm install resend
-
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ── Configura estos valores con los tuyos ──────────────────────────────────
-const CF_ZONE_ID    = process.env.CF_ZONE_ID;      // ID de tu zona en Cloudflare
-const CF_API_TOKEN  = process.env.CF_API_TOKEN;    // Token de Cloudflare con permiso DNS
+const CF_ZONE_ID    = process.env.CLOUDFLARE_ZONE_ID;
+const CF_API_TOKEN  = process.env.CLOUDFLARE_API_TOKEN;
 const BASE_DOMAIN   = 'tecnosofia.xyz';
 const FROM_EMAIL    = 'hola@tecnosofia.xyz';       // Debe coincidir con el dominio verificado en Resend
 // ──────────────────────────────────────────────────────────────────────────
