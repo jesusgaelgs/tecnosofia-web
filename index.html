@@ -3,267 +3,796 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnosofia - Tu espacio en internet</title>
+
+    <!-- SEO & Open Graph -->
+    <title>Tecnosofia — Tu espacio gratis en internet</title>
+    <meta name="description" content="Obtén tu propio subdominio gratis en tecnosofia.xyz. Sin conocimientos técnicos, sin tarjeta de crédito. Ideal para estudiantes y proyectos personales.">
+    <meta property="og:title" content="Tecnosofia — Tu espacio gratis en internet">
+    <meta property="og:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos. Sin complicaciones.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tecnosofia.xyz">
+    <meta property="og:image" content="https://tecnosofia.xyz/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tecnosofia — Tu espacio gratis en internet">
+    <meta name="twitter:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos.">
+
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+        :root {
+            --bg:        #080e1a;
+            --surface:   #0f1c2e;
+            --border:    #1e3a5f;
+            --accent:    #38bdf8;
+            --accent2:   #0ea5e9;
+            --success:   #4ade80;
+            --warning:   #f59e0b;
+            --error:     #f87171;
+            --text:      #f0f6ff;
+            --muted:     #8baec4;
+            --radius:    14px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 2rem 1rem;
-        }
-        .wrap {
-            width: 100%;
-            max-width: 550px;
-            margin-top: 20px;
-        }
-        h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: 2rem; text-align: center; font-weight: bold; }
-        
-        /* Contenedor principal estilo tarjeta */
-        .card {
-            background-color: #1e293b;
-            padding: 2.5rem 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-            border-top: 4px solid #38bdf8;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem 4rem;
+            /* Subtle grid texture */
+            background-image:
+                linear-gradient(rgba(56,189,248,.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56,189,248,.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        /* Lógica para ocultar/mostrar pasos */
-        .step { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .step.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Textos de la entrevista */
-        h2 { color: #f8fafc; font-size: 1.4rem; margin-bottom: 1rem; text-align: center; }
-        .desc { color: #cbd5e1; font-size: 1rem; line-height: 1.6; text-align: center; margin-bottom: 2rem; }
-        
-        /* Campos de texto */
-        .fg { margin-bottom: 1.5rem; }
-        input {
-            width: 100%;
-            padding: 1rem;
-            border-radius: .5rem;
-            border: 2px solid #334155;
-            background: #0f172a;
-            color: #fff;
-            font-size: 1.1rem;
+        /* ── Header ── */
+        .header {
             text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 1.5rem;
         }
-        input:focus { border-color: #38bdf8; outline: none; }
-        
-        /* Botones */
-        button {
-            width: 100%;
-            padding: 1rem;
-            background: #0284c7;
-            color: #fff;
-            border: none;
-            border-radius: .5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background 0.2s;
+        .header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        button:hover { background: #0369a1; }
-        
-        button.btn-secondary {
-            background: transparent;
-            border: 2px solid #334155;
-            color: #cbd5e1;
-        }
-        button.btn-secondary:hover { background: #334155; color: #fff; }
-
-        button.btn-text {
-            background: transparent;
-            color: #94a3b8;
-            font-size: 0.95rem;
-            padding: 0.5rem;
-            margin-top: 10px;
-        }
-        button.btn-text:hover { color: #cbd5e1; background: transparent; text-decoration: underline; }
-
-        /* Mensajes de ayuda e instrucciones finales */
-        .tip {
-            background: #0f172a;
-            padding: 1.2rem;
-            border-radius: .5rem;
-            border-left: 4px solid #f59e0b;
+        .header p {
+            color: var(--muted);
             font-size: .95rem;
-            color: #cbd5e1;
-            margin-top: 1rem;
-            line-height: 1.6;
+            margin-top: .4rem;
         }
-        .success-box {
-            background: #0f172a;
-            padding: 1.5rem;
-            border-radius: .5rem;
-            border: 1px solid #4ade80;
-            margin-bottom: 1.5rem;
+
+        /* ── Card ── */
+        .card {
+            width: 100%;
+            max-width: 520px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 60px -10px rgba(0,0,0,.6),
+                        0 0 0 1px rgba(56,189,248,.07);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #38bdf8);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer { to { background-position: 200% 0; } }
+
+        /* ── Progress bar ── */
+        .progress-wrap {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 2rem;
+        }
+        .progress-wrap span {
+            flex: 1;
+            height: 4px;
+            border-radius: 99px;
+            background: var(--border);
+            transition: background .4s;
+        }
+        .progress-wrap span.done { background: var(--accent); }
+
+        /* ── Steps ── */
+        .step { display: none; }
+        .step.active {
+            display: block;
+            animation: fadeUp .35s ease-out both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Typography in steps ── */
+        .step-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
             text-align: center;
+            margin-bottom: .6rem;
         }
-        .success-box strong { color: #4ade80; font-size: 1.2rem;}
-        
-        ol { padding-left: 1.25rem; color: #cbd5e1; font-size: .95rem; line-height: 1.8; margin-bottom: 1.5rem;}
-        ol li { margin-bottom: .8rem; }
-        code { color: #38bdf8; font-size: .9rem; background: #0f172a; padding: 2px 6px; border-radius: 4px;}
+        .step-desc {
+            color: var(--muted);
+            font-size: .95rem;
+            line-height: 1.65;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* ── Form fields ── */
+        .fg { margin-bottom: 1rem; }
+        .fg label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .45rem;
+        }
+        .input-wrap { position: relative; }
+        .input-wrap .suffix {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: .9rem;
+            font-weight: 600;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: .85rem 1rem;
+            border-radius: 9px;
+            border: 2px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(56,189,248,.12);
+        }
+        input.has-suffix { padding-right: 160px; }
+        input.error-field { border-color: var(--error) !important; }
+
+        .field-hint {
+            font-size: .8rem;
+            color: var(--muted);
+            margin-top: .35rem;
+        }
+        .field-hint.error { color: var(--error); }
+
+        /* Availability badge */
+        .avail-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: .8rem;
+            font-weight: 600;
+            margin-top: .35rem;
+            padding: 2px 8px;
+            border-radius: 99px;
+        }
+        .avail-badge.checking { color: var(--muted); background: rgba(139,174,196,.12); }
+        .avail-badge.available { color: var(--success); background: rgba(74,222,128,.12); }
+        .avail-badge.taken { color: var(--error); background: rgba(248,113,113,.12); }
+
+        /* Char counter */
+        .char-counter {
+            text-align: right;
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: .25rem;
+        }
+        .char-counter.warn { color: var(--warning); }
+
+        /* ── Buttons ── */
+        .btn {
+            width: 100%;
+            padding: .9rem 1rem;
+            border-radius: 9px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: all .2s;
+            margin-bottom: 8px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent2), #6366f1);
+            color: #fff;
+        }
+        .btn-primary:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+        .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--border);
+            color: var(--muted);
+        }
+        .btn-secondary:hover { background: var(--border); color: var(--text); }
+
+        .btn-text {
+            background: transparent;
+            color: var(--muted);
+            font-size: .9rem;
+            padding: .45rem;
+        }
+        .btn-text:hover { color: var(--text); text-decoration: underline; }
+
+        /* ── Help box ── */
+        .tip {
+            background: rgba(245,158,11,.07);
+            border-left: 3px solid var(--warning);
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            font-size: .88rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        /* ── Success screen ── */
+        .success-domain {
+            background: var(--bg);
+            border: 1px solid var(--success);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .success-domain .domain-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--success);
+            word-break: break-all;
+        }
+        .copy-btn {
+            flex-shrink: 0;
+            background: rgba(74,222,128,.12);
+            border: 1px solid rgba(74,222,128,.3);
+            color: var(--success);
+            border-radius: 7px;
+            padding: .45rem .8rem;
+            font-size: .82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            white-space: nowrap;
+        }
+        .copy-btn:hover { background: rgba(74,222,128,.22); }
+        .copy-btn.copied { color: var(--text); }
+
+        .steps-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .steps-list li {
+            display: flex;
+            gap: .85rem;
+            padding: .85rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: .92rem;
+            color: var(--muted);
+            line-height: 1.55;
+            align-items: flex-start;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .step-num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent2), #6366f1);
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+        code {
+            background: var(--bg);
+            color: var(--accent);
+            font-size: .88rem;
+            padding: 2px 7px;
+            border-radius: 5px;
+            border: 1px solid var(--border);
+            font-family: 'Courier New', monospace;
+        }
+
         .img-ref {
             max-width: 100%;
-            border-radius: 6px;
-            margin-top: 10px;
-            border: 1px solid #334155;
+            border-radius: 7px;
+            margin-top: .75rem;
+            border: 1px solid var(--border);
             display: block;
+        }
+        .img-fallback {
+            display: none;
+            font-size: .82rem;
+            color: var(--muted);
+            margin-top: .5rem;
+        }
+
+        /* ── Loading ── */
+        .loader-wrap { text-align: center; padding: 1rem 0; }
+        .spinner {
+            width: 44px;
+            height: 44px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+            margin: 0 auto 1.2rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Error screen ── */
+        .error-icon { font-size: 2.5rem; text-align: center; margin-bottom: .8rem; }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            margin: 1rem 0;
+            color: var(--muted);
+            font-size: .8rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
         }
     </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="header">
     <h1>Tecnosofia</h1>
+    <p>Tu espacio gratis en internet 🚀</p>
+</div>
 
-    <div class="card">
-        
-        <!-- PANTALLA 1: Pregunta inicial -->
-        <div id="step-1" class="step active">
-            <h2>¡Hola! Vamos a crear tu enlace 🚀</h2>
-            <p class="desc">Para darte tu propio espacio en internet, primero necesitamos saber si ya subiste los archivos de tu página a Vercel.</p>
-            
-            <button type="button" onclick="irAlPaso(2)">Sí, ya tengo mi página en Vercel</button>
-            <button type="button" class="btn-secondary" onclick="mostrarAyuda()">Aún no, ¿qué es Vercel?</button>
-            
-            <div id="help-box" style="display:none;" class="tip">
-                💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. Para continuar, primero necesitas crear una cuenta ahí y subir tu página. ¡Cuando te den tu enlace temporal, regresa aquí!
-            </div>
-        </div>
+<div class="card">
 
-        <!-- PANTALLA 2: El nombre -->
-        <div id="step-2" class="step">
-            <h2>Elige tu nombre</h2>
-            <p class="desc">¡Excelente! Escribe cómo quieres que se llame tu nuevo enlace (por ejemplo: tu nombre, tu proyecto o tu negocio).</p>
-            
-            <div class="fg">
-                <input type="text" id="subdomain" placeholder="ejemplo: mateo">
-            </div>
-            
-            <button type="button" onclick="irAlPaso(3)">Siguiente 👉</button>
-            <button type="button" class="btn-text" onclick="irAlPaso(1)">⬅ Volver atrás</button>
-        </div>
-
-        <!-- PANTALLA 3: Conexión -->
-        <div id="step-3" class="step">
-            <h2>Conecta tu página</h2>
-            <p class="desc">¡Gran nombre! Para terminar, pega aquí el enlace temporal que te dio Vercel (el que termina en .vercel.app).</p>
-            
-            <div class="fg">
-                <input type="text" id="target" placeholder="ejemplo: mi-proyecto.vercel.app">
-            </div>
-            
-            <button type="button" id="btn-crear" onclick="crearDominio()">🪄 ¡Crear mi página web!</button>
-            <button type="button" class="btn-text" onclick="irAlPaso(2)">⬅ Volver atrás</button>
-        </div>
-
-        <!-- PANTALLA 4: Cargando -->
-        <div id="step-loading" class="step">
-            <h2>⏳ Estamos construyendo tu enlace...</h2>
-            <p class="desc">Los robots están trabajando. Esto tomará solo unos segundos.</p>
-        </div>
-
-        <!-- PANTALLA 5: Éxito y Paso Final en Vercel -->
-        <div id="step-success" class="step">
-            <div class="success-box">
-                ¡Felicidades! 🎉<br>Tu enlace oficial es:<br>
-                <strong id="final-link">...</strong>
-            </div>
-
-            <h2>⚠️ ÚLTIMO PASO OBLIGATORIO</h2>
-            <p class="desc">Tu nombre ya existe, pero debes avisarle a Vercel que reciba las visitas o dará <strong>Error 404</strong>. Solo sigue estos pasos:</p>
-
-            <ol>
-                <li>Abre tu panel de <strong>Vercel</strong> y entra a tu proyecto.</li>
-                <li>En el menú de la izquierda, selecciona la opción <strong>Domains</strong>.</li>
-                <li>Haz clic en el botón <strong>Add Existing</strong> y te pedirá que escribas el dominio completo que te acabamos de generar.
-                    <img src="Adddomain.png" alt="Botón de Vercel" class="img-ref">
-                </li>
-            </ol>
-
-            <div class="tip">
-                💡 Si Vercel te pregunta si deseas redireccionar configuraciones, elige añadir <strong>únicamente tu subdominio exacto</strong>. ¡Saldrán palomitas azules y habrás terminado!
-            </div>
-            
-            <button type="button" class="btn-secondary" style="margin-top:20px;" onclick="location.reload()">Hacer otro registro</button>
-        </div>
-
-        <!-- PANTALLA 6: Error -->
-        <div id="step-error" class="step">
-            <h2>Ocurrió un problema 😕</h2>
-            <p class="desc" id="error-msg">No pudimos crear el enlace. Por favor revisa que la información sea correcta.</p>
-            <button type="button" class="btn-secondary" onclick="irAlPaso(2)">Intentar de nuevo</button>
-        </div>
-
+    <!-- Progress bar (3 pasos reales: ¿tienes Vercel? → nombre → enlace) -->
+    <div class="progress-wrap" id="progress-bar">
+        <span></span><span></span><span></span>
     </div>
+
+    <!-- PASO 1: ¿Ya tienes Vercel? -->
+    <div id="step-1" class="step active">
+        <p class="step-title">¡Hola! Vamos a crear tu enlace 🚀</p>
+        <p class="step-desc">Para darte tu propio espacio en internet, primero necesitamos saber si ya subiste los archivos de tu página a Vercel.</p>
+
+        <button class="btn btn-primary" onclick="irAlPaso(2)">Sí, ya tengo mi página en Vercel</button>
+        <button class="btn btn-secondary" onclick="mostrarAyuda()">Aún no, ¿qué es Vercel?</button>
+
+        <div id="help-box" style="display:none;" class="tip">
+            💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. Crea una cuenta en <strong>vercel.com</strong>, sube tu página y cuando tengas un enlace terminado en <code>.vercel.app</code>, ¡regresa aquí!
+        </div>
+    </div>
+
+    <!-- PASO 2: Nombre del subdominio -->
+    <div id="step-2" class="step">
+        <p class="step-title">Elige tu nombre</p>
+        <p class="step-desc">Escribe cómo quieres que se llame tu enlace. Solo letras, números y guiones.</p>
+
+        <div class="fg">
+            <label for="subdomain">Tu subdominio</label>
+            <div class="input-wrap">
+                <input
+                    type="text"
+                    id="subdomain"
+                    class="has-suffix"
+                    placeholder="ejemplo: mateo"
+                    maxlength="30"
+                    autocomplete="off"
+                    oninput="alEscribirSubdominio()"
+                >
+                <span class="suffix">.tecnosofia.xyz</span>
+            </div>
+            <div class="char-counter" id="char-count">0 / 30</div>
+            <div id="subdomain-hint" class="field-hint">Entre 3 y 30 caracteres: letras, números y guiones. Sin espacios.</div>
+            <div id="avail-status"></div>
+        </div>
+
+        <div class="fg">
+            <label for="email">Tu correo electrónico</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="tú@ejemplo.com"
+                autocomplete="email"
+            >
+            <div class="field-hint">Te enviaremos las instrucciones finales por si las necesitas después.</div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente 👉</button>
+        <button class="btn btn-text" onclick="irAlPaso(1)">⬅ Volver atrás</button>
+    </div>
+
+    <!-- PASO 3: URL de Vercel -->
+    <div id="step-3" class="step">
+        <p class="step-title">Conecta tu página</p>
+        <p class="step-desc">Pega aquí el enlace temporal que te dio Vercel. Debe terminar en <code>.vercel.app</code>.</p>
+
+        <div class="fg">
+            <label for="target">Enlace de Vercel</label>
+            <input
+                type="text"
+                id="target"
+                placeholder="mi-proyecto.vercel.app"
+                autocomplete="off"
+                oninput="validarTarget()"
+            >
+            <div id="target-hint" class="field-hint">Solo la parte después de https://. Ejemplo: <code>mi-web.vercel.app</code></div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-crear" onclick="crearDominio()" disabled>🪄 ¡Crear mi página web!</button>
+        <button class="btn btn-text" onclick="irAlPaso(2)">⬅ Volver atrás</button>
+    </div>
+
+    <!-- PASO CARGA -->
+    <div id="step-loading" class="step">
+        <div class="loader-wrap">
+            <div class="spinner"></div>
+            <p class="step-title">Construyendo tu enlace...</p>
+            <p class="step-desc">Los robots están trabajando. Solo tomará unos segundos.</p>
+        </div>
+    </div>
+
+    <!-- PASO ÉXITO -->
+    <div id="step-success" class="step">
+        <p class="step-title">¡Felicidades! 🎉</p>
+        <p class="step-desc">Tu enlace oficial ya existe. Guárdalo:</p>
+
+        <div class="success-domain">
+            <span class="domain-text" id="final-link">...</span>
+            <button class="copy-btn" id="copy-btn" onclick="copiarDominio()">📋 Copiar</button>
+        </div>
+
+        <p class="step-title" style="font-size:1.1rem; margin-bottom:.6rem;">⚠️ Último paso obligatorio</p>
+        <p class="step-desc" style="margin-bottom:1rem;">Tu nombre ya existe en nuestro sistema, pero debes avisarle a Vercel que reciba las visitas o dará <strong>Error 404</strong>. Sigue estos pasos:</p>
+
+        <ol class="steps-list">
+            <li>
+                <span class="step-num">1</span>
+                <span>Abre tu panel de <strong>Vercel</strong> y entra al proyecto de tu página.</span>
+            </li>
+            <li>
+                <span class="step-num">2</span>
+                <span>En el menú de la izquierda, selecciona <strong>Domains</strong>.</span>
+            </li>
+            <li>
+                <span class="step-num">3</span>
+                <span>
+                    Haz clic en <strong>Add Existing</strong> y escribe exactamente:<br>
+                    <code id="domain-in-instructions">...</code>
+                    <img
+                        src="Adddomain.png"
+                        alt="Captura del botón Add Existing en el panel de Vercel"
+                        class="img-ref"
+                        onerror="this.style.display='none'; document.getElementById('img-fallback').style.display='block';"
+                    >
+                    <span id="img-fallback" class="img-fallback">
+                        (Imagen no disponible — busca el botón "Add Existing" en la sección Domains de tu proyecto en Vercel.)
+                    </span>
+                </span>
+            </li>
+            <li>
+                <span class="step-num">4</span>
+                <span>Si Vercel te pregunta por redirecciones, elige añadir <strong>únicamente tu subdominio exacto</strong>. ¡Aparecerán palomitas azules y habrás terminado! ✅</span>
+            </li>
+        </ol>
+
+        <div class="tip">
+            💡 ¿Recibiste las instrucciones por correo? Revisa tu bandeja de entrada (y spam) para encontrarlas cuando las necesites.
+        </div>
+
+        <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="reiniciar()">Hacer otro registro</button>
+    </div>
+
+    <!-- PASO ERROR -->
+    <div id="step-error" class="step">
+        <div class="error-icon">😕</div>
+        <p class="step-title">Ocurrió un problema</p>
+        <p class="step-desc" id="error-msg">No pudimos crear el enlace. Por favor revisa que la información sea correcta.</p>
+        <button class="btn btn-secondary" onclick="volverDesdeError()">Intentar de nuevo</button>
+    </div>
+
 </div>
 
 <script>
-    // Función para cambiar de pantallas
-    function irAlPaso(numero) {
-        document.querySelectorAll('.step').forEach(pantalla => pantalla.classList.remove('active'));
-        document.getElementById('step-' + numero).classList.add('active');
+    // ── Estado global ──
+    const state = {
+        subdomain: '',
+        target: '',
+        email: '',
+        availChecked: false,
+        availResult: null,   // true = libre, false = tomado
+        checkTimer: null,
+    };
+
+    // ── Navegación ──
+    function mostrarStep(id) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        actualizarProgreso(id);
     }
 
-    // Mostrar el mensaje de ayuda de Vercel
+    function irAlPaso(n) { mostrarStep('step-' + n); }
+
+    function actualizarProgreso(stepId) {
+        const barras = document.querySelectorAll('#progress-bar span');
+        const mapa = { 'step-1': 0, 'step-2': 1, 'step-3': 2, 'step-loading': 2, 'step-success': 3, 'step-error': 2 };
+        const llenas = mapa[stepId] ?? 0;
+        barras.forEach((b, i) => b.classList.toggle('done', i < llenas));
+    }
+
     function mostrarAyuda() {
         document.getElementById('help-box').style.display = 'block';
     }
 
-    // Lógica para enviar los datos a Cloudflare
-    async function crearDominio() {
-        const subdomainInput = document.getElementById('subdomain').value.trim().toLowerCase();
-        let targetInput = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+    // ── Validación en tiempo real del subdominio ──
+    function alEscribirSubdominio() {
+        const raw = document.getElementById('subdomain').value;
+        const val = raw.toLowerCase().replace(/[^a-z0-9-]/g, '');
 
-        // Validaciones básicas antes de enviar
-        if(!subdomainInput || !targetInput) {
-            alert('Por favor llena los datos de nombre y enlace de Vercel.');
+        // Corregir el valor en el input (solo chars válidos)
+        if (document.getElementById('subdomain').value !== val) {
+            document.getElementById('subdomain').value = val;
+        }
+
+        state.subdomain = val;
+
+        // Contador de chars
+        const counter = document.getElementById('char-count');
+        counter.textContent = `${val.length} / 30`;
+        counter.classList.toggle('warn', val.length >= 25);
+
+        const hint = document.getElementById('subdomain-hint');
+        const avail = document.getElementById('avail-status');
+        const btn = document.getElementById('btn-paso2');
+
+        // Resetear disponibilidad
+        state.availChecked = false;
+        state.availResult = null;
+        avail.innerHTML = '';
+        btn.disabled = true;
+
+        if (val.length < 3) {
+            hint.textContent = 'Mínimo 3 caracteres.';
+            hint.className = 'field-hint error';
+            return;
+        }
+        if (val.startsWith('-') || val.endsWith('-')) {
+            hint.textContent = 'El nombre no puede empezar ni terminar con guión.';
+            hint.className = 'field-hint error';
             return;
         }
 
-        // Mostrar pantalla de carga
-        document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
-        document.getElementById('step-loading').classList.add('active');
+        hint.textContent = '¡Se ve bien!';
+        hint.className = 'field-hint';
 
+        // Debounce para verificar disponibilidad
+        clearTimeout(state.checkTimer);
+        avail.innerHTML = '<span class="avail-badge checking">⏳ Verificando disponibilidad...</span>';
+
+        state.checkTimer = setTimeout(() => verificarDisponibilidad(val), 700);
+    }
+
+    async function verificarDisponibilidad(sub) {
+        const avail = document.getElementById('avail-status');
+        const btn   = document.getElementById('btn-paso2');
         try {
-            const respuesta = await fetch('/api/create-dns', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ subdomain: subdomainInput, target: targetInput })
-            });
-            const data = await respuesta.json();
-            
-            if (data.success) {
-                // Si funciona, muestra la pantalla final
-                document.getElementById('final-link').innerText = `${subdomainInput}.tecnosofia.xyz`;
-                document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
-                document.getElementById('step-success').classList.add('active');
+            const res  = await fetch(`/api/check-dns?subdomain=${encodeURIComponent(sub)}`);
+            const data = await res.json();
+            if (data.available) {
+                avail.innerHTML = '<span class="avail-badge available">✅ Disponible</span>';
+                state.availChecked = true;
+                state.availResult  = true;
+                btn.disabled = false;
             } else {
-                // Si hay error (ej: nombre ya ocupado)
-                document.getElementById('error-msg').innerText = `Error: ${data.error || 'Nombre no disponible.'}`;
-                document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
-                document.getElementById('step-error').classList.add('active');
+                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba otro nombre.</span>';
+                state.availChecked = true;
+                state.availResult  = false;
+                btn.disabled = true;
             }
         } catch {
-            document.getElementById('error-msg').innerText = 'Hubo un problema de conexión con nuestro servidor.';
-            document.querySelectorAll('.step').forEach(p => p.classList.remove('active'));
-            document.getElementById('step-error').classList.add('active');
+            // Si el endpoint no existe todavía, no bloqueamos al usuario
+            avail.innerHTML = '';
+            state.availChecked = true;
+            state.availResult  = true;
+            btn.disabled = false;
         }
+    }
+
+    // ── Paso 2 → 3 ──
+    function validarPaso2() {
+        const email = document.getElementById('email').value.trim();
+        state.email = email;
+        state.subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
+
+        if (!state.subdomain || state.subdomain.length < 3) {
+            alert('Escribe un nombre de al menos 3 caracteres.');
+            return;
+        }
+        if (state.availResult === false) {
+            alert('Ese nombre ya está en uso. Elige otro.');
+            return;
+        }
+        irAlPaso(3);
+    }
+
+    // ── Validación del target ──
+    function validarTarget() {
+        let raw = document.getElementById('target').value.trim().toLowerCase();
+        raw = raw.replace(/^(https?:\/\/)?(www\.)?/, '');
+        state.target = raw;
+
+        const btn  = document.getElementById('btn-crear');
+        const hint = document.getElementById('target-hint');
+
+        if (!raw) {
+            hint.textContent = 'Solo la parte después de https://. Ejemplo: mi-web.vercel.app';
+            hint.className = 'field-hint';
+            btn.disabled = true;
+            return;
+        }
+        if (!raw.endsWith('.vercel.app')) {
+            hint.textContent = '⚠️ El enlace debe terminar en .vercel.app';
+            hint.className = 'field-hint error';
+            btn.disabled = true;
+            return;
+        }
+        hint.textContent = '✅ Enlace válido.';
+        hint.className = 'field-hint';
+        btn.disabled = false;
+    }
+
+    // ── Crear dominio ──
+    async function crearDominio() {
+        const btn = document.getElementById('btn-crear');
+        btn.disabled = true;   // Evitar doble click
+
+        const sub    = state.subdomain;
+        const target = state.target;
+        const email  = state.email;
+
+        if (!sub || !target) {
+            alert('Por favor llena todos los datos.');
+            btn.disabled = false;
+            return;
+        }
+
+        mostrarStep('step-loading');
+
+        try {
+            const res  = await fetch('/api/create-dns', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ subdomain: sub, target, email }),
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                const dominio = `${sub}.tecnosofia.xyz`;
+                document.getElementById('final-link').textContent = dominio;
+                document.getElementById('domain-in-instructions').textContent = dominio;
+                mostrarStep('step-success');
+
+                // Actualizar URL sin recargar (para que el usuario pueda compartir/volver)
+                history.replaceState(null, '', `?sub=${encodeURIComponent(sub)}`);
+            } else {
+                document.getElementById('error-msg').textContent =
+                    `Error: ${data.error || 'Ese nombre no está disponible o hubo un problema.'}`;
+                mostrarStep('step-error');
+            }
+        } catch {
+            document.getElementById('error-msg').textContent =
+                'Hubo un problema de conexión con nuestro servidor. Intenta de nuevo en unos segundos.';
+            mostrarStep('step-error');
+        }
+    }
+
+    // ── Copiar dominio ──
+    function copiarDominio() {
+        const texto = document.getElementById('final-link').textContent;
+        navigator.clipboard.writeText(texto).then(() => {
+            const btn = document.getElementById('copy-btn');
+            btn.textContent = '✅ Copiado';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = '📋 Copiar';
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(() => {
+            // Fallback para navegadores sin permiso de clipboard
+            const ta = document.createElement('textarea');
+            ta.value = texto;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            document.getElementById('copy-btn').textContent = '✅ Copiado';
+            setTimeout(() => { document.getElementById('copy-btn').textContent = '📋 Copiar'; }, 2000);
+        });
+    }
+
+    // ── Volver desde error conservando datos ──
+    function volverDesdeError() {
+        // Regresar al paso 3 si el target es el problema, al 2 si es el nombre
+        if (state.target && state.target.endsWith('.vercel.app')) {
+            irAlPaso(3);
+        } else {
+            irAlPaso(2);
+        }
+    }
+
+    // ── Reiniciar ──
+    function reiniciar() {
+        state.subdomain = '';
+        state.target = '';
+        state.email = '';
+        state.availChecked = false;
+        state.availResult = null;
+        document.getElementById('subdomain').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('target').value = '';
+        document.getElementById('avail-status').innerHTML = '';
+        document.getElementById('char-count').textContent = '0 / 30';
+        document.getElementById('subdomain-hint').textContent = 'Entre 3 y 30 caracteres: letras, números y guiones. Sin espacios.';
+        document.getElementById('subdomain-hint').className = 'field-hint';
+        document.getElementById('target-hint').textContent = 'Solo la parte después de https://. Ejemplo: mi-web.vercel.app';
+        document.getElementById('target-hint').className = 'field-hint';
+        document.getElementById('btn-paso2').disabled = true;
+        document.getElementById('btn-crear').disabled = true;
+        history.replaceState(null, '', window.location.pathname);
+        irAlPaso(1);
     }
 </script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
-<!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
