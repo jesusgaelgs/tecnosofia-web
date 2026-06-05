@@ -18,17 +18,16 @@
     <meta name="twitter:title" content="Tecnosofia — Tu espacio gratis en internet">
     <meta name="twitter:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos.">
 
-    <!-- JSON-LD para SEO y organización sin fines de lucro -->
+    <!-- JSON-LD para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Tecnosofia",
       "url": "https://tecnosofia.xyz",
-      "description": "Subdominios gratuitos para estudiantes y creadores sin recursos técnicos o económicos",
+      "description": "Subdominios gratuitos + educación digital para estudiantes y creadores",
       "nonprofit": true,
-      "email": "hola@tecnosofia.xyz",
-      "sameAs": []
+      "email": "hola@tecnosofia.xyz"
     }
     </script>
 
@@ -38,24 +37,22 @@
 
     <style>
         :root {
-            --bg:       #05080f;
-            --surface:  #0c1220;
+            --bg: #05080f;
+            --surface: #0c1220;
             --surface2: #111827;
-            --border:   #1e2d45;
-            --accent:   #3b9eff;
-            --accent2:  #7c6fff;
-            --green:    #34d399;
-            --yellow:   #fbbf24;
-            --red:      #f87171;
-            --text:     #eef2ff;
-            --muted:    #7b93b4;
-            --radius:   16px;
+            --border: #1e2d45;
+            --accent: #3b9eff;
+            --accent2: #7c6fff;
+            --green: #34d399;
+            --yellow: #fbbf24;
+            --red: #f87171;
+            --text: #eef2ff;
+            --muted: #7b93b4;
+            --radius: 16px;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Cabinet Grotesk', sans-serif;
             background: var(--bg);
@@ -78,11 +75,9 @@
             font-weight: 600;
             transition: top 0.2s;
         }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
 
-        /* ── FONDO ANIMADO ── */
+        /* Fondos animados */
         .bg-grid {
             position: fixed;
             inset: 0;
@@ -105,7 +100,7 @@
             z-index: 0;
         }
 
-        /* ── NAV ── */
+        /* NAV */
         nav {
             position: sticky;
             top: 0;
@@ -144,7 +139,7 @@
             font-weight: 700 !important;
         }
 
-        /* ── HERO ── */
+        /* HERO */
         .hero {
             position: relative;
             z-index: 1;
@@ -165,7 +160,6 @@
             padding: .35rem 1rem;
             border-radius: 99px;
             margin-bottom: 1.5rem;
-            letter-spacing: .03em;
             animation: fadeUp .6s ease both;
         }
         .hero h1 {
@@ -178,7 +172,7 @@
             animation: fadeUp .6s .1s ease both;
         }
         .hero h1 span {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -192,7 +186,6 @@
             animation: fadeUp .6s .2s ease both;
         }
 
-        /* Preview animado del dominio */
         .domain-preview {
             display: inline-flex;
             align-items: center;
@@ -254,7 +247,7 @@
         }
         .btn-hero-secondary:hover { border-color: var(--accent); color: var(--text); }
 
-        /* ── STATS ── */
+        /* STATS */
         .stats {
             position: relative;
             z-index: 1;
@@ -275,7 +268,7 @@
         .stat-num span { color: var(--accent); }
         .stat-label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
 
-        /* ── SECCIÓN: CÓMO FUNCIONA ── */
+        /* SECCIONES */
         .section {
             position: relative;
             z-index: 1;
@@ -304,7 +297,7 @@
             text-align: center;
             color: var(--muted);
             font-size: 1rem;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto 3.5rem;
             line-height: 1.65;
         }
@@ -364,7 +357,7 @@
         }
         .step-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
 
-        /* ── GALERÍA DE EJEMPLOS ── */
+        /* EJEMPLOS */
         .examples-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -403,7 +396,7 @@
         }
         .example-type { font-size: .75rem; color: var(--muted); margin-top: 2px; }
 
-        /* ── FORMULARIO ── */
+        /* FORMULARIO */
         .form-section {
             position: relative;
             z-index: 1;
@@ -412,7 +405,6 @@
             justify-content: center;
         }
         .form-wrap { width: 100%; max-width: 540px; }
-
         .form-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -431,8 +423,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2.5rem 2rem;
-            box-shadow: 0 24px 80px -10px rgba(0,0,0,.7),
-                        0 0 0 1px rgba(59,158,255,.06);
+            box-shadow: 0 24px 80px -10px rgba(0,0,0,.7), 0 0 0 1px rgba(59,158,255,.06);
             position: relative;
             overflow: hidden;
         }
@@ -447,7 +438,6 @@
         }
         @keyframes shimmer { to { background-position: 200% 0; } }
 
-        /* Progress */
         .progress-wrap {
             display: flex;
             align-items: center;
@@ -474,12 +464,11 @@
             font-weight: 600;
         }
 
-        /* Steps */
         .step { display: none; }
         .step.active { display: block; animation: fadeUp .3s ease both; }
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .step-title {
@@ -497,7 +486,6 @@
             margin-bottom: 1.8rem;
         }
 
-        /* Fields */
         .fg { margin-bottom: 1.1rem; }
         .fg label {
             display: block;
@@ -541,7 +529,6 @@
         .field-hint { font-size: .78rem; color: var(--muted); margin-top: .3rem; }
         .field-hint.error { color: var(--red); }
 
-        /* Preview en vivo dentro del form */
         .live-preview {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -572,7 +559,6 @@
         .char-counter { text-align: right; font-size: .72rem; color: var(--muted); margin-top: .2rem; }
         .char-counter.warn { color: var(--yellow); }
 
-        /* Buttons */
         .btn {
             width: 100%;
             padding: .9rem 1rem;
@@ -606,7 +592,6 @@
         }
         .btn-text:hover { color: var(--text); text-decoration: underline; }
 
-        /* Opciones del paso 1 */
         .choice-btns { display: flex; flex-direction: column; gap: .75rem; }
         .choice-btn {
             display: flex;
@@ -628,7 +613,6 @@
         .choice-btn-text strong { display: block; font-size: .98rem; font-weight: 700; }
         .choice-btn-text span { font-size: .82rem; color: var(--muted); }
 
-        /* Tip box */
         .tip {
             background: rgba(251,191,36,.06);
             border-left: 3px solid var(--yellow);
@@ -640,6 +624,106 @@
             margin-top: 1rem;
         }
         .tip a { color: var(--accent); }
+
+        /* ✨ NUEVO: Sección de recursos educativos */
+        .resources-box {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: rgba(59,158,255,.05);
+            border: 2px dashed var(--accent);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .resources-box h4 {
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .resources-box p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .resource-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: border-color .2s, transform .2s;
+        }
+        .resource-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ✨ NUEVO: Checklist interactivo */
+        .checklist {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .checklist h4 {
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .checklist label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        .checklist input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* ✨ NUEVO: Código copiable */
+        .code-block {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+        .copy-code-btn {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all .2s;
+            margin-top: 0.5rem;
+        }
+        .copy-code-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
 
         /* Success */
         .success-domain {
@@ -736,7 +820,7 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.85);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -754,7 +838,7 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
@@ -785,7 +869,7 @@
             margin-bottom: 1rem;
             color: var(--text);
         }
-        .modal ol {
+        .modal ol, .modal ul {
             padding-left: 1.5rem;
             color: var(--muted);
             line-height: 1.8;
@@ -810,9 +894,60 @@
             justify-content: center;
             color: var(--muted);
             font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
         }
+        
+        /* ✨ NUEVO: Video embed responsive */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 1rem 0;
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            text-align: center;
+            padding: 1rem;
+        }
+        .video-placeholder .play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform .2s;
+        }
+        .video-placeholder .play-btn:hover { transform: scale(1.1); }
 
-        /* ── FAQ ── */
+        /* FAQ */
         .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 700px; margin: 0 auto; }
         .faq-item {
             background: var(--surface);
@@ -859,10 +994,10 @@
             line-height: 1.65;
             padding: 0 1.3rem;
         }
-        .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.1rem; }
+        .faq-item.open .faq-a { max-height: 400px; padding-bottom: 1.1rem; }
         .faq-a a { color: var(--accent); }
 
-        /* ── FOOTER ── */
+        /* FOOTER */
         footer {
             position: relative;
             z-index: 1;
@@ -896,7 +1031,6 @@
         }
         .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
         
-        /* Legal links y recovery */
         .footer-legal {
             font-size: .75rem;
             color: var(--muted);
@@ -923,7 +1057,7 @@
         
         .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; margin-top: 1.5rem; }
 
-        /* ── DIVIDER ── */
+        /* DIVIDER */
         .divider {
             position: relative;
             z-index: 1;
@@ -932,7 +1066,32 @@
             margin: 0 2rem;
         }
 
-        /* ── RESPONSIVE ── */
+        /* ✨ NUEVO: Botón flotante de ayuda */
+        .help-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(59,158,255,0.4);
+            z-index: 999;
+            transition: transform .2s, box-shadow .2s;
+            text-decoration: none;
+        }
+        .help-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(59,158,255,0.6);
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 600px) {
             nav { padding: .9rem 1rem; }
             .nav-links { gap: .8rem; }
@@ -941,6 +1100,13 @@
             .stats { gap: 2rem; }
             .section { padding: 3.5rem 1rem; }
             .modal { padding: 1.5rem; margin: 1rem; }
+            .help-float { width: 50px; height: 50px; font-size: 1.2rem; }
+        }
+
+        /* Animaciones */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -952,7 +1118,7 @@
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
     <div class="nav-logo">Tecnosofia</div>
     <div class="nav-links">
@@ -963,7 +1129,7 @@
     </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-badge">✨ 100% Gratis — Sin tarjeta de crédito</div>
     <h1>Tu propio espacio<br>en <span>internet</span></h1>
@@ -980,7 +1146,7 @@
     </div>
 </section>
 
-<!-- ── STATS ── -->
+<!-- STATS -->
 <div class="stats">
     <div class="stat">
         <div class="stat-num"><span>100%</span></div>
@@ -998,37 +1164,37 @@
 
 <div class="divider"></div>
 
-<!-- ── CÓMO FUNCIONA ── -->
+<!-- CÓMO FUNCIONA -->
 <section class="section" id="como-funciona">
     <p class="section-label">Proceso</p>
     <h2 class="section-title">En 3 pasos simples</h2>
-    <p class="section-desc">No necesitas saber programar ni tener experiencia técnica. Lo guiamos todo el camino.</p>
+    <p class="section-desc">No necesitas saber programar. Te enseñamos cada paso del camino.</p>
 
     <div class="steps-grid">
         <div class="step-card">
-            <div class="step-icon">☁️</div>
+            <div class="step-icon">📚</div>
             <div class="step-num-badge">1</div>
-            <h3>Sube tu página a Vercel</h3>
-            <p>Vercel es una plataforma gratuita donde viven los archivos de tu página. Crea tu cuenta, sube tu proyecto y obtendrás un enlace temporal.</p>
+            <h3>Aprende (opcional)</h3>
+            <p>Descarga nuestra plantilla gratuita o sigue el tutorial paso a paso. No necesitas experiencia previa.</p>
         </div>
         <div class="step-card">
             <div class="step-icon">✏️</div>
             <div class="step-num-badge">2</div>
-            <h3>Elige tu nombre aquí</h3>
-            <p>Escoge cómo quieres que se llame tu enlace — tu nombre, tu proyecto o tu negocio. Verificamos en tiempo real que esté disponible.</p>
+            <h3>Elige tu nombre</h3>
+            <p>Escoge cómo quieres que se llame tu enlace. Verificamos en tiempo real que esté disponible.</p>
         </div>
         <div class="step-card">
             <div class="step-icon">🔗</div>
             <div class="step-num-badge">3</div>
             <h3>Conecta y comparte</h3>
-            <p>Sigue el último paso en Vercel para activar tu enlace. En minutos tendrás tu propio espacio en internet listo para compartir.</p>
+            <p>En minutos tendrás tu propio espacio en internet listo para compartir con el mundo.</p>
         </div>
     </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ── EJEMPLOS ── -->
+<!-- EJEMPLOS -->
 <section class="section" id="ejemplos">
     <p class="section-label">Comunidad</p>
     <h2 class="section-title">Páginas que ya existen</h2>
@@ -1082,7 +1248,7 @@
 
 <div class="divider"></div>
 
-<!-- ── FORMULARIO ── -->
+<!-- FORMULARIO -->
 <section class="form-section" id="registrate">
     <div class="form-wrap">
         <div class="form-header">
@@ -1112,20 +1278,30 @@
                             <span>Tengo un enlace que termina en .vercel.app</span>
                         </div>
                     </button>
-                    <button class="choice-btn" onclick="mostrarAyuda()">
-                        <span class="choice-btn-icon">❓</span>
+                    <button class="choice-btn" onclick="abrirModalVercel()">
+                        <span class="choice-btn-icon">📚</span>
                         <div class="choice-btn-text">
-                            <strong>Aún no, ¿qué es Vercel?</strong>
-                            <span>Cuéntame más antes de continuar</span>
+                            <strong>No sé cómo, enséñame</strong>
+                            <span>Guía paso a paso con video y plantilla</span>
                         </div>
                     </button>
                 </div>
 
-                <div id="help-box" style="display:none;" class="tip">
-                    💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. 
-                    <a href="#" onclick="abrirModalVercel(); return false;">📚 Ver guía paso a paso con imágenes</a> 
-                    o crea tu cuenta en <a href="https://vercel.com" target="_blank">vercel.com</a>. 
-                    Cuando tengas un enlace terminado en <code>.vercel.app</code>, ¡regresa aquí y continúa!
+                <!-- ✨ NUEVO: Sección de recursos educativos -->
+                <div class="resources-box">
+                    <h4>🎁 Recursos gratuitos para empezar</h4>
+                    <p>Descarga lo que necesites. Todo listo para usar.</p>
+                    <div class="resource-links">
+                        <a href="/plantilla-basica.zip" class="resource-link" download>
+                            📦 Descargar plantilla HTML (ZIP)
+                        </a>
+                        <a href="/guia-vercel.pdf" class="resource-link" download>
+                            📄 Descargar guía en PDF
+                        </a>
+                        <a href="#" class="resource-link" onclick="abrirModalVercel(); return false;">
+                            🎬 Ver tutorial en video
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1245,7 +1421,7 @@
 
 <div class="divider"></div>
 
-<!-- ── FAQ ── -->
+<!-- FAQ -->
 <section class="section" id="faq">
     <p class="section-label">Preguntas frecuentes</p>
     <h2 class="section-title">¿Tienes dudas?</h2>
@@ -1294,7 +1470,6 @@
             </button>
             <div class="faq-a" id="faq6">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> e intentamos ayudarte.</div>
         </div>
-        <!-- FAQ de recuperación -->
         <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq7">
                 ¿Olvidé mi subdominio, puedo recuperarlo?
@@ -1305,7 +1480,7 @@
     </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-logo">Tecnosofia</div>
     <p class="footer-desc">Un proyecto para que todos puedan tener<br>su propio espacio en internet. Gratis.</p>
@@ -1313,13 +1488,11 @@
         ✉️ hola@tecnosofia.xyz
     </a>
     
-    <!-- Legal links -->
     <div class="footer-legal">
         <a href="/privacidad">Política de Privacidad</a> • 
         <a href="/terminos">Términos de Uso</a>
     </div>
     
-    <!-- Recovery link -->
     <div class="footer-recovery">
         ¿Olvidaste tu subdominio? 
         <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
@@ -1328,47 +1501,69 @@
     <p class="footer-copy">© 2025 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
 </footer>
 
-<!-- Modal de guía de Vercel -->
+<!-- ✨ NUEVO: Modal educativo de Vercel -->
 <div class="modal-overlay" id="modal-vercel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
         <button class="modal-close" onclick="cerrarModalVercel()" aria-label="Cerrar guía">&times;</button>
-        <h3 id="modal-title">📚 Guía: Subir tu página a Vercel</h3>
-        <p style="color:var(--muted);margin-bottom:1rem;">Sigue estos pasos sencillos. No necesitas saber programar.</p>
+        <h3 id="modal-title">📚 Guía: Publica tu página en internet</h3>
+        <p style="color:var(--muted);margin-bottom:1rem;">Sigue estos pasos. No necesitas saber programar.</p>
         
-        <ol>
-            <li><strong>Ve a <a href="https://vercel.com" target="_blank">vercel.com</a></strong> y haz clic en "Sign Up". Puedes usar tu cuenta de GitHub, GitLab o crear una con email.</li>
-            
-            <li><strong>Prepara tus archivos</strong>: Solo necesitas un archivo llamado <code>index.html</code> con tu contenido. Ejemplo básico:
-                <pre style="background:var(--bg);padding:0.8rem;border-radius:6px;margin:0.5rem 0;font-size:0.8rem;overflow-x:auto;"><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;&lt;head&gt;&lt;title&gt;Mi Página&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
-            </li>
-            
-            <li><strong>Sube tu proyecto</strong>:
-                <ul style="margin:0.5rem 0;padding-left:1.2rem;">
-                    <li>Opción A: Arrastra tu carpeta con el archivo en la página de Vercel</li>
-                    <li>Opción B: Conecta tu cuenta de GitHub si tu código está allí</li>
-                </ul>
-            </li>
-            
-            <li><strong>¡Listo!</strong> Vercel te dará un enlace como <code>mi-proyecto.vercel.app</code>. Cópialo y regresa a Tecnosofia para continuar.</li>
-        </ol>
-        
-        <div class="modal-screenshot">
-            🖼️ [Aquí iría una captura de Vercel]<br>
-            <small style="color:var(--muted);margin-top:0.5rem;display:block;">
-                💡 Tip: Si quieres, puedes reemplazar este texto con una imagen real: 
-                <code>&lt;img src="tu-imagen.png" alt="..." style="width:100%"&gt;</code>
-            </small>
+        <!-- Video tutorial (placeholder - reemplaza con tu video real) -->
+        <div class="video-wrapper">
+            <div class="video-placeholder" id="video-placeholder">
+                <div class="play-btn" onclick="cargarVideo()">▶</div>
+                <p>🎬 Tutorial de 2 minutos<br><small>Haz clic para reproducir</small></p>
+            </div>
+            <!-- El iframe se insertará aquí al hacer clic -->
         </div>
         
+        <!-- Checklist interactivo -->
+        <div class="checklist">
+            <h4>✅ Tu checklist:</h4>
+            <label><input type="checkbox" id="check1" onchange="verificarChecklist()"> Tengo una cuenta en Vercel</label>
+            <label><input type="checkbox" id="check2" onchange="verificarChecklist()"> Descargué la plantilla</label>
+            <label><input type="checkbox" id="check3" onchange="verificarChecklist()"> Edité mi nombre en el HTML</label>
+            <label><input type="checkbox" id="check4" onchange="verificarChecklist()"> Subí mi carpeta a Vercel</label>
+            <label><input type="checkbox" id="check5" onchange="verificarChecklist()"> Tengo mi enlace .vercel.app</label>
+        </div>
+        
+        <!-- Ejemplo de código copiable -->
+        <div style="margin:1rem 0;">
+            <p style="font-weight:600;margin-bottom:0.5rem;">📝 ¿Prefieres copiar y pegar? Usa este código:</p>
+            <pre class="code-block" id="codigo-ejemplo"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;¡Hola! Soy [TU NOMBRE]&lt;/h1&gt;
+    &lt;p&gt;Este es mi portafolio personal&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <button class="copy-code-btn" onclick="copiarCodigo()">📋 Copiar código</button>
+        </div>
+        
+        <!-- Pasos escritos -->
+        <ol>
+            <li><strong>Descarga la plantilla</strong>: <a href="/plantilla-basica.zip" download>plantilla-basica.zip</a></li>
+            <li><strong>Edita el archivo</strong>: Abre <code>index.html</code> con Bloc de Notas y cambia "[TU NOMBRE]" por tu nombre real</li>
+            <li><strong>Ve a Vercel</strong>: <a href="https://vercel.com" target="_blank">vercel.com</a> → Sign Up → Create Account</li>
+            <li><strong>Sube tu carpeta</strong>: Arrastra la carpeta completa al área de Vercel</li>
+            <li><strong>Copia tu enlace</strong>: Cuando veas "Congratulations!", copia el enlace .vercel.app</li>
+            <li><strong>Regresa a Tecnosofia</strong>: Pega tu enlace y elige tu subdominio</li>
+        </ol>
+        
         <div class="tip" style="margin-top:1rem;">
-            ¿Te trabaste en algún paso? Escríbenos a 
+            💡 ¿Te trabaste en algún paso? Escríbenos a 
             <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> 
             y te ayudamos personalmente.
         </div>
     </div>
 </div>
+
+<!-- ✨ NUEVO: Botón flotante de ayuda -->
+<a href="#faq" class="help-float" title="¿Necesitas ayuda?">💬</a>
 
 <script>
     // ── Estado global ──
@@ -1409,14 +1604,10 @@
         document.getElementById('progress-text').textContent = textos[stepId] ?? '';
     }
 
-    function mostrarAyuda() {
-        document.getElementById('help-box').style.display = 'block';
-    }
-
-    // Funciones del modal de Vercel
+    // ── Modal de Vercel ──
     function abrirModalVercel() {
         document.getElementById('modal-vercel').classList.add('active');
-        document.body.style.overflow = 'hidden'; // Evitar scroll del body
+        document.body.style.overflow = 'hidden';
     }
     
     function cerrarModalVercel() {
@@ -1424,15 +1615,42 @@
         document.body.style.overflow = '';
     }
     
-    // Cerrar modal al hacer clic fuera
     document.getElementById('modal-vercel').addEventListener('click', function(e) {
         if (e.target === this) cerrarModalVercel();
     });
     
-    // Cerrar con tecla Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') cerrarModalVercel();
     });
+
+    // ✨ NUEVO: Cargar video al hacer clic (reemplaza con tu URL real de YouTube)
+    function cargarVideo() {
+        const placeholder = document.getElementById('video-placeholder');
+        const wrapper = placeholder.parentElement;
+        // Reemplaza 'TU_VIDEO_ID' con el ID real de tu video de YouTube
+        const videoId = 'TU_VIDEO_ID'; // Ej: 'dQw4w9WgXcQ'
+        wrapper.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen title="Tutorial Vercel"></iframe>`;
+    }
+
+    // ✨ NUEVO: Verificar checklist
+    function verificarChecklist() {
+        const checks = ['check1','check2','check3','check4','check5'];
+        const completados = checks.filter(id => document.getElementById(id).checked).length;
+        if (completados === checks.length) {
+            // Opcional: mostrar mensaje de felicitación
+        }
+    }
+
+    // ✨ NUEVO: Copiar código de ejemplo
+    function copiarCodigo() {
+        const codigo = document.getElementById('codigo-ejemplo').innerText;
+        navigator.clipboard.writeText(codigo).then(() => {
+            const btn = event.target;
+            const original = btn.textContent;
+            btn.textContent = '✅ ¡Copiado!';
+            setTimeout(() => { btn.textContent = original; }, 2000);
+        });
+    }
 
     // ── Validación subdominio ──
     function alEscribirSubdominio() {
@@ -1491,7 +1709,6 @@
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                // Mensaje más útil cuando el nombre está tomado
                 avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code> o <code>' + sub + '2</code></span>';
                 state.availResult = false;
             }
@@ -1529,11 +1746,10 @@
             return; 
         }
         if (!raw.endsWith('.vercel.app')) { 
-            // Mensaje más útil con enlace a ayuda
             hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code><br><small>¿Tu enlace es de otro servicio? <a href="#faq" onclick="document.querySelector(\'#faq6\').classList.add(\'open\');return false;">Ver opciones</a></small>'; 
             hint.className = 'field-hint error'; 
             btn.disabled = true; 
-            return; 
+            return;
         }
         hint.textContent = '✅ Enlace válido.'; 
         hint.className = 'field-hint'; 
@@ -1559,7 +1775,6 @@
                 mostrarStep('step-success');
                 history.replaceState(null, '', `?sub=${encodeURIComponent(state.subdomain)}`);
             } else {
-                // Mensaje de error más específico
                 const errorMsg = data.error || 'Nombre no disponible o problema al crear.';
                 document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>Si el problema persiste, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a></small>`;
                 mostrarStep('step-error');
@@ -1611,15 +1826,10 @@
     function toggleFaq(btn) {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        
-        // Cerrar todos
         document.querySelectorAll('.faq-item.open').forEach(i => {
             i.classList.remove('open');
             i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
         });
-        
-        // Abrir el seleccionado si estaba cerrado
         if (!isOpen) {
             item.classList.add('open');
             btn.setAttribute('aria-expanded', 'true');
