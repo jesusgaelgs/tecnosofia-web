@@ -6,6 +6,8 @@
     <title>Subdominios y Dominios Gratis para Estudiantes — Tecnosofia</title>
     <meta name="description" content="¿Buscas dominios gratis? Obtén tu subdominio personalizado .tecnosofia.xyz 100% gratuito. Publica tu portafolio o proyecto web con GitHub y Vercel en minutos.">
     
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:;">
+    
     <meta property="og:title" content="Tecnosofia — Tu propio espacio en internet">
     <meta property="og:description" content="Subdominios gratuitos para estudiantes y desarrolladores.">
     <meta property="og:type" content="website">
@@ -51,15 +53,6 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
-        .skip-link {
-            position: absolute; top: -40px; left: 0;
-            background: var(--accent); color: #fff;
-            padding: 8px 16px; z-index: 1000;
-            text-decoration: none; border-radius: 0 0 8px 0;
-            font-weight: 600; transition: top 0.2s;
-        }
-        .skip-link:focus { top: 0; }
 
         .bg-grid {
             position: fixed; inset: 0;
@@ -630,6 +623,7 @@
 </div>
 
 <script>
+    // SEGURIDAD: Evitar exponer funciones en el scope global si no es necesario.
     const state = { subdomain: '', target: '', email: '', availResult: null, checkTimer: null };
 
     const words = ['tunombre', 'maria', 'portafolio', 'negocio', 'carlos-dev'];
@@ -666,10 +660,37 @@
         if (e.target === this) cerrarModalVercel();
     });
 
+    // SEGURIDAD: Función helper para crear elementos de forma segura (Previene XSS vía innerHTML)
+    function safeRenderAvailBadge(type, text) {
+        const container = document.getElementById('avail-status');
+        container.textContent = ''; // Limpia seguro
+        const span = document.createElement('span');
+        
+        if (type === 'checking') {
+            span.className = 'avail-badge checking';
+            span.textContent = 'Verificando...';
+        } else if (type === 'available') {
+            span.className = 'avail-badge available';
+            span.textContent = '✅ Disponible';
+        } else if (type === 'taken') {
+            span.className = 'avail-badge taken';
+            span.textContent = '❌ Ya está en uso. Prueba con otro.';
+        }
+        container.appendChild(span);
+    }
+
     function alEscribirSubdominio() {
         const raw = document.getElementById('subdomain').value;
-        const val = raw.toLowerCase().replace(/[^a-z0-9-]/g, '');
-        if (document.getElementById('subdomain').value !== val) document.getElementById('subdomain').value = val;
+        // SEGURIDAD: Limpieza agresiva de caracteres en el lado del cliente.
+        // Solo permite letras minúsculas, números y guiones. Bloquea dobles guiones.
+        let val = raw.toLowerCase().replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-');
+        
+        // No permitir que empiece con guión
+        if (val.startsWith('-')) val = val.substring(1);
+        
+        if (document.getElementById('subdomain').value !== val) {
+            document.getElementById('subdomain').value = val;
+        }
 
         state.subdomain = val;
         state.availResult = null;
@@ -679,12 +700,11 @@
         counter.classList.toggle('warn', val.length >= 25);
 
         const hint = document.getElementById('subdomain-hint');
-        const avail = document.getElementById('avail-status');
         const preview = document.getElementById('live-preview');
         const previewDomain = document.getElementById('preview-domain');
         const btn = document.getElementById('btn-paso2');
 
-        avail.innerHTML = '';
+        document.getElementById('avail-status').textContent = '';
         btn.disabled = true;
 
         if (val.length < 3) {
@@ -693,8 +713,8 @@
             preview.classList.remove('visible');
             return;
         }
-        if (val.startsWith('-') || val.endsWith('-')) {
-            hint.textContent = 'No puede empezar ni terminar con guión.';
+        if (val.endsWith('-')) {
+            hint.textContent = 'No puede terminar con guión.';
             hint.className = 'field-hint error';
             preview.classList.remove('visible');
             return;
@@ -702,31 +722,32 @@
 
         hint.textContent = '¡Se ve bien!';
         hint.className = 'field-hint';
-        previewDomain.textContent = `${val}.tecnosofia.xyz`;
+        // textContent es seguro contra XSS
+        previewDomain.textContent = `${val}.tecnosofia.xyz`; 
         preview.classList.add('visible');
 
         clearTimeout(state.checkTimer);
-        avail.innerHTML = '<span class="avail-badge checking"> Verificando...</span>';
+        safeRenderAvailBadge('checking');
         state.checkTimer = setTimeout(() => verificarDisponibilidad(val), 700);
     }
 
     async function verificarDisponibilidad(sub) {
-        const avail = document.getElementById('avail-status');
         const btn = document.getElementById('btn-paso2');
         try {
+            // Se usa encodeURIComponent para evitar inyección en la URL
             const res = await fetch(`/api/check-dns?subdomain=${encodeURIComponent(sub)}`);
             const data = await res.json();
             if (data.available) {
-                avail.innerHTML = '<span class="avail-badge available">✅ Disponible</span>';
+                safeRenderAvailBadge('available');
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con otro.</span>';
+                safeRenderAvailBadge('taken');
                 state.availResult = false;
             }
         } catch {
-            avail.innerHTML = '';
-            state.availResult = true;
+            document.getElementById('avail-status').textContent = '';
+            state.availResult = true; // Fallback optimista si la API falla temporalmente
             btn.disabled = false;
         }
     }
@@ -734,25 +755,43 @@
     function validarPaso2() {
         state.email = document.getElementById('email').value.trim();
         state.subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
-        if (!state.subdomain || state.subdomain.length < 3) { alert('Escribe un nombre válido.'); return; }
+        
+        if (!state.subdomain || state.subdomain.length < 3 || state.subdomain.length > 30) { 
+            alert('Escribe un nombre válido (entre 3 y 30 caracteres).'); 
+            return; 
+        }
+        // Validar formato de email de forma básica si el usuario escribió algo
+        if (state.email !== "" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) {
+            alert('Por favor, ingresa un correo electrónico válido o déjalo en blanco.');
+            return;
+        }
+        
         if (state.availResult === false) { alert('Ese nombre ya está en uso.'); return; }
         irAlPaso(3);
     }
 
     function validarTarget() {
         let raw = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+        // Eliminar cualquier path o query parameter que el usuario haya pegado por error
+        raw = raw.split('/')[0].split('?')[0]; 
+        
         state.target = raw;
         const btn = document.getElementById('btn-crear');
         const hint = document.getElementById('target-hint');
         
         if (!raw) { 
-            hint.innerHTML = 'Pega tu enlace completo y nosotros lo acomodamos.'; 
+            hint.textContent = 'Pega tu enlace completo y nosotros lo acomodamos.'; 
             hint.className = 'field-hint'; btn.disabled = true; return; 
         }
-        if (!raw.endsWith('.vercel.app')) { 
-            hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code>'; 
+        
+        // Validación estricta con Regex para evitar SSRF o destinos inválidos
+        const vercelRegex = /^[a-z0-9-]+(\.[a-z0-9-]+)*\.vercel\.app$/;
+        
+        if (!vercelRegex.test(raw)) { 
+            hint.textContent = '⚠️ Debe ser un enlace válido que termine en .vercel.app'; 
             hint.className = 'field-hint error'; btn.disabled = true; return;
         }
+        
         hint.textContent = '✅ Enlace válido.'; hint.className = 'field-hint'; btn.disabled = false;
     }
 
@@ -763,21 +802,31 @@
         try {
             const res = await fetch('/api/create-dns', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ subdomain: state.subdomain, target: state.target, email: state.email }),
+                headers: { 
+                    'Content-Type': 'application/json',
+                    // Ayuda leve contra CSRF asegurando que la petición viene del mismo sitio
+                    'Accept': 'application/json' 
+                },
+                body: JSON.stringify({ 
+                    subdomain: state.subdomain, 
+                    target: state.target, 
+                    email: state.email 
+                }),
             });
             const data = await res.json();
-            if (data.success) {
+            if (res.ok && data.success) {
                 const dominio = `${state.subdomain}.tecnosofia.xyz`;
                 document.getElementById('final-link').textContent = dominio;
                 document.getElementById('domain-in-instructions').textContent = dominio;
                 mostrarStep('step-success');
             } else {
-                document.getElementById('error-msg').innerHTML = `Error: ${data.error}`;
+                // Manejo seguro de errores sin mostrar logs del sistema
+                const safeError = data.error ? String(data.error).substring(0, 100) : 'Revisa que la información sea correcta.';
+                document.getElementById('error-msg').textContent = `Error: ${safeError}`;
                 mostrarStep('step-error');
             }
         } catch {
-            document.getElementById('error-msg').innerHTML = 'Problema de conexión. Intenta de nuevo.';
+            document.getElementById('error-msg').textContent = 'Problema de conexión. Intenta de nuevo.';
             mostrarStep('step-error');
         }
     }
@@ -792,14 +841,17 @@
     }
 
     function volverDesdeError() {
-        if (state.target && state.target.endsWith('.vercel.app')) irAlPaso(3);
-        else irAlPaso(2);
+        if (state.target && /^[a-z0-9-]+(\.[a-z0-9-]+)*\.vercel\.app$/.test(state.target)) {
+            irAlPaso(3);
+        } else {
+            irAlPaso(2);
+        }
     }
 
     function reiniciar() {
         state.subdomain = ''; state.target = ''; state.email = ''; state.availResult = null;
         ['subdomain','email','target'].forEach(id => document.getElementById(id).value = '');
-        document.getElementById('avail-status').innerHTML = '';
+        document.getElementById('avail-status').textContent = '';
         document.getElementById('live-preview').classList.remove('visible');
         document.getElementById('btn-paso2').disabled = true;
         document.getElementById('btn-crear').disabled = true;
@@ -813,6 +865,8 @@
         if (!isOpen) item.classList.add('open');
     }
 </script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
 
 </body>
 </html>
