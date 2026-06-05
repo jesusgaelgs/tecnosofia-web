@@ -13,7 +13,7 @@ Soy un profesional de soporte técnico y aspirante a ingeniero de redes radicado
 *   **Entornos:** Administración avanzada de Linux (Fedora, CachyOS, Mint, Zorin)
 *   **Experiencia Base:** Soporte técnico de alto nivel, prevención de fraude y monitoreo de operaciones P2P.
 
-📫 **Cómo contactarme:** [Tu enlace de LinkedIn o tu correo hola@tecnosofia.xyz]
+📫 **Cómo contactarme:** hola@tecnosofia.xyz
 
 ---
 
@@ -32,4 +32,4 @@ I'm a technical support professional and aspiring network engineer based in Mexi
 *   **Environments:** Advanced Linux administration (Fedora, CachyOS, Mint, Zorin)
 *   **Background:** High-level technical support, fraud prevention, and P2P monitoring.
 
-📫 **How to reach me:** [Tu enlace de LinkedIn o tu correo hola@tecnosofia.xyz]
+📫 **How to reach me:** hola@tecnosofia.xyz]
