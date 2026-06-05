@@ -18,7 +18,7 @@
     <meta name="twitter:title" content="Tecnosofia — Tu espacio gratis en internet">
     <meta name="twitter:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos.">
 
-    <!-- ✨ NUEVO: JSON-LD para SEO y organización sin fines de lucro -->
+    <!-- JSON-LD para SEO y organización sin fines de lucro -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,7 +27,7 @@
       "url": "https://tecnosofia.xyz",
       "description": "Subdominios gratuitos para estudiantes y creadores sin recursos técnicos o económicos",
       "nonprofit": true,
-      "email": "admintecnosofia@gmail.com",
+      "email": "hola@tecnosofia.xyz",
       "sameAs": []
     }
     </script>
@@ -64,7 +64,7 @@
             overflow-x: hidden;
         }
 
-        /* ✨ NUEVO: Skip link para accesibilidad */
+        /* Skip link para accesibilidad */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -274,26 +274,6 @@
         }
         .stat-num span { color: var(--accent); }
         .stat-label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
-
-        /* ✨ NUEVO: Trust badges */
-        .trust-badges {
-            text-align: center;
-            padding: 1rem 1.5rem;
-            color: var(--muted);
-            font-size: .9rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: rgba(12,18,32,0.5);
-        }
-        .trust-badges span {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
 
         /* ── SECCIÓN: CÓMO FUNCIONA ── */
         .section {
@@ -752,7 +732,7 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* ✨ NUEVO: Modal de guía de Vercel */
+        /* Modal de guía de Vercel */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -916,7 +896,7 @@
         }
         .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
         
-        /* ✨ NUEVO: Legal links y recovery */
+        /* Legal links y recovery */
         .footer-legal {
             font-size: .75rem;
             color: var(--muted);
@@ -959,11 +939,6 @@
             .nav-links a:not(.nav-cta) { display: none; }
             .hero { padding: 4rem 1rem 3rem; }
             .stats { gap: 2rem; }
-            .trust-badges { 
-                flex-direction: column; 
-                gap: 0.5rem;
-                padding: 1rem;
-            }
             .section { padding: 3.5rem 1rem; }
             .modal { padding: 1.5rem; margin: 1rem; }
         }
@@ -971,7 +946,7 @@
 </head>
 <body>
 
-<!-- ✨ NUEVO: Skip link para accesibilidad -->
+<!-- Skip link para accesibilidad -->
 <a href="#registrate" class="skip-link">Saltar al formulario</a>
 
 <div class="bg-grid"></div>
@@ -1021,13 +996,6 @@
     </div>
 </div>
 
-<!-- ✨ NUEVO: Trust badges -->
-<div class="trust-badges">
-    <span>🔒 Sin tarjeta requerida</span>
-    <span>🌍 Disponible en todo el mundo</span>
-    <span>✨ +<span id="active-subs">500</span> estudiantes ya tienen su enlace</span>
-</div>
-
 <div class="divider"></div>
 
 <!-- ── CÓMO FUNCIONA ── -->
@@ -1068,7 +1036,7 @@
 
     <div class="examples-grid">
         <div class="example-card">
-            <div class="example-avatar" style="background:rgba(59,158,255,.1);">🧑‍💻</div>
+            <div class="example-avatar" style="background:rgba(59,158,255,.1);">🧑‍</div>
             <div class="example-info">
                 <div class="example-domain">carlos.tecnosofia.xyz</div>
                 <div class="example-type">Portafolio personal</div>
@@ -1258,7 +1226,7 @@
                 </ol>
 
                 <div class="tip">
-                    💡 ¿Tienes dudas? Escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> y te ayudamos.
+                    💡 ¿Tienes dudas? Escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> y te ayudamos.
                 </div>
 
                 <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="reiniciar()">Registrar otro subdominio</button>
@@ -1310,7 +1278,7 @@
                 ¿Necesito saber programar?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq4">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Si tienes dudas, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a>.</div>
+            <div class="faq-a" id="faq4">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Si tienes dudas, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a>.</div>
         </div>
         <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq5">
@@ -1324,15 +1292,15 @@
                 ¿Puedo usar otro servicio además de Vercel?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq6">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> e intentamos ayudarte.</div>
+            <div class="faq-a" id="faq6">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> e intentamos ayudarte.</div>
         </div>
-        <!-- ✨ NUEVO: FAQ de recuperación -->
+        <!-- FAQ de recuperación -->
         <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq7">
                 ¿Olvidé mi subdominio, puedo recuperarlo?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq7">¡Sí! Escríbenos a <a href="mailto:admintecnosofia@gmail.com?subject=Recuperar%20mi%20subdominio">admintecnosofia@gmail.com</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
+            <div class="faq-a" id="faq7">¡Sí! Escríbenos a <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">hola@tecnosofia.xyz</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
         </div>
     </div>
 </section>
@@ -1341,26 +1309,26 @@
 <footer>
     <div class="footer-logo">Tecnosofia</div>
     <p class="footer-desc">Un proyecto para que todos puedan tener<br>su propio espacio en internet. Gratis.</p>
-    <a href="mailto:admintecnosofia@gmail.com" class="footer-contact">
-        ✉️ admintecnosofia@gmail.com
+    <a href="mailto:hola@tecnosofia.xyz" class="footer-contact">
+        ✉️ hola@tecnosofia.xyz
     </a>
     
-    <!-- ✨ NUEVO: Legal links -->
+    <!-- Legal links -->
     <div class="footer-legal">
         <a href="/privacidad">Política de Privacidad</a> • 
         <a href="/terminos">Términos de Uso</a>
     </div>
     
-    <!-- ✨ NUEVO: Recovery link -->
+    <!-- Recovery link -->
     <div class="footer-recovery">
         ¿Olvidaste tu subdominio? 
-        <a href="mailto:admintecnosofia@gmail.com?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
+        <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
     </div>
     
     <p class="footer-copy">© 2025 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
 </footer>
 
-<!-- ✨ NUEVO: Modal de guía de Vercel -->
+<!-- Modal de guía de Vercel -->
 <div class="modal-overlay" id="modal-vercel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
         <button class="modal-close" onclick="cerrarModalVercel()" aria-label="Cerrar guía">&times;</button>
@@ -1396,7 +1364,7 @@
         
         <div class="tip" style="margin-top:1rem;">
             ¿Te trabaste en algún paso? Escríbenos a 
-            <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> 
+            <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> 
             y te ayudamos personalmente.
         </div>
     </div>
@@ -1445,7 +1413,7 @@
         document.getElementById('help-box').style.display = 'block';
     }
 
-    // ✨ NUEVO: Funciones del modal de Vercel
+    // Funciones del modal de Vercel
     function abrirModalVercel() {
         document.getElementById('modal-vercel').classList.add('active');
         document.body.style.overflow = 'hidden'; // Evitar scroll del body
@@ -1523,7 +1491,7 @@
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                // ✨ NUEVO: Mensaje más útil cuando el nombre está tomado
+                // Mensaje más útil cuando el nombre está tomado
                 avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code> o <code>' + sub + '2</code></span>';
                 state.availResult = false;
             }
@@ -1561,7 +1529,7 @@
             return; 
         }
         if (!raw.endsWith('.vercel.app')) { 
-            // ✨ NUEVO: Mensaje más útil con enlace a ayuda
+            // Mensaje más útil con enlace a ayuda
             hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code><br><small>¿Tu enlace es de otro servicio? <a href="#faq" onclick="document.querySelector(\'#faq6\').classList.add(\'open\');return false;">Ver opciones</a></small>'; 
             hint.className = 'field-hint error'; 
             btn.disabled = true; 
@@ -1591,13 +1559,13 @@
                 mostrarStep('step-success');
                 history.replaceState(null, '', `?sub=${encodeURIComponent(state.subdomain)}`);
             } else {
-                // ✨ NUEVO: Mensaje de error más específico
+                // Mensaje de error más específico
                 const errorMsg = data.error || 'Nombre no disponible o problema al crear.';
-                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>Si el problema persiste, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a></small>`;
+                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>Si el problema persiste, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a></small>`;
                 mostrarStep('step-error');
             }
         } catch {
-            document.getElementById('error-msg').innerHTML = 'Problema de conexión con el servidor. Intenta de nuevo.<br><small>¿Sigues con problemas? <a href="mailto:admintecnosofia@gmail.com">Contáctanos</a></small>';
+            document.getElementById('error-msg').innerHTML = 'Problema de conexión con el servidor. Intenta de nuevo.<br><small>¿Sigues con problemas? <a href="mailto:hola@tecnosofia.xyz">Contáctanos</a></small>';
             mostrarStep('step-error');
         }
     }
@@ -1657,34 +1625,6 @@
             btn.setAttribute('aria-expanded', 'true');
         }
     }
-
-    // ✨ NUEVO: Contador simulado de subdominios activos (puedes conectarlo a una API real después)
-    document.addEventListener('DOMContentLoaded', function() {
-        // Animación suave del contador
-        const counterEl = document.getElementById('active-subs');
-        const target = 500; // Cambia este número según tus estadísticas reales
-        let current = 0;
-        const increment = Math.ceil(target / 50);
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current >= target) {
-                counterEl.textContent = target + '+';
-            } else {
-                counterEl.textContent = current + '+';
-                setTimeout(updateCounter, 50);
-            }
-        };
-        
-        // Iniciar animación cuando el elemento sea visible
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                updateCounter();
-                observer.disconnect();
-            }
-        });
-        observer.observe(counterEl);
-    });
 </script>
 
 <!-- Cloudflare Web Analytics -->
