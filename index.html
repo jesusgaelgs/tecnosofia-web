@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnosofia — Tu espacio gratis en internet</title>
-    <meta name="description" content="Obtén tu propio subdominio gratis en tecnosofia.xyz. Sin conocimientos técnicos, sin tarjeta de crédito. Ideal para estudiantes y proyectos personales.">
+    <title>Tecnosofia — Aprende y publica tu página gratis</title>
+    <meta name="description" content="Guía paso a paso para publicar tu página web gratis con GitHub y Vercel. Obtén tu subdominio personalizado en tecnosofia.xyz">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Tecnosofia — Tu espacio gratis en internet">
-    <meta property="og:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos. Sin complicaciones.">
+    <meta property="og:title" content="Tecnosofia — Aprende y publica gratis">
+    <meta property="og:description" content="Guía completa para estudiantes: GitHub + Vercel + Subdominio gratis">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tecnosofia.xyz">
-    <meta property="og:image" content="https://tecnosofia.xyz/og-image.png">
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tecnosofia — Tu espacio gratis en internet">
-    <meta name="twitter:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos.">
-
-    <!-- JSON-LD para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Tecnosofia",
       "url": "https://tecnosofia.xyz",
-      "description": "Subdominios gratuitos + educación digital para estudiantes y creadores",
+      "description": "Educación digital gratuita + subdominios para estudiantes",
       "nonprofit": true,
       "email": "hola@tecnosofia.xyz"
     }
@@ -61,407 +53,297 @@
             overflow-x: hidden;
         }
 
-        /* Skip link para accesibilidad */
         .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--accent);
-            color: #fff;
-            padding: 8px 16px;
-            z-index: 1000;
-            text-decoration: none;
-            border-radius: 0 0 8px 0;
-            font-weight: 600;
-            transition: top 0.2s;
+            position: absolute; top: -40px; left: 0;
+            background: var(--accent); color: #fff;
+            padding: 8px 16px; z-index: 1000;
+            text-decoration: none; border-radius: 0 0 8px 0;
+            font-weight: 600; transition: top 0.2s;
         }
         .skip-link:focus { top: 0; }
 
-        /* Fondos animados */
         .bg-grid {
-            position: fixed;
-            inset: 0;
+            position: fixed; inset: 0;
             background-image:
                 linear-gradient(rgba(59,158,255,.04) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59,158,255,.04) 1px, transparent 1px);
             background-size: 48px 48px;
-            pointer-events: none;
-            z-index: 0;
+            pointer-events: none; z-index: 0;
         }
         .bg-glow {
-            position: fixed;
-            top: -20%;
-            left: 50%;
+            position: fixed; top: -20%; left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 500px;
+            width: 800px; height: 500px;
             background: radial-gradient(ellipse, rgba(59,158,255,.12) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
+            pointer-events: none; z-index: 0;
         }
 
-        /* NAV */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 2rem;
-            background: rgba(5,8,15,.8);
-            backdrop-filter: blur(16px);
+            background: rgba(5,8,15,.8); backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
         }
         .nav-logo {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.4rem; font-weight: 700;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .nav-links { display: flex; gap: 1.5rem; align-items: center; }
         .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: .9rem;
-            font-weight: 500;
-            transition: color .2s;
+            color: var(--muted); text-decoration: none;
+            font-size: .9rem; font-weight: 500; transition: color .2s;
         }
         .nav-links a:hover { color: var(--text); }
         .nav-cta {
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff !important;
-            padding: .5rem 1.2rem;
-            border-radius: 99px;
-            font-weight: 700 !important;
+            color: #fff !important; padding: .5rem 1.2rem;
+            border-radius: 99px; font-weight: 700 !important;
         }
 
-        /* HERO */
         .hero {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 6rem 1.5rem 4rem;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative; z-index: 1;
+            text-align: center; padding: 6rem 1.5rem 4rem;
+            max-width: 800px; margin: 0 auto;
         }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            background: rgba(59,158,255,.1);
-            border: 1px solid rgba(59,158,255,.25);
-            color: var(--accent);
-            font-size: .82rem;
-            font-weight: 700;
-            padding: .35rem 1rem;
-            border-radius: 99px;
-            margin-bottom: 1.5rem;
-            animation: fadeUp .6s ease both;
+            display: inline-flex; align-items: center; gap: .5rem;
+            background: rgba(59,158,255,.1); border: 1px solid rgba(59,158,255,.25);
+            color: var(--accent); font-size: .82rem; font-weight: 700;
+            padding: .35rem 1rem; border-radius: 99px;
+            margin-bottom: 1.5rem; animation: fadeUp .6s ease both;
         }
         .hero h1 {
             font-family: 'Clash Display', sans-serif;
             font-size: clamp(2.4rem, 7vw, 4.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 1.2rem;
+            font-weight: 700; line-height: 1.1;
+            letter-spacing: -1.5px; margin-bottom: 1.2rem;
             animation: fadeUp .6s .1s ease both;
         }
         .hero h1 span {
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .hero-sub {
-            color: var(--muted);
-            font-size: 1.15rem;
-            line-height: 1.65;
-            max-width: 560px;
-            margin: 0 auto 2.5rem;
+            color: var(--muted); font-size: 1.15rem; line-height: 1.65;
+            max-width: 600px; margin: 0 auto 2.5rem;
             animation: fadeUp .6s .2s ease both;
         }
 
         .domain-preview {
-            display: inline-flex;
-            align-items: center;
-            gap: 0;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: .9rem 1.4rem;
-            font-family: 'Courier New', monospace;
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            animation: fadeUp .6s .3s ease both;
+            display: inline-flex; align-items: center; gap: 0;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: .9rem 1.4rem;
+            font-family: 'Courier New', monospace; font-size: 1.2rem;
+            margin-bottom: 2.5rem; animation: fadeUp .6s .3s ease both;
             box-shadow: 0 0 40px rgba(59,158,255,.08);
         }
         .domain-preview .typing {
-            color: var(--accent);
-            font-weight: 700;
+            color: var(--accent); font-weight: 700;
             border-right: 2px solid var(--accent);
-            animation: blink .8s step-end infinite;
-            min-width: 2px;
+            animation: blink .8s step-end infinite; min-width: 2px;
         }
         .domain-preview .suffix { color: var(--muted); }
         @keyframes blink { 50% { border-color: transparent; } }
 
         .hero-btns {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeUp .6s .4s ease both;
+            display: flex; gap: 1rem; justify-content: center;
+            flex-wrap: wrap; animation: fadeUp .6s .4s ease both;
         }
         .btn-hero-primary {
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff;
-            padding: .9rem 2rem;
-            border-radius: 99px;
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all .2s;
+            color: #fff; padding: .9rem 2rem; border-radius: 99px;
+            font-size: 1rem; font-weight: 700; text-decoration: none;
+            border: none; cursor: pointer; transition: all .2s;
             font-family: 'Cabinet Grotesk', sans-serif;
             box-shadow: 0 8px 30px rgba(59,158,255,.3);
         }
         .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(59,158,255,.4); }
         .btn-hero-secondary {
-            background: transparent;
-            color: var(--muted);
-            padding: .9rem 2rem;
-            border-radius: 99px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all .2s;
-            font-family: 'Cabinet Grotesk', sans-serif;
+            background: transparent; color: var(--muted);
+            padding: .9rem 2rem; border-radius: 99px;
+            font-size: 1rem; font-weight: 600; text-decoration: none;
+            border: 1px solid var(--border); cursor: pointer;
+            transition: all .2s; font-family: 'Cabinet Grotesk', sans-serif;
         }
         .btn-hero-secondary:hover { border-color: var(--accent); color: var(--text); }
 
-        /* STATS */
         .stats {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            padding: 2rem 1.5rem 4rem;
+            position: relative; z-index: 1;
+            display: flex; justify-content: center; gap: 3rem;
+            flex-wrap: wrap; padding: 2rem 1.5rem 4rem;
             animation: fadeUp .6s .5s ease both;
         }
         .stat { text-align: center; }
         .stat-num {
             font-family: 'Clash Display', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text);
+            font-size: 2rem; font-weight: 700; color: var(--text);
         }
         .stat-num span { color: var(--accent); }
         .stat-label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
 
-        /* SECCIONES */
         .section {
-            position: relative;
-            z-index: 1;
-            padding: 5rem 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
+            position: relative; z-index: 1;
+            padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto;
         }
         .section-label {
-            text-align: center;
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: .8rem;
+            text-align: center; font-size: .8rem; font-weight: 700;
+            letter-spacing: .1em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: .8rem;
         }
         .section-title {
             font-family: 'Clash Display', sans-serif;
             font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
+            font-weight: 700; text-align: center;
+            letter-spacing: -1px; margin-bottom: 1rem;
         }
         .section-desc {
-            text-align: center;
-            color: var(--muted);
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto 3.5rem;
-            line-height: 1.65;
+            text-align: center; color: var(--muted); font-size: 1rem;
+            max-width: 600px; margin: 0 auto 3.5rem; line-height: 1.65;
         }
 
         .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
         .step-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem;
+            position: relative; overflow: hidden;
             transition: border-color .3s, transform .3s;
         }
         .step-card:hover { border-color: var(--accent); transform: translateY(-4px); }
         .step-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            opacity: 0;
-            transition: opacity .3s;
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2));
+            opacity: 0; transition: opacity .3s;
         }
         .step-card:hover::before { opacity: 1; }
         .step-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 48px; height: 48px; border-radius: 12px;
             background: linear-gradient(135deg, rgba(59,158,255,.15), rgba(124,111,255,.15));
             border: 1px solid rgba(59,158,255,.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 1.2rem;
         }
         .step-num-badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            position: absolute; top: 1.5rem; right: 1.5rem;
             font-family: 'Clash Display', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(59,158,255,.07);
-            line-height: 1;
+            font-size: 3rem; font-weight: 700;
+            color: rgba(59,158,255,.07); line-height: 1;
         }
         .step-card h3 {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: .6rem;
+            font-size: 1.2rem; font-weight: 600; margin-bottom: .6rem;
         }
         .step-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
 
-        /* EJEMPLOS */
-        .examples-grid {
+        /* ✨ NUEVO: Sección educativa de herramientas */
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: border-color .3s, transform .3s;
+        }
+        .tool-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .tool-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin-bottom: 1rem;
+        }
+        .tool-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.3rem; font-weight: 600; margin-bottom: .5rem;
+        }
+        .tool-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; margin-bottom: 1rem; }
+        .tool-link {
+            display: inline-flex; align-items: center; gap: .5rem;
+            color: var(--accent); text-decoration: none;
+            font-weight: 600; font-size: .9rem;
+            transition: gap .2s;
+        }
+        .tool-link:hover { gap: .8rem; }
+
+        .examples-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 1rem;
         }
         .example-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: .9rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.2rem 1.4rem;
+            display: flex; align-items: center; gap: .9rem;
             transition: border-color .2s, transform .2s;
             text-decoration: none;
         }
         .example-card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .example-avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            width: 38px; height: 38px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
         }
         .example-info { min-width: 0; }
         .example-domain {
-            font-size: .88rem;
-            font-weight: 700;
-            color: var(--accent);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            font-size: .88rem; font-weight: 700;
+            color: var(--accent); white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis;
         }
         .example-type { font-size: .75rem; color: var(--muted); margin-top: 2px; }
 
-        /* FORMULARIO */
         .form-section {
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
             padding: 2rem 1.5rem 6rem;
-            display: flex;
-            justify-content: center;
+            display: flex; justify-content: center;
         }
         .form-wrap { width: 100%; max-width: 540px; }
         .form-header {
-            text-align: center;
-            margin-bottom: 2rem;
+            text-align: center; margin-bottom: 2rem;
         }
         .form-header h2 {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: .4rem;
+            font-size: 1.8rem; font-weight: 700;
+            letter-spacing: -0.5px; margin-bottom: .4rem;
         }
         .form-header p { color: var(--muted); font-size: .95rem; }
 
         .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2.5rem 2rem;
             box-shadow: 0 24px 80px -10px rgba(0,0,0,.7), 0 0 0 1px rgba(59,158,255,.06);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
-            background-size: 200% 100%;
-            animation: shimmer 3s linear infinite;
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
+            background-size: 200% 100%; animation: shimmer 3s linear infinite;
         }
         @keyframes shimmer { to { background-position: 200% 0; } }
 
         .progress-wrap {
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            margin-bottom: 2rem;
+            display: flex; align-items: center; gap: .5rem; margin-bottom: 2rem;
         }
         .progress-bar {
-            flex: 1;
-            height: 3px;
-            border-radius: 99px;
-            background: var(--border);
-            overflow: hidden;
+            flex: 1; height: 3px; border-radius: 99px;
+            background: var(--border); overflow: hidden;
         }
         .progress-bar-fill {
-            height: 100%;
-            border-radius: 99px;
+            height: 100%; border-radius: 99px;
             background: linear-gradient(90deg, var(--accent), var(--accent2));
             transition: width .4s ease;
         }
         .progress-text {
-            font-size: .75rem;
-            color: var(--muted);
-            white-space: nowrap;
-            font-weight: 600;
+            font-size: .75rem; color: var(--muted);
+            white-space: nowrap; font-weight: 600;
         }
 
         .step { display: none; }
@@ -473,55 +355,36 @@
 
         .step-title {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: .5rem;
+            font-size: 1.3rem; font-weight: 600;
+            text-align: center; margin-bottom: .5rem;
         }
         .step-desc {
-            color: var(--muted);
-            font-size: .93rem;
-            line-height: 1.6;
-            text-align: center;
-            margin-bottom: 1.8rem;
+            color: var(--muted); font-size: .93rem;
+            line-height: 1.6; text-align: center; margin-bottom: 1.8rem;
         }
 
         .fg { margin-bottom: 1.1rem; }
         .fg label {
-            display: block;
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: .4rem;
+            display: block; font-size: .78rem; font-weight: 700;
+            letter-spacing: .06em; text-transform: uppercase;
+            color: var(--muted); margin-bottom: .4rem;
         }
         .input-wrap { position: relative; }
         .input-suffix {
-            position: absolute;
-            right: 12px;
-            top: 50%;
+            position: absolute; right: 12px; top: 50%;
             transform: translateY(-50%);
-            color: var(--accent);
-            font-size: .85rem;
-            font-weight: 700;
-            pointer-events: none;
-            white-space: nowrap;
+            color: var(--accent); font-size: .85rem;
+            font-weight: 700; pointer-events: none; white-space: nowrap;
         }
         input[type="text"], input[type="email"] {
-            width: 100%;
-            padding: .85rem 1rem;
-            border-radius: 10px;
-            border: 2px solid var(--border);
-            background: var(--bg);
-            color: var(--text);
-            font-size: .98rem;
+            width: 100%; padding: .85rem 1rem; border-radius: 10px;
+            border: 2px solid var(--border); background: var(--bg);
+            color: var(--text); font-size: .98rem;
             font-family: 'Cabinet Grotesk', sans-serif;
             transition: border-color .2s, box-shadow .2s;
         }
         input[type="text"]:focus, input[type="email"]:focus {
-            border-color: var(--accent);
-            outline: none;
+            border-color: var(--accent); outline: none;
             box-shadow: 0 0 0 3px rgba(59,158,255,.1);
         }
         input.has-suffix { padding-right: 175px; }
@@ -530,27 +393,18 @@
         .field-hint.error { color: var(--red); }
 
         .live-preview {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: .7rem 1rem;
-            margin-top: .5rem;
-            font-size: .88rem;
-            color: var(--muted);
-            display: none;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; padding: .7rem 1rem;
+            margin-top: .5rem; font-size: .88rem;
+            color: var(--muted); display: none;
         }
         .live-preview.visible { display: block; }
         .live-preview strong { color: var(--green); }
 
         .avail-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: .78rem;
-            font-weight: 700;
-            margin-top: .3rem;
-            padding: 2px 8px;
-            border-radius: 99px;
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: .78rem; font-weight: 700;
+            margin-top: .3rem; padding: 2px 8px; border-radius: 99px;
         }
         .avail-badge.checking { color: var(--muted); background: rgba(123,147,180,.1); }
         .avail-badge.available { color: var(--green); background: rgba(52,211,153,.1); }
@@ -560,53 +414,36 @@
         .char-counter.warn { color: var(--yellow); }
 
         .btn {
-            width: 100%;
-            padding: .9rem 1rem;
-            border-radius: 10px;
-            border: none;
-            font-size: .98rem;
-            font-weight: 700;
+            width: 100%; padding: .9rem 1rem; border-radius: 10px;
+            border: none; font-size: .98rem; font-weight: 700;
             font-family: 'Cabinet Grotesk', sans-serif;
-            cursor: pointer;
-            transition: all .2s;
-            margin-bottom: 8px;
+            cursor: pointer; transition: all .2s; margin-bottom: 8px;
         }
         .btn-primary {
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff;
-            box-shadow: 0 6px 20px rgba(59,158,255,.25);
+            color: #fff; box-shadow: 0 6px 20px rgba(59,158,255,.25);
         }
         .btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 10px 30px rgba(59,158,255,.35); }
         .btn-primary:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
         .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--border);
+            background: transparent; border: 2px solid var(--border);
             color: var(--muted);
         }
         .btn-secondary:hover { background: var(--border); color: var(--text); }
         .btn-text {
-            background: transparent;
-            color: var(--muted);
-            font-size: .88rem;
-            padding: .4rem;
+            background: transparent; color: var(--muted);
+            font-size: .88rem; padding: .4rem;
         }
         .btn-text:hover { color: var(--text); text-decoration: underline; }
 
         .choice-btns { display: flex; flex-direction: column; gap: .75rem; }
         .choice-btn {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--bg);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 1.1rem 1.3rem;
-            cursor: pointer;
-            transition: all .2s;
-            text-align: left;
+            display: flex; align-items: center; gap: 1rem;
+            background: var(--bg); border: 2px solid var(--border);
+            border-radius: 12px; padding: 1.1rem 1.3rem;
+            cursor: pointer; transition: all .2s; text-align: left;
             font-family: 'Cabinet Grotesk', sans-serif;
-            color: var(--text);
-            width: 100%;
+            color: var(--text); width: 100%;
         }
         .choice-btn:hover { border-color: var(--accent); background: rgba(59,158,255,.04); }
         .choice-btn-icon { font-size: 1.5rem; flex-shrink: 0; }
@@ -614,484 +451,216 @@
         .choice-btn-text span { font-size: .82rem; color: var(--muted); }
 
         .tip {
-            background: rgba(251,191,36,.06);
-            border-left: 3px solid var(--yellow);
-            border-radius: 8px;
-            padding: 1rem 1.1rem;
-            font-size: .86rem;
-            color: var(--muted);
-            line-height: 1.6;
+            background: rgba(251,191,36,.06); border-left: 3px solid var(--yellow);
+            border-radius: 8px; padding: 1rem 1.1rem;
+            font-size: .86rem; color: var(--muted); line-height: 1.6;
             margin-top: 1rem;
         }
         .tip a { color: var(--accent); }
 
-        /* ✨ NUEVO: Sección de recursos educativos */
         .resources-box {
-            margin-top: 1.5rem;
-            padding: 1.2rem;
+            margin-top: 1.5rem; padding: 1.2rem;
             background: rgba(59,158,255,.05);
             border: 2px dashed var(--accent);
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 12px; text-align: center;
         }
-        .resources-box h4 {
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .resources-box p {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-        .resource-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+        .resources-box h4 { margin-bottom: 0.8rem; font-weight: 600; color: var(--text); }
+        .resources-box p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+        .resource-links { display: flex; flex-direction: column; gap: 0.5rem; }
         .resource-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.7rem 1rem;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.5rem; background: var(--bg);
+            border: 1px solid var(--border); border-radius: 8px;
+            padding: 0.7rem 1rem; color: var(--text);
+            text-decoration: none; font-size: 0.9rem;
             transition: border-color .2s, transform .2s;
         }
-        .resource-link:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
+        .resource-link:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-        /* ✨ NUEVO: Checklist interactivo */
-        .checklist {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: var(--bg);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        .checklist h4 {
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .checklist label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-        .checklist input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--accent);
-            cursor: pointer;
-        }
-
-        /* ✨ NUEVO: Código copiable */
-        .code-block {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--accent);
-        }
-        .copy-code-btn {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all .2s;
-            margin-top: 0.5rem;
-        }
-        .copy-code-btn:hover {
-            border-color: var(--accent);
-            color: var(--text);
-        }
-
-        /* Success */
         .success-domain {
-            background: var(--bg);
-            border: 1px solid var(--green);
-            border-radius: 10px;
-            padding: 1.2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            box-shadow: 0 0 30px rgba(52,211,153,.08);
+            background: var(--bg); border: 1px solid var(--green);
+            border-radius: 10px; padding: 1.2rem;
+            margin-bottom: 1.5rem; display: flex;
+            align-items: center; justify-content: space-between;
+            gap: 1rem; box-shadow: 0 0 30px rgba(52,211,153,.08);
         }
         .success-domain .domain-text {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--green);
-            word-break: break-all;
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--green); word-break: break-all;
         }
         .copy-btn {
-            flex-shrink: 0;
-            background: rgba(52,211,153,.1);
+            flex-shrink: 0; background: rgba(52,211,153,.1);
             border: 1px solid rgba(52,211,153,.25);
-            color: var(--green);
-            border-radius: 7px;
-            padding: .4rem .8rem;
-            font-size: .8rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all .2s;
-            white-space: nowrap;
+            color: var(--green); border-radius: 7px;
+            padding: .4rem .8rem; font-size: .8rem;
+            font-weight: 700; cursor: pointer;
+            transition: all .2s; white-space: nowrap;
             font-family: 'Cabinet Grotesk', sans-serif;
         }
         .copy-btn:hover { background: rgba(52,211,153,.2); }
 
         .steps-list { list-style: none; margin-bottom: 1.5rem; }
         .steps-list li {
-            display: flex;
-            gap: .8rem;
-            padding: .85rem 0;
+            display: flex; gap: .8rem; padding: .85rem 0;
             border-bottom: 1px solid var(--border);
-            font-size: .9rem;
-            color: var(--muted);
-            line-height: 1.55;
-            align-items: flex-start;
+            font-size: .9rem; color: var(--muted);
+            line-height: 1.55; align-items: flex-start;
         }
         .steps-list li:last-child { border-bottom: none; }
         .step-num {
-            flex-shrink: 0;
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff;
-            font-size: .7rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2px;
+            flex-shrink: 0; width: 22px; height: 22px;
+            border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff; font-size: .7rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; margin-top: 2px;
         }
         code {
-            background: var(--bg);
-            color: var(--accent);
-            font-size: .85rem;
-            padding: 2px 6px;
-            border-radius: 5px;
-            border: 1px solid var(--border);
+            background: var(--bg); color: var(--accent);
+            font-size: .85rem; padding: 2px 6px;
+            border-radius: 5px; border: 1px solid var(--border);
             font-family: 'Courier New', monospace;
         }
         .img-ref {
-            max-width: 100%;
-            border-radius: 7px;
-            margin-top: .6rem;
-            border: 1px solid var(--border);
-            display: block;
+            max-width: 100%; border-radius: 7px;
+            margin-top: .6rem; border: 1px solid var(--border); display: block;
         }
         .img-fallback { display: none; font-size: .78rem; color: var(--muted); margin-top: .4rem; }
 
-        /* Loader */
         .loader-wrap { text-align: center; padding: 1.5rem 0; }
         .spinner {
             width: 42px; height: 42px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin .8s linear infinite;
+            border: 3px solid var(--border); border-top-color: var(--accent);
+            border-radius: 50%; animation: spin .8s linear infinite;
             margin: 0 auto 1rem;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Modal de guía de Vercel */
         .modal-overlay {
-            position: fixed;
-            inset: 0;
+            position: fixed; inset: 0;
             background: rgba(0,0,0,0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; padding: 1rem;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
         }
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            max-width: 650px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2rem;
-            position: relative;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); max-width: 650px;
+            width: 100%; max-height: 90vh; overflow-y: auto;
+            padding: 2rem; position: relative;
         }
         .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--border);
-            border: none;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            color: var(--text);
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute; top: 1rem; right: 1rem;
+            background: var(--border); border: none; border-radius: 50%;
+            width: 32px; height: 32px; color: var(--text);
+            cursor: pointer; font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
             transition: background 0.2s;
         }
         .modal-close:hover { background: var(--accent); }
         .modal h3 {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--text);
+            font-size: 1.4rem; margin-bottom: 1rem; color: var(--text);
         }
         .modal ol, .modal ul {
-            padding-left: 1.5rem;
-            color: var(--muted);
-            line-height: 1.8;
+            padding-left: 1.5rem; color: var(--muted); line-height: 1.8;
         }
         .modal li { margin-bottom: 0.8rem; }
         .modal code {
-            background: var(--bg);
-            color: var(--accent);
-            padding: 2px 6px;
-            border-radius: 4px;
+            background: var(--bg); color: var(--accent);
+            padding: 2px 6px; border-radius: 4px;
         }
         .modal a { color: var(--accent); }
         .modal-screenshot {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin: 1rem 0;
-            background: var(--bg);
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 1rem;
+            width: 100%; border-radius: 8px; border: 1px solid var(--border);
+            margin: 1rem 0; background: var(--bg); min-height: 150px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--muted); font-size: 0.9rem; text-align: center; padding: 1rem;
         }
-        
-        /* ✨ NUEVO: Video embed responsive */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            margin: 1rem 0;
-            background: var(--bg);
-            border: 1px solid var(--border);
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            text-align: center;
-            padding: 1rem;
-        }
-        .video-placeholder .play-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: transform .2s;
-        }
-        .video-placeholder .play-btn:hover { transform: scale(1.1); }
 
-        /* FAQ */
         .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 700px; margin: 0 auto; }
         .faq-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: border-color .2s;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; overflow: hidden; transition: border-color .2s;
         }
         .faq-item:hover { border-color: rgba(59,158,255,.3); }
         .faq-q {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.1rem 1.3rem;
-            background: transparent;
-            border: none;
-            color: var(--text);
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 1.1rem 1.3rem;
+            background: transparent; border: none; color: var(--text);
             font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: .95rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: left;
-            gap: 1rem;
+            font-size: .95rem; font-weight: 700; cursor: pointer;
+            text-align: left; gap: 1rem;
         }
         .faq-arrow {
-            flex-shrink: 0;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            background: var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .7rem;
-            transition: transform .3s, background .2s;
+            flex-shrink: 0; width: 20px; height: 20px;
+            border-radius: 50%; background: var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .7rem; transition: transform .3s, background .2s;
         }
         .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--accent); }
         .faq-a {
-            max-height: 0;
-            overflow: hidden;
+            max-height: 0; overflow: hidden;
             transition: max-height .35s ease, padding .35s;
-            color: var(--muted);
-            font-size: .9rem;
-            line-height: 1.65;
-            padding: 0 1.3rem;
+            color: var(--muted); font-size: .9rem;
+            line-height: 1.65; padding: 0 1.3rem;
         }
         .faq-item.open .faq-a { max-height: 400px; padding-bottom: 1.1rem; }
         .faq-a a { color: var(--accent); }
 
-        /* FOOTER */
         footer {
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
             border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            text-align: center;
+            padding: 3rem 2rem; text-align: center;
         }
         .footer-logo {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.3rem; font-weight: 700;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: .5rem;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: .5rem;
         }
         .footer-desc { color: var(--muted); font-size: .88rem; margin-bottom: 1.5rem; line-height: 1.6; }
         .footer-contact {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            color: var(--muted);
-            font-size: .88rem;
-            text-decoration: none;
-            border: 1px solid var(--border);
-            padding: .5rem 1rem;
-            border-radius: 99px;
-            transition: all .2s;
-            margin-bottom: 1rem;
+            display: inline-flex; align-items: center; gap: .5rem;
+            color: var(--muted); font-size: .88rem; text-decoration: none;
+            border: 1px solid var(--border); padding: .5rem 1rem;
+            border-radius: 99px; transition: all .2s; margin-bottom: 1rem;
         }
         .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
-        
         .footer-legal {
-            font-size: .75rem;
-            color: var(--muted);
-            margin: 1rem 0;
+            font-size: .75rem; color: var(--muted); margin: 1rem 0;
         }
         .footer-legal a {
-            color: var(--muted);
-            text-decoration: none;
-            margin: 0 0.5rem;
-            transition: color 0.2s;
+            color: var(--muted); text-decoration: none;
+            margin: 0 0.5rem; transition: color 0.2s;
         }
         .footer-legal a:hover { color: var(--accent); }
-        
         .footer-recovery {
-            font-size: .85rem;
-            color: var(--muted);
-            margin-top: 1rem;
+            font-size: .85rem; color: var(--muted); margin-top: 1rem;
         }
-        .footer-recovery a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        .footer-recovery a { color: var(--accent); text-decoration: none; }
         .footer-recovery a:hover { text-decoration: underline; }
-        
         .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; margin-top: 1.5rem; }
 
-        /* DIVIDER */
         .divider {
-            position: relative;
-            z-index: 1;
-            height: 1px;
+            position: relative; z-index: 1; height: 1px;
             background: linear-gradient(90deg, transparent, var(--border), transparent);
             margin: 0 2rem;
         }
 
-        /* ✨ NUEVO: Botón flotante de ayuda */
         .help-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            position: fixed; bottom: 2rem; right: 2rem;
+            width: 60px; height: 60px; border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(59,158,255,0.4);
-            z-index: 999;
-            transition: transform .2s, box-shadow .2s;
+            color: white; display: flex; align-items: center;
+            justify-content: center; font-size: 1.5rem;
+            cursor: pointer; box-shadow: 0 4px 20px rgba(59,158,255,0.4);
+            z-index: 999; transition: transform .2s, box-shadow .2s;
             text-decoration: none;
         }
-        .help-float:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(59,158,255,0.6);
-        }
+        .help-float:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(59,158,255,0.6); }
 
-        /* RESPONSIVE */
         @media (max-width: 600px) {
             nav { padding: .9rem 1rem; }
             .nav-links { gap: .8rem; }
@@ -1102,26 +671,19 @@
             .modal { padding: 1.5rem; margin: 1rem; }
             .help-float { width: 50px; height: 50px; font-size: 1.2rem; }
         }
-
-        /* Animaciones */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
 
-<!-- Skip link para accesibilidad -->
 <a href="#registrate" class="skip-link">Saltar al formulario</a>
 
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
-<!-- NAV -->
 <nav>
     <div class="nav-logo">Tecnosofia</div>
     <div class="nav-links">
+        <a href="#aprende">Aprende</a>
         <a href="#como-funciona">¿Cómo funciona?</a>
         <a href="#ejemplos">Ejemplos</a>
         <a href="#faq">FAQ</a>
@@ -1129,11 +691,10 @@
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="hero-badge">✨ 100% Gratis — Sin tarjeta de crédito</div>
+    <div class="hero-badge">✨ 100% Gratis — Aprende y publica</div>
     <h1>Tu propio espacio<br>en <span>internet</span></h1>
-    <p class="hero-sub">Consigue un enlace profesional tipo <strong>tunombre.tecnosofia.xyz</strong> en menos de 2 minutos. Sin conocimientos técnicos, sin costos ocultos.</p>
+    <p class="hero-sub">Te enseñamos paso a paso a publicar tu página web gratis con GitHub y Vercel. Luego te damos un subdominio profesional tipo <strong>tunombre.tecnosofia.xyz</strong>.</p>
 
     <div class="domain-preview">
         <span class="typing" id="hero-typing"></span>
@@ -1141,30 +702,58 @@
     </div>
 
     <div class="hero-btns">
-        <a href="#registrate" class="btn-hero-primary">🚀 Obtener mi enlace gratis</a>
-        <a href="#como-funciona" class="btn-hero-secondary">¿Cómo funciona?</a>
+        <a href="#aprende" class="btn-hero-primary">📚 Empezar a aprender</a>
+        <a href="#registrate" class="btn-hero-secondary">Obtener mi enlace →</a>
     </div>
 </section>
 
-<!-- STATS -->
 <div class="stats">
     <div class="stat">
         <div class="stat-num"><span>100%</span></div>
         <div class="stat-label">Gratuito para siempre</div>
     </div>
     <div class="stat">
-        <div class="stat-num"><span>&lt;2</span> min</div>
-        <div class="stat-label">Para obtener tu enlace</div>
+        <div class="stat-num"><span>0</span></div>
+        <div class="stat-label">Conocimientos técnicos previos</div>
     </div>
     <div class="stat">
-        <div class="stat-num"><span>0</span></div>
-        <div class="stat-label">Conocimientos técnicos requeridos</div>
+        <div class="stat-num"><span>3</span></div>
+        <div class="stat-label">Pasos simples</div>
     </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- CÓMO FUNCIONA -->
+<!-- ✨ NUEVA SECCIÓN: APRENDE -->
+<section class="section" id="aprende">
+    <p class="section-label">Educación</p>
+    <h2 class="section-title">¿Qué herramientas usaremos?</h2>
+    <p class="section-desc">No te preocupes si nunca has escuchado estos nombres. Te explicamos cada uno de forma sencilla.</p>
+
+    <div class="tools-grid">
+        <div class="tool-card">
+            <div class="tool-icon" style="background:rgba(59,158,255,.1);"></div>
+            <h3>GitHub</h3>
+            <p>Es como un "Google Drive" pero para código. Ahí guardarás los archivos de tu página web de forma segura y gratuita.</p>
+            <a href="https://github.com" target="_blank" class="tool-link">Crear cuenta gratis →</a>
+        </div>
+        <div class="tool-card">
+            <div class="tool-icon" style="background:rgba(124,111,255,.1);">▲</div>
+            <h3>Vercel</h3>
+            <p>Es la plataforma que PUBLICA tu página en internet. Toma los archivos de GitHub y los hace visibles para todo el mundo.</p>
+            <a href="https://vercel.com" target="_blank" class="tool-link">Crear cuenta gratis →</a>
+        </div>
+        <div class="tool-card">
+            <div class="tool-icon" style="background:rgba(52,211,153,.1);">🌐</div>
+            <h3>Tecnosofia</h3>
+            <p>Te damos un subdominio personalizado bonito. En lugar de un enlace largo, tendrás algo como tunombre.tecnosofia.xyz.</p>
+            <a href="#registrate" class="tool-link">Obtener subdominio →</a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
 <section class="section" id="como-funciona">
     <p class="section-label">Proceso</p>
     <h2 class="section-title">En 3 pasos simples</h2>
@@ -1175,7 +764,7 @@
             <div class="step-icon">📚</div>
             <div class="step-num-badge">1</div>
             <h3>Aprende (opcional)</h3>
-            <p>Descarga nuestra plantilla gratuita o sigue el tutorial paso a paso. No necesitas experiencia previa.</p>
+            <p>Descarga nuestra guía PDF o sigue el tutorial paso a paso. No necesitas experiencia previa.</p>
         </div>
         <div class="step-card">
             <div class="step-icon">✏️</div>
@@ -1194,7 +783,6 @@
 
 <div class="divider"></div>
 
-<!-- EJEMPLOS -->
 <section class="section" id="ejemplos">
     <p class="section-label">Comunidad</p>
     <h2 class="section-title">Páginas que ya existen</h2>
@@ -1216,7 +804,7 @@
             </div>
         </div>
         <div class="example-card">
-            <div class="example-avatar" style="background:rgba(251,191,36,.1);">🎨</div>
+            <div class="example-avatar" style="background:rgba(251,191,36,.1);"></div>
             <div class="example-info">
                 <div class="example-domain">arte-sofia.tecnosofia.xyz</div>
                 <div class="example-type">Galería de arte</div>
@@ -1248,7 +836,6 @@
 
 <div class="divider"></div>
 
-<!-- FORMULARIO -->
 <section class="form-section" id="registrate">
     <div class="form-wrap">
         <div class="form-header">
@@ -1257,7 +844,6 @@
         </div>
 
         <div class="card">
-            <!-- Progress -->
             <div class="progress-wrap">
                 <div class="progress-bar">
                     <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -1265,7 +851,6 @@
                 <span class="progress-text" id="progress-text">Paso 1 de 3</span>
             </div>
 
-            <!-- PASO 1 -->
             <div id="step-1" class="step active">
                 <p class="step-title">¿Ya tienes tu página en Vercel? 🤔</p>
                 <p class="step-desc">Para darte tu subdominio, primero necesitas tener tu página subida a Vercel.</p>
@@ -1279,15 +864,14 @@
                         </div>
                     </button>
                     <button class="choice-btn" onclick="abrirModalVercel()">
-                        <span class="choice-btn-icon">📚</span>
+                        <span class="choice-btn-icon"></span>
                         <div class="choice-btn-text">
                             <strong>No sé cómo, enséñame</strong>
-                            <span>Guía paso a paso con video y plantilla</span>
+                            <span>Guía paso a paso con video y PDF</span>
                         </div>
                     </button>
                 </div>
 
-                <!-- ✨ NUEVO: Sección de recursos educativos -->
                 <div class="resources-box">
                     <h4>🎁 Recursos gratuitos para empezar</h4>
                     <p>Descarga lo que necesites. Todo listo para usar.</p>
@@ -1295,17 +879,16 @@
                         <a href="/plantilla-basica.zip" class="resource-link" download>
                             📦 Descargar plantilla HTML (ZIP)
                         </a>
-                        <a href="/guia-vercel.pdf" class="resource-link" download>
-                            📄 Descargar guía en PDF
+                        <a href="/guia-vercel-2026.pdf" class="resource-link" download>
+                            📄 Descargar guía PDF actualizada
                         </a>
                         <a href="#" class="resource-link" onclick="abrirModalVercel(); return false;">
-                            🎬 Ver tutorial en video
+                            🎬 Ver tutorial paso a paso
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- PASO 2 -->
             <div id="step-2" class="step">
                 <p class="step-title">Elige tu nombre ✏️</p>
                 <p class="step-desc">Solo letras, números y guiones. Sin espacios.</p>
@@ -1314,10 +897,8 @@
                     <label for="subdomain">Tu subdominio</label>
                     <div class="input-wrap">
                         <input type="text" id="subdomain" class="has-suffix"
-                            placeholder="ejemplo: mateo"
-                            maxlength="30" autocomplete="off"
-                            oninput="alEscribirSubdominio()"
-                            aria-describedby="subdomain-hint"
+                            placeholder="ejemplo: mateo" maxlength="30" autocomplete="off"
+                            oninput="alEscribirSubdominio()" aria-describedby="subdomain-hint"
                             aria-label="Nombre de tu subdominio">
                         <span class="input-suffix">.tecnosofia.xyz</span>
                     </div>
@@ -1331,31 +912,25 @@
 
                 <div class="fg">
                     <label for="email">Tu correo electrónico <span style="color:var(--muted);font-weight:400;text-transform:none;">(opcional)</span></label>
-                    <input type="email" id="email"
-                        placeholder="tú@ejemplo.com"
-                        autocomplete="email"
-                        aria-describedby="email-hint"
+                    <input type="email" id="email" placeholder="tú@ejemplo.com"
+                        autocomplete="email" aria-describedby="email-hint"
                         aria-label="Correo electrónico (opcional)">
-                    <div class="field-hint" id="email-hint">Te enviaremos las instrucciones para no perderlas. 🔒 Nunca compartimos tu email.</div>
+                    <div class="field-hint" id="email-hint">Te enviaremos las instrucciones. 🔒 Nunca compartimos tu email.</div>
                 </div>
 
-                <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente 👉</button>
-                <button class="btn btn-text" onclick="irAlPaso(1)">⬅ Volver atrás</button>
+                <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente </button>
+                <button class="btn btn-text" onclick="irAlPaso(1)"> Volver atrás</button>
             </div>
 
-            <!-- PASO 3 -->
             <div id="step-3" class="step">
                 <p class="step-title">Conecta tu página 🔗</p>
                 <p class="step-desc">Pega el enlace temporal que te dio Vercel. Debe terminar en <code>.vercel.app</code>.</p>
 
                 <div class="fg">
                     <label for="target">Enlace de Vercel</label>
-                    <input type="text" id="target"
-                        placeholder="mi-proyecto.vercel.app"
-                        autocomplete="off"
-                        oninput="validarTarget()"
-                        aria-describedby="target-hint"
-                        aria-label="Enlace de tu proyecto en Vercel">
+                    <input type="text" id="target" placeholder="mi-proyecto.vercel.app"
+                        autocomplete="off" oninput="validarTarget()"
+                        aria-describedby="target-hint" aria-label="Enlace de tu proyecto en Vercel">
                     <div id="target-hint" class="field-hint" role="status">Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code></div>
                 </div>
 
@@ -1363,7 +938,6 @@
                 <button class="btn btn-text" onclick="irAlPaso(2)">⬅ Volver atrás</button>
             </div>
 
-            <!-- CARGANDO -->
             <div id="step-loading" class="step">
                 <div class="loader-wrap">
                     <div class="spinner"></div>
@@ -1372,7 +946,6 @@
                 </div>
             </div>
 
-            <!-- ÉXITO -->
             <div id="step-success" class="step">
                 <p class="step-title">¡Felicidades! 🎉</p>
                 <p class="step-desc">Tu enlace oficial ya existe. Guárdalo bien:</p>
@@ -1408,7 +981,6 @@
                 <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="reiniciar()">Registrar otro subdominio</button>
             </div>
 
-            <!-- ERROR -->
             <div id="step-error" class="step">
                 <div style="text-align:center;font-size:2.5rem;margin-bottom:.8rem;">😕</div>
                 <p class="step-title">Ocurrió un problema</p>
@@ -1421,7 +993,6 @@
 
 <div class="divider"></div>
 
-<!-- FAQ -->
 <section class="section" id="faq">
     <p class="section-label">Preguntas frecuentes</p>
     <h2 class="section-title">¿Tienes dudas?</h2>
@@ -1429,128 +1000,88 @@
 
     <div class="faq-list">
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq1">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                 ¿Es gratis para siempre?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq1">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes y personas que quieren tener presencia en internet sin gastar dinero.</div>
+            <div class="faq-a">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes y personas que quieren tener presencia en internet sin gastar dinero.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq2">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+                ¿Qué es GitHub y Vercel?
+                <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-a"><strong>GitHub</strong> es donde guardas tus archivos (como Google Drive pero para código). <strong>Vercel</strong> es la plataforma que publica tu página en internet. Ambos son gratuitos y los usamos juntos para que tu página esté online. <a href="#aprende">Lee más aquí →</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                 ¿Puedo cambiar mi página después?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq2">Sí. Tu subdominio apunta a tu proyecto en Vercel, así que puedes actualizar el contenido de tu página las veces que quieras desde Vercel sin necesidad de cambiar nada aquí.</div>
+            <div class="faq-a">Sí. Tu subdominio apunta a tu proyecto en Vercel, así que puedes actualizar el contenido de tu página las veces que quieras desde Vercel sin necesidad de cambiar nada aquí.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq3">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                 ¿Qué pasa si el nombre que quiero ya está tomado?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq3">Te avisamos en tiempo real mientras escribes. Si tu nombre favorito ya está ocupado, puedes probar variaciones como agregar tu apellido, un guión o un número. Por ejemplo: <code>mateo-dev</code> o <code>mateo2</code>.</div>
+            <div class="faq-a">Te avisamos en tiempo real mientras escribes. Si tu nombre favorito ya está ocupado, puedes probar variaciones como agregar tu apellido, un guión o un número. Por ejemplo: <code>mateo-dev</code> o <code>mateo2</code>.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq4">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                 ¿Necesito saber programar?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq4">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Si tienes dudas, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a>.</div>
+            <div class="faq-a">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Descarga nuestra <a href="/plantilla-basica.zip">plantilla gratuita</a> para empezar.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq5">
-                ¿Por qué necesito Vercel?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a" id="faq5">Vercel es donde viven los archivos de tu página web. Tecnosofia solo te da el nombre (el subdominio), pero los archivos tienen que estar guardados en algún servidor. Vercel es gratuito y muy fácil de usar, por eso lo recomendamos.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq6">
-                ¿Puedo usar otro servicio además de Vercel?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a" id="faq6">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> e intentamos ayudarte.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq7">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                 ¿Olvidé mi subdominio, puedo recuperarlo?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a" id="faq7">¡Sí! Escríbenos a <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">hola@tecnosofia.xyz</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
+            <div class="faq-a">¡Sí! Escríbenos a <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">hola@tecnosofia.xyz</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-logo">Tecnosofia</div>
     <p class="footer-desc">Un proyecto para que todos puedan tener<br>su propio espacio en internet. Gratis.</p>
     <a href="mailto:hola@tecnosofia.xyz" class="footer-contact">
         ✉️ hola@tecnosofia.xyz
     </a>
-    
     <div class="footer-legal">
         <a href="/privacidad">Política de Privacidad</a> • 
         <a href="/terminos">Términos de Uso</a>
     </div>
-    
     <div class="footer-recovery">
         ¿Olvidaste tu subdominio? 
         <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
     </div>
-    
-    <p class="footer-copy">© 2025 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
+    <p class="footer-copy">© 2026 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
 </footer>
 
-<!-- ✨ NUEVO: Modal educativo de Vercel -->
 <div class="modal-overlay" id="modal-vercel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
         <button class="modal-close" onclick="cerrarModalVercel()" aria-label="Cerrar guía">&times;</button>
         <h3 id="modal-title">📚 Guía: Publica tu página en internet</h3>
         <p style="color:var(--muted);margin-bottom:1rem;">Sigue estos pasos. No necesitas saber programar.</p>
         
-        <!-- Video tutorial (placeholder - reemplaza con tu video real) -->
-        <div class="video-wrapper">
-            <div class="video-placeholder" id="video-placeholder">
-                <div class="play-btn" onclick="cargarVideo()">▶</div>
-                <p>🎬 Tutorial de 2 minutos<br><small>Haz clic para reproducir</small></p>
-            </div>
-            <!-- El iframe se insertará aquí al hacer clic -->
+        <div class="resources-box" style="margin-bottom:1rem;">
+            <h4> Descarga la guía completa</h4>
+            <p>PDF con capturas de pantalla paso a paso</p>
+            <a href="/guia-vercel-2026.pdf" class="resource-link" download>
+                📄 Descargar PDF gratuito
+            </a>
         </div>
         
-        <!-- Checklist interactivo -->
-        <div class="checklist">
-            <h4>✅ Tu checklist:</h4>
-            <label><input type="checkbox" id="check1" onchange="verificarChecklist()"> Tengo una cuenta en Vercel</label>
-            <label><input type="checkbox" id="check2" onchange="verificarChecklist()"> Descargué la plantilla</label>
-            <label><input type="checkbox" id="check3" onchange="verificarChecklist()"> Edité mi nombre en el HTML</label>
-            <label><input type="checkbox" id="check4" onchange="verificarChecklist()"> Subí mi carpeta a Vercel</label>
-            <label><input type="checkbox" id="check5" onchange="verificarChecklist()"> Tengo mi enlace .vercel.app</label>
-        </div>
-        
-        <!-- Ejemplo de código copiable -->
-        <div style="margin:1rem 0;">
-            <p style="font-weight:600;margin-bottom:0.5rem;">📝 ¿Prefieres copiar y pegar? Usa este código:</p>
-            <pre class="code-block" id="codigo-ejemplo"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Mi Página&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;¡Hola! Soy [TU NOMBRE]&lt;/h1&gt;
-    &lt;p&gt;Este es mi portafolio personal&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            <button class="copy-code-btn" onclick="copiarCodigo()">📋 Copiar código</button>
-        </div>
-        
-        <!-- Pasos escritos -->
         <ol>
-            <li><strong>Descarga la plantilla</strong>: <a href="/plantilla-basica.zip" download>plantilla-basica.zip</a></li>
-            <li><strong>Edita el archivo</strong>: Abre <code>index.html</code> con Bloc de Notas y cambia "[TU NOMBRE]" por tu nombre real</li>
-            <li><strong>Ve a Vercel</strong>: <a href="https://vercel.com" target="_blank">vercel.com</a> → Sign Up → Create Account</li>
-            <li><strong>Sube tu carpeta</strong>: Arrastra la carpeta completa al área de Vercel</li>
-            <li><strong>Copia tu enlace</strong>: Cuando veas "Congratulations!", copia el enlace .vercel.app</li>
+            <li><strong>Crea cuenta en GitHub</strong>: <a href="https://github.com" target="_blank">github.com</a> → Sign up → Llena el formulario</li>
+            <li><strong>Crea un repositorio</strong>: En GitHub, clic en "+" → "New repository" → Nombre: mi-pagina</li>
+            <li><strong>Sube tus archivos</strong>: Clic en "uploading an existing file" → Arrastra tu index.html</li>
+            <li><strong>Crea cuenta en Vercel</strong>: <a href="https://vercel.com" target="_blank">vercel.com</a> → Sign up → Continue with GitHub</li>
+            <li><strong>Importa tu proyecto</strong>: En Vercel → Add New → Project → Import tu repositorio → Deploy</li>
+            <li><strong>Copia tu enlace</strong>: Verás algo como mi-pagina.vercel.app</li>
             <li><strong>Regresa a Tecnosofia</strong>: Pega tu enlace y elige tu subdominio</li>
         </ol>
         
@@ -1562,17 +1093,14 @@
     </div>
 </div>
 
-<!-- ✨ NUEVO: Botón flotante de ayuda -->
 <a href="#faq" class="help-float" title="¿Necesitas ayuda?">💬</a>
 
 <script>
-    // ── Estado global ──
     const state = {
         subdomain: '', target: '', email: '',
         availResult: null, checkTimer: null,
     };
 
-    // ── Animación de escritura en el hero ──
     const words = ['tunombre', 'maria', 'portafolio', 'mi-negocio', 'carlos-dev', 'proyecto'];
     let wi = 0, ci = 0, deleting = false;
     const typingEl = document.getElementById('hero-typing');
@@ -1589,7 +1117,6 @@
     }
     typeLoop();
 
-    // ── Navegación entre pasos ──
     function mostrarStep(id) {
         document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
@@ -1604,55 +1131,21 @@
         document.getElementById('progress-text').textContent = textos[stepId] ?? '';
     }
 
-    // ── Modal de Vercel ──
     function abrirModalVercel() {
         document.getElementById('modal-vercel').classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-    
     function cerrarModalVercel() {
         document.getElementById('modal-vercel').classList.remove('active');
         document.body.style.overflow = '';
     }
-    
     document.getElementById('modal-vercel').addEventListener('click', function(e) {
         if (e.target === this) cerrarModalVercel();
     });
-    
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') cerrarModalVercel();
     });
 
-    // ✨ NUEVO: Cargar video al hacer clic (reemplaza con tu URL real de YouTube)
-    function cargarVideo() {
-        const placeholder = document.getElementById('video-placeholder');
-        const wrapper = placeholder.parentElement;
-        // Reemplaza 'TU_VIDEO_ID' con el ID real de tu video de YouTube
-        const videoId = 'TU_VIDEO_ID'; // Ej: 'dQw4w9WgXcQ'
-        wrapper.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen title="Tutorial Vercel"></iframe>`;
-    }
-
-    // ✨ NUEVO: Verificar checklist
-    function verificarChecklist() {
-        const checks = ['check1','check2','check3','check4','check5'];
-        const completados = checks.filter(id => document.getElementById(id).checked).length;
-        if (completados === checks.length) {
-            // Opcional: mostrar mensaje de felicitación
-        }
-    }
-
-    // ✨ NUEVO: Copiar código de ejemplo
-    function copiarCodigo() {
-        const codigo = document.getElementById('codigo-ejemplo').innerText;
-        navigator.clipboard.writeText(codigo).then(() => {
-            const btn = event.target;
-            const original = btn.textContent;
-            btn.textContent = '✅ ¡Copiado!';
-            setTimeout(() => { btn.textContent = original; }, 2000);
-        });
-    }
-
-    // ── Validación subdominio ──
     function alEscribirSubdominio() {
         const raw = document.getElementById('subdomain').value;
         const val = raw.toLowerCase().replace(/[^a-z0-9-]/g, '');
@@ -1694,7 +1187,7 @@
         preview.classList.add('visible');
 
         clearTimeout(state.checkTimer);
-        avail.innerHTML = '<span class="avail-badge checking">⏳ Verificando...</span>';
+        avail.innerHTML = '<span class="avail-badge checking"> Verificando...</span>';
         state.checkTimer = setTimeout(() => verificarDisponibilidad(val), 700);
     }
 
@@ -1709,7 +1202,7 @@
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code> o <code>' + sub + '2</code></span>';
+                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code></span>';
                 state.availResult = false;
             }
         } catch {
@@ -1723,17 +1216,14 @@
         state.email = document.getElementById('email').value.trim();
         state.subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
         if (!state.subdomain || state.subdomain.length < 3) { 
-            alert('Escribe un nombre de al menos 3 caracteres.'); 
-            return; 
+            alert('Escribe un nombre de al menos 3 caracteres.'); return; 
         }
         if (state.availResult === false) { 
-            alert('Ese nombre ya está en uso. Elige otro o prueba una variación.'); 
-            return; 
+            alert('Ese nombre ya está en uso. Elige otro.'); return; 
         }
         irAlPaso(3);
     }
 
-    // ── Validación target ──
     function validarTarget() {
         let raw = document.getElementById('target').value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
         state.target = raw;
@@ -1741,22 +1231,15 @@
         const hint = document.getElementById('target-hint');
         if (!raw) { 
             hint.innerHTML = 'Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code>'; 
-            hint.className = 'field-hint'; 
-            btn.disabled = true; 
-            return; 
+            hint.className = 'field-hint'; btn.disabled = true; return; 
         }
         if (!raw.endsWith('.vercel.app')) { 
-            hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code><br><small>¿Tu enlace es de otro servicio? <a href="#faq" onclick="document.querySelector(\'#faq6\').classList.add(\'open\');return false;">Ver opciones</a></small>'; 
-            hint.className = 'field-hint error'; 
-            btn.disabled = true; 
-            return;
+            hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code>'; 
+            hint.className = 'field-hint error'; btn.disabled = true; return;
         }
-        hint.textContent = '✅ Enlace válido.'; 
-        hint.className = 'field-hint'; 
-        btn.disabled = false;
+        hint.textContent = '✅ Enlace válido.'; hint.className = 'field-hint'; btn.disabled = false;
     }
 
-    // ── Crear dominio ──
     async function crearDominio() {
         const btn = document.getElementById('btn-crear');
         btn.disabled = true;
@@ -1776,16 +1259,15 @@
                 history.replaceState(null, '', `?sub=${encodeURIComponent(state.subdomain)}`);
             } else {
                 const errorMsg = data.error || 'Nombre no disponible o problema al crear.';
-                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>Si el problema persiste, escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a></small>`;
+                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>¿Problemas? <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a></small>`;
                 mostrarStep('step-error');
             }
         } catch {
-            document.getElementById('error-msg').innerHTML = 'Problema de conexión con el servidor. Intenta de nuevo.<br><small>¿Sigues con problemas? <a href="mailto:hola@tecnosofia.xyz">Contáctanos</a></small>';
+            document.getElementById('error-msg').innerHTML = 'Problema de conexión. Intenta de nuevo.<br><small><a href="mailto:hola@tecnosofia.xyz">Contáctanos</a></small>';
             mostrarStep('step-error');
         }
     }
 
-    // ── Copiar ──
     function copiarDominio() {
         const texto = document.getElementById('final-link').textContent;
         const btn = document.getElementById('copy-btn');
@@ -1799,13 +1281,11 @@
         });
     }
 
-    // ── Error: volver al paso correcto ──
     function volverDesdeError() {
         if (state.target && state.target.endsWith('.vercel.app')) irAlPaso(3);
         else irAlPaso(2);
     }
 
-    // ── Reiniciar ──
     function reiniciar() {
         state.subdomain = ''; state.target = ''; state.email = ''; state.availResult = null;
         ['subdomain','email','target'].forEach(id => document.getElementById(id).value = '');
@@ -1822,7 +1302,6 @@
         irAlPaso(1);
     }
 
-    // ── FAQ ──
     function toggleFaq(btn) {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
@@ -1837,7 +1316,6 @@
     }
 </script>
 
-<!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
 
 </body>
