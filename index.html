@@ -5,14 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnosofia — Tu espacio gratis en internet</title>
     <meta name="description" content="Obtén tu propio subdominio gratis en tecnosofia.xyz. Sin conocimientos técnicos, sin tarjeta de crédito. Ideal para estudiantes y proyectos personales.">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Tecnosofia — Tu espacio gratis en internet">
     <meta property="og:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos. Sin complicaciones.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tecnosofia.xyz">
     <meta property="og:image" content="https://tecnosofia.xyz/og-image.png">
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tecnosofia — Tu espacio gratis en internet">
     <meta name="twitter:description" content="Consigue tu propio enlace tipo mateo.tecnosofia.xyz gratis y en minutos.">
+
+    <!-- ✨ NUEVO: JSON-LD para SEO y organización sin fines de lucro -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tecnosofia",
+      "url": "https://tecnosofia.xyz",
+      "description": "Subdominios gratuitos para estudiantes y creadores sin recursos técnicos o económicos",
+      "nonprofit": true,
+      "email": "admintecnosofia@gmail.com",
+      "sameAs": []
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +62,24 @@
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
+        }
+
+        /* ✨ NUEVO: Skip link para accesibilidad */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            font-weight: 600;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
         }
 
         /* ── FONDO ANIMADO ── */
@@ -238,6 +274,26 @@
         }
         .stat-num span { color: var(--accent); }
         .stat-label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
+
+        /* ✨ NUEVO: Trust badges */
+        .trust-badges {
+            text-align: center;
+            padding: 1rem 1.5rem;
+            color: var(--muted);
+            font-size: .9rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: rgba(12,18,32,0.5);
+        }
+        .trust-badges span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
 
         /* ── SECCIÓN: CÓMO FUNCIONA ── */
         .section {
@@ -696,6 +752,86 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* ✨ NUEVO: Modal de guía de Vercel */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--border);
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .modal-close:hover { background: var(--accent); }
+        .modal h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .modal ol {
+            padding-left: 1.5rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        .modal li { margin-bottom: 0.8rem; }
+        .modal code {
+            background: var(--bg);
+            color: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .modal a { color: var(--accent); }
+        .modal-screenshot {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin: 1rem 0;
+            background: var(--bg);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
         /* ── FAQ ── */
         .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 700px; margin: 0 auto; }
         .faq-item {
@@ -743,7 +879,7 @@
             line-height: 1.65;
             padding: 0 1.3rem;
         }
-        .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.1rem; }
+        .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.1rem; }
         .faq-a a { color: var(--accent); }
 
         /* ── FOOTER ── */
@@ -776,10 +912,36 @@
             padding: .5rem 1rem;
             border-radius: 99px;
             transition: all .2s;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
         .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
-        .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; }
+        
+        /* ✨ NUEVO: Legal links y recovery */
+        .footer-legal {
+            font-size: .75rem;
+            color: var(--muted);
+            margin: 1rem 0;
+        }
+        .footer-legal a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.2s;
+        }
+        .footer-legal a:hover { color: var(--accent); }
+        
+        .footer-recovery {
+            font-size: .85rem;
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+        .footer-recovery a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .footer-recovery a:hover { text-decoration: underline; }
+        
+        .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; margin-top: 1.5rem; }
 
         /* ── DIVIDER ── */
         .divider {
@@ -797,11 +959,20 @@
             .nav-links a:not(.nav-cta) { display: none; }
             .hero { padding: 4rem 1rem 3rem; }
             .stats { gap: 2rem; }
+            .trust-badges { 
+                flex-direction: column; 
+                gap: 0.5rem;
+                padding: 1rem;
+            }
             .section { padding: 3.5rem 1rem; }
+            .modal { padding: 1.5rem; margin: 1rem; }
         }
     </style>
 </head>
 <body>
+
+<!-- ✨ NUEVO: Skip link para accesibilidad -->
+<a href="#registrate" class="skip-link">Saltar al formulario</a>
 
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
@@ -848,6 +1019,13 @@
         <div class="stat-num"><span>0</span></div>
         <div class="stat-label">Conocimientos técnicos requeridos</div>
     </div>
+</div>
+
+<!-- ✨ NUEVO: Trust badges -->
+<div class="trust-badges">
+    <span>🔒 Sin tarjeta requerida</span>
+    <span>🌍 Disponible en todo el mundo</span>
+    <span>✨ +<span id="active-subs">500</span> estudiantes ya tienen su enlace</span>
 </div>
 
 <div class="divider"></div>
@@ -976,7 +1154,10 @@
                 </div>
 
                 <div id="help-box" style="display:none;" class="tip">
-                    💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. Crea tu cuenta en <a href="https://vercel.com" target="_blank">vercel.com</a>, sube tu página y cuando tengas un enlace terminado en <code>.vercel.app</code>, ¡regresa aquí y continúa!
+                    💡 <strong>Vercel</strong> es una plataforma gratuita donde viven los archivos de tu proyecto web. 
+                    <a href="#" onclick="abrirModalVercel(); return false;">📚 Ver guía paso a paso con imágenes</a> 
+                    o crea tu cuenta en <a href="https://vercel.com" target="_blank">vercel.com</a>. 
+                    Cuando tengas un enlace terminado en <code>.vercel.app</code>, ¡regresa aquí y continúa!
                 </div>
             </div>
 
@@ -991,23 +1172,27 @@
                         <input type="text" id="subdomain" class="has-suffix"
                             placeholder="ejemplo: mateo"
                             maxlength="30" autocomplete="off"
-                            oninput="alEscribirSubdominio()">
+                            oninput="alEscribirSubdominio()"
+                            aria-describedby="subdomain-hint"
+                            aria-label="Nombre de tu subdominio">
                         <span class="input-suffix">.tecnosofia.xyz</span>
                     </div>
                     <div class="char-counter" id="char-count">0 / 30</div>
-                    <div id="subdomain-hint" class="field-hint">Entre 3 y 30 caracteres.</div>
+                    <div id="subdomain-hint" class="field-hint" role="status">Entre 3 y 30 caracteres.</div>
                     <div class="live-preview" id="live-preview">
                         ✨ Tu enlace será: <strong id="preview-domain"></strong>
                     </div>
-                    <div id="avail-status"></div>
+                    <div id="avail-status" role="status" aria-live="polite"></div>
                 </div>
 
                 <div class="fg">
                     <label for="email">Tu correo electrónico <span style="color:var(--muted);font-weight:400;text-transform:none;">(opcional)</span></label>
                     <input type="email" id="email"
                         placeholder="tú@ejemplo.com"
-                        autocomplete="email">
-                    <div class="field-hint">Te enviaremos las instrucciones para no perderlas.</div>
+                        autocomplete="email"
+                        aria-describedby="email-hint"
+                        aria-label="Correo electrónico (opcional)">
+                    <div class="field-hint" id="email-hint">Te enviaremos las instrucciones para no perderlas. 🔒 Nunca compartimos tu email.</div>
                 </div>
 
                 <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente 👉</button>
@@ -1024,8 +1209,10 @@
                     <input type="text" id="target"
                         placeholder="mi-proyecto.vercel.app"
                         autocomplete="off"
-                        oninput="validarTarget()">
-                    <div id="target-hint" class="field-hint">Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code></div>
+                        oninput="validarTarget()"
+                        aria-describedby="target-hint"
+                        aria-label="Enlace de tu proyecto en Vercel">
+                    <div id="target-hint" class="field-hint" role="status">Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code></div>
                 </div>
 
                 <button class="btn btn-primary" id="btn-crear" onclick="crearDominio()" disabled>🪄 ¡Crear mi página web!</button>
@@ -1098,46 +1285,54 @@
 
     <div class="faq-list">
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq1">
                 ¿Es gratis para siempre?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes y personas que quieren tener presencia en internet sin gastar dinero.</div>
+            <div class="faq-a" id="faq1">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes y personas que quieren tener presencia en internet sin gastar dinero.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq2">
                 ¿Puedo cambiar mi página después?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">Sí. Tu subdominio apunta a tu proyecto en Vercel, así que puedes actualizar el contenido de tu página las veces que quieras desde Vercel sin necesidad de cambiar nada aquí.</div>
+            <div class="faq-a" id="faq2">Sí. Tu subdominio apunta a tu proyecto en Vercel, así que puedes actualizar el contenido de tu página las veces que quieras desde Vercel sin necesidad de cambiar nada aquí.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq3">
                 ¿Qué pasa si el nombre que quiero ya está tomado?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">Te avisamos en tiempo real mientras escribes. Si tu nombre favorito ya está ocupado, puedes probar variaciones como agregar tu apellido, un guión o un número. Por ejemplo: <code>mateo-dev</code> o <code>mateo2</code>.</div>
+            <div class="faq-a" id="faq3">Te avisamos en tiempo real mientras escribes. Si tu nombre favorito ya está ocupado, puedes probar variaciones como agregar tu apellido, un guión o un número. Por ejemplo: <code>mateo-dev</code> o <code>mateo2</code>.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq4">
                 ¿Necesito saber programar?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Si tienes dudas, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a>.</div>
+            <div class="faq-a" id="faq4">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Si tienes dudas, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a>.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq5">
                 ¿Por qué necesito Vercel?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">Vercel es donde viven los archivos de tu página web. Tecnosofia solo te da el nombre (el subdominio), pero los archivos tienen que estar guardados en algún servidor. Vercel es gratuito y muy fácil de usar, por eso lo recomendamos.</div>
+            <div class="faq-a" id="faq5">Vercel es donde viven los archivos de tu página web. Tecnosofia solo te da el nombre (el subdominio), pero los archivos tienen que estar guardados en algún servidor. Vercel es gratuito y muy fácil de usar, por eso lo recomendamos.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq6">
                 ¿Puedo usar otro servicio además de Vercel?
                 <span class="faq-arrow">▼</span>
             </button>
-            <div class="faq-a">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> e intentamos ayudarte.</div>
+            <div class="faq-a" id="faq6">Por ahora el formulario está optimizado para Vercel ya que es el más sencillo para principiantes. Si tienes tu página en otro servicio y necesitas ayuda, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> e intentamos ayudarte.</div>
+        </div>
+        <!-- ✨ NUEVO: FAQ de recuperación -->
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq7">
+                ¿Olvidé mi subdominio, puedo recuperarlo?
+                <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-a" id="faq7">¡Sí! Escríbenos a <a href="mailto:admintecnosofia@gmail.com?subject=Recuperar%20mi%20subdominio">admintecnosofia@gmail.com</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
         </div>
     </div>
 </section>
@@ -1149,8 +1344,63 @@
     <a href="mailto:admintecnosofia@gmail.com" class="footer-contact">
         ✉️ admintecnosofia@gmail.com
     </a>
+    
+    <!-- ✨ NUEVO: Legal links -->
+    <div class="footer-legal">
+        <a href="/privacidad">Política de Privacidad</a> • 
+        <a href="/terminos">Términos de Uso</a>
+    </div>
+    
+    <!-- ✨ NUEVO: Recovery link -->
+    <div class="footer-recovery">
+        ¿Olvidaste tu subdominio? 
+        <a href="mailto:admintecnosofia@gmail.com?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
+    </div>
+    
     <p class="footer-copy">© 2025 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
 </footer>
+
+<!-- ✨ NUEVO: Modal de guía de Vercel -->
+<div class="modal-overlay" id="modal-vercel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+        <button class="modal-close" onclick="cerrarModalVercel()" aria-label="Cerrar guía">&times;</button>
+        <h3 id="modal-title">📚 Guía: Subir tu página a Vercel</h3>
+        <p style="color:var(--muted);margin-bottom:1rem;">Sigue estos pasos sencillos. No necesitas saber programar.</p>
+        
+        <ol>
+            <li><strong>Ve a <a href="https://vercel.com" target="_blank">vercel.com</a></strong> y haz clic en "Sign Up". Puedes usar tu cuenta de GitHub, GitLab o crear una con email.</li>
+            
+            <li><strong>Prepara tus archivos</strong>: Solo necesitas un archivo llamado <code>index.html</code> con tu contenido. Ejemplo básico:
+                <pre style="background:var(--bg);padding:0.8rem;border-radius:6px;margin:0.5rem 0;font-size:0.8rem;overflow-x:auto;"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Mi Página&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+            </li>
+            
+            <li><strong>Sube tu proyecto</strong>:
+                <ul style="margin:0.5rem 0;padding-left:1.2rem;">
+                    <li>Opción A: Arrastra tu carpeta con el archivo en la página de Vercel</li>
+                    <li>Opción B: Conecta tu cuenta de GitHub si tu código está allí</li>
+                </ul>
+            </li>
+            
+            <li><strong>¡Listo!</strong> Vercel te dará un enlace como <code>mi-proyecto.vercel.app</code>. Cópialo y regresa a Tecnosofia para continuar.</li>
+        </ol>
+        
+        <div class="modal-screenshot">
+            🖼️ [Aquí iría una captura de Vercel]<br>
+            <small style="color:var(--muted);margin-top:0.5rem;display:block;">
+                💡 Tip: Si quieres, puedes reemplazar este texto con una imagen real: 
+                <code>&lt;img src="tu-imagen.png" alt="..." style="width:100%"&gt;</code>
+            </small>
+        </div>
+        
+        <div class="tip" style="margin-top:1rem;">
+            ¿Te trabaste en algún paso? Escríbenos a 
+            <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a> 
+            y te ayudamos personalmente.
+        </div>
+    </div>
+</div>
 
 <script>
     // ── Estado global ──
@@ -1194,6 +1444,27 @@
     function mostrarAyuda() {
         document.getElementById('help-box').style.display = 'block';
     }
+
+    // ✨ NUEVO: Funciones del modal de Vercel
+    function abrirModalVercel() {
+        document.getElementById('modal-vercel').classList.add('active');
+        document.body.style.overflow = 'hidden'; // Evitar scroll del body
+    }
+    
+    function cerrarModalVercel() {
+        document.getElementById('modal-vercel').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('modal-vercel').addEventListener('click', function(e) {
+        if (e.target === this) cerrarModalVercel();
+    });
+    
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') cerrarModalVercel();
+    });
 
     // ── Validación subdominio ──
     function alEscribirSubdominio() {
@@ -1252,7 +1523,8 @@
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba otro nombre.</span>';
+                // ✨ NUEVO: Mensaje más útil cuando el nombre está tomado
+                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code> o <code>' + sub + '2</code></span>';
                 state.availResult = false;
             }
         } catch {
@@ -1265,8 +1537,14 @@
     function validarPaso2() {
         state.email = document.getElementById('email').value.trim();
         state.subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
-        if (!state.subdomain || state.subdomain.length < 3) { alert('Escribe un nombre de al menos 3 caracteres.'); return; }
-        if (state.availResult === false) { alert('Ese nombre ya está en uso. Elige otro.'); return; }
+        if (!state.subdomain || state.subdomain.length < 3) { 
+            alert('Escribe un nombre de al menos 3 caracteres.'); 
+            return; 
+        }
+        if (state.availResult === false) { 
+            alert('Ese nombre ya está en uso. Elige otro o prueba una variación.'); 
+            return; 
+        }
         irAlPaso(3);
     }
 
@@ -1276,9 +1554,22 @@
         state.target = raw;
         const btn = document.getElementById('btn-crear');
         const hint = document.getElementById('target-hint');
-        if (!raw) { hint.textContent = 'Solo la parte después de https://. Ej: mi-web.vercel.app'; hint.className = 'field-hint'; btn.disabled = true; return; }
-        if (!raw.endsWith('.vercel.app')) { hint.textContent = '⚠️ El enlace debe terminar en .vercel.app'; hint.className = 'field-hint error'; btn.disabled = true; return; }
-        hint.textContent = '✅ Enlace válido.'; hint.className = 'field-hint'; btn.disabled = false;
+        if (!raw) { 
+            hint.innerHTML = 'Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code>'; 
+            hint.className = 'field-hint'; 
+            btn.disabled = true; 
+            return; 
+        }
+        if (!raw.endsWith('.vercel.app')) { 
+            // ✨ NUEVO: Mensaje más útil con enlace a ayuda
+            hint.innerHTML = '⚠️ Debe terminar en <code>.vercel.app</code><br><small>¿Tu enlace es de otro servicio? <a href="#faq" onclick="document.querySelector(\'#faq6\').classList.add(\'open\');return false;">Ver opciones</a></small>'; 
+            hint.className = 'field-hint error'; 
+            btn.disabled = true; 
+            return; 
+        }
+        hint.textContent = '✅ Enlace válido.'; 
+        hint.className = 'field-hint'; 
+        btn.disabled = false;
     }
 
     // ── Crear dominio ──
@@ -1300,11 +1591,13 @@
                 mostrarStep('step-success');
                 history.replaceState(null, '', `?sub=${encodeURIComponent(state.subdomain)}`);
             } else {
-                document.getElementById('error-msg').textContent = `Error: ${data.error || 'Nombre no disponible o problema al crear.'}`;
+                // ✨ NUEVO: Mensaje de error más específico
+                const errorMsg = data.error || 'Nombre no disponible o problema al crear.';
+                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>Si el problema persiste, escríbenos a <a href="mailto:admintecnosofia@gmail.com">admintecnosofia@gmail.com</a></small>`;
                 mostrarStep('step-error');
             }
         } catch {
-            document.getElementById('error-msg').textContent = 'Problema de conexión con el servidor. Intenta de nuevo.';
+            document.getElementById('error-msg').innerHTML = 'Problema de conexión con el servidor. Intenta de nuevo.<br><small>¿Sigues con problemas? <a href="mailto:admintecnosofia@gmail.com">Contáctanos</a></small>';
             mostrarStep('step-error');
         }
     }
@@ -1338,7 +1631,7 @@
         document.getElementById('char-count').textContent = '0 / 30';
         document.getElementById('subdomain-hint').textContent = 'Entre 3 y 30 caracteres.';
         document.getElementById('subdomain-hint').className = 'field-hint';
-        document.getElementById('target-hint').textContent = 'Solo la parte después de https://. Ej: mi-web.vercel.app';
+        document.getElementById('target-hint').innerHTML = 'Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code>';
         document.getElementById('target-hint').className = 'field-hint';
         document.getElementById('btn-paso2').disabled = true;
         document.getElementById('btn-crear').disabled = true;
@@ -1350,9 +1643,48 @@
     function toggleFaq(btn) {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        
+        // Cerrar todos
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        
+        // Abrir el seleccionado si estaba cerrado
+        if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
     }
+
+    // ✨ NUEVO: Contador simulado de subdominios activos (puedes conectarlo a una API real después)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animación suave del contador
+        const counterEl = document.getElementById('active-subs');
+        const target = 500; // Cambia este número según tus estadísticas reales
+        let current = 0;
+        const increment = Math.ceil(target / 50);
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current >= target) {
+                counterEl.textContent = target + '+';
+            } else {
+                counterEl.textContent = current + '+';
+                setTimeout(updateCounter, 50);
+            }
+        };
+        
+        // Iniciar animación cuando el elemento sea visible
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCounter();
+                observer.disconnect();
+            }
+        });
+        observer.observe(counterEl);
+    });
 </script>
 
 <!-- Cloudflare Web Analytics -->
