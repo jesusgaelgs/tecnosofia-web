@@ -4,25 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnosofia — Aprende y publica tu página gratis</title>
-    <meta name="description" content="Guía paso a paso para publicar tu página web gratis con GitHub y Vercel. Obtén tu subdominio personalizado en tecnosofia.xyz">
+    <meta name="description" content="Obtén tu subdominio personalizado gratuito para tu página de Vercel. Ideal para estudiantes y creadores.">
     
-    <meta property="og:title" content="Tecnosofia — Aprende y publica gratis">
-    <meta property="og:description" content="Guía completa para estudiantes: GitHub + Vercel + Subdominio gratis">
+    <meta property="og:title" content="Tecnosofia — Tu propio espacio en internet">
+    <meta property="og:description" content="Subdominios gratuitos para estudiantes y desarrolladores.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tecnosofia.xyz">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tecnosofia",
-      "url": "https://tecnosofia.xyz",
-      "description": "Educación digital gratuita + subdominios para estudiantes",
-      "nonprofit": true,
-      "email": "hola@tecnosofia.xyz"
-    }
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -31,7 +19,6 @@
         :root {
             --bg: #05080f;
             --surface: #0c1220;
-            --surface2: #111827;
             --border: #1e2d45;
             --accent: #3b9eff;
             --accent2: #7c6fff;
@@ -106,15 +93,8 @@
 
         .hero {
             position: relative; z-index: 1;
-            text-align: center; padding: 6rem 1.5rem 4rem;
+            text-align: center; padding: 6rem 1.5rem 3rem;
             max-width: 800px; margin: 0 auto;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: .5rem;
-            background: rgba(59,158,255,.1); border: 1px solid rgba(59,158,255,.25);
-            color: var(--accent); font-size: .82rem; font-weight: 700;
-            padding: .35rem 1rem; border-radius: 99px;
-            margin-bottom: 1.5rem; animation: fadeUp .6s ease both;
         }
         .hero h1 {
             font-family: 'Clash Display', sans-serif;
@@ -150,171 +130,12 @@
         .domain-preview .suffix { color: var(--muted); }
         @keyframes blink { 50% { border-color: transparent; } }
 
-        .hero-btns {
-            display: flex; gap: 1rem; justify-content: center;
-            flex-wrap: wrap; animation: fadeUp .6s .4s ease both;
-        }
-        .btn-hero-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff; padding: .9rem 2rem; border-radius: 99px;
-            font-size: 1rem; font-weight: 700; text-decoration: none;
-            border: none; cursor: pointer; transition: all .2s;
-            font-family: 'Cabinet Grotesk', sans-serif;
-            box-shadow: 0 8px 30px rgba(59,158,255,.3);
-        }
-        .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(59,158,255,.4); }
-        .btn-hero-secondary {
-            background: transparent; color: var(--muted);
-            padding: .9rem 2rem; border-radius: 99px;
-            font-size: 1rem; font-weight: 600; text-decoration: none;
-            border: 1px solid var(--border); cursor: pointer;
-            transition: all .2s; font-family: 'Cabinet Grotesk', sans-serif;
-        }
-        .btn-hero-secondary:hover { border-color: var(--accent); color: var(--text); }
-
-        .stats {
-            position: relative; z-index: 1;
-            display: flex; justify-content: center; gap: 3rem;
-            flex-wrap: wrap; padding: 2rem 1.5rem 4rem;
-            animation: fadeUp .6s .5s ease both;
-        }
-        .stat { text-align: center; }
-        .stat-num {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 2rem; font-weight: 700; color: var(--text);
-        }
-        .stat-num span { color: var(--accent); }
-        .stat-label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
-
-        .section {
-            position: relative; z-index: 1;
-            padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto;
-        }
-        .section-label {
-            text-align: center; font-size: .8rem; font-weight: 700;
-            letter-spacing: .1em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: .8rem;
-        }
-        .section-title {
-            font-family: 'Clash Display', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700; text-align: center;
-            letter-spacing: -1px; margin-bottom: 1rem;
-        }
-        .section-desc {
-            text-align: center; color: var(--muted); font-size: 1rem;
-            max-width: 600px; margin: 0 auto 3.5rem; line-height: 1.65;
-        }
-
-        .steps-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .step-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2rem;
-            position: relative; overflow: hidden;
-            transition: border-color .3s, transform .3s;
-        }
-        .step-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-        .step-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0;
-            height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2));
-            opacity: 0; transition: opacity .3s;
-        }
-        .step-card:hover::before { opacity: 1; }
-        .step-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            background: linear-gradient(135deg, rgba(59,158,255,.15), rgba(124,111,255,.15));
-            border: 1px solid rgba(59,158,255,.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; margin-bottom: 1.2rem;
-        }
-        .step-num-badge {
-            position: absolute; top: 1.5rem; right: 1.5rem;
-            font-family: 'Clash Display', sans-serif;
-            font-size: 3rem; font-weight: 700;
-            color: rgba(59,158,255,.07); line-height: 1;
-        }
-        .step-card h3 {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.2rem; font-weight: 600; margin-bottom: .6rem;
-        }
-        .step-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
-
-        /* ✨ NUEVO: Sección educativa de herramientas */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .tool-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            transition: border-color .3s, transform .3s;
-        }
-        .tool-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-        .tool-icon {
-            width: 56px; height: 56px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin-bottom: 1rem;
-        }
-        .tool-card h3 {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.3rem; font-weight: 600; margin-bottom: .5rem;
-        }
-        .tool-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; margin-bottom: 1rem; }
-        .tool-link {
-            display: inline-flex; align-items: center; gap: .5rem;
-            color: var(--accent); text-decoration: none;
-            font-weight: 600; font-size: .9rem;
-            transition: gap .2s;
-        }
-        .tool-link:hover { gap: .8rem; }
-
-        .examples-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1rem;
-        }
-        .example-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.2rem 1.4rem;
-            display: flex; align-items: center; gap: .9rem;
-            transition: border-color .2s, transform .2s;
-            text-decoration: none;
-        }
-        .example-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .example-avatar {
-            width: 38px; height: 38px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; flex-shrink: 0;
-        }
-        .example-info { min-width: 0; }
-        .example-domain {
-            font-size: .88rem; font-weight: 700;
-            color: var(--accent); white-space: nowrap;
-            overflow: hidden; text-overflow: ellipsis;
-        }
-        .example-type { font-size: .75rem; color: var(--muted); margin-top: 2px; }
-
         .form-section {
             position: relative; z-index: 1;
             padding: 2rem 1.5rem 6rem;
             display: flex; justify-content: center;
         }
-        .form-wrap { width: 100%; max-width: 540px; }
-        .form-header {
-            text-align: center; margin-bottom: 2rem;
-        }
-        .form-header h2 {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.8rem; font-weight: 700;
-            letter-spacing: -0.5px; margin-bottom: .4rem;
-        }
-        .form-header p { color: var(--muted); font-size: .95rem; }
+        .form-wrap { width: 100%; max-width: 540px; animation: fadeUp .6s .4s ease both; }
 
         .card {
             background: var(--surface); border: 1px solid var(--border);
@@ -329,9 +150,7 @@
         }
         @keyframes shimmer { to { background-position: 200% 0; } }
 
-        .progress-wrap {
-            display: flex; align-items: center; gap: .5rem; margin-bottom: 2rem;
-        }
+        .progress-wrap { display: flex; align-items: center; gap: .5rem; margin-bottom: 2rem; }
         .progress-bar {
             flex: 1; height: 3px; border-radius: 99px;
             background: var(--border); overflow: hidden;
@@ -341,10 +160,7 @@
             background: linear-gradient(90deg, var(--accent), var(--accent2));
             transition: width .4s ease;
         }
-        .progress-text {
-            font-size: .75rem; color: var(--muted);
-            white-space: nowrap; font-weight: 600;
-        }
+        .progress-text { font-size: .75rem; color: var(--muted); white-space: nowrap; font-weight: 600; }
 
         .step { display: none; }
         .step.active { display: block; animation: fadeUp .3s ease both; }
@@ -425,57 +241,25 @@
         }
         .btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 10px 30px rgba(59,158,255,.35); }
         .btn-primary:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
-        .btn-secondary {
-            background: transparent; border: 2px solid var(--border);
-            color: var(--muted);
-        }
+        .btn-secondary { background: transparent; border: 2px solid var(--border); color: var(--muted); }
         .btn-secondary:hover { background: var(--border); color: var(--text); }
-        .btn-text {
-            background: transparent; color: var(--muted);
-            font-size: .88rem; padding: .4rem;
-        }
+        .btn-text { background: transparent; color: var(--muted); font-size: .88rem; padding: .4rem; }
         .btn-text:hover { color: var(--text); text-decoration: underline; }
 
-        .choice-btns { display: flex; flex-direction: column; gap: .75rem; }
+        /* NUEVO DISEÑO BIFURCACIÓN */
+        .choice-btns { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;}
         .choice-btn {
-            display: flex; align-items: center; gap: 1rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
             background: var(--bg); border: 2px solid var(--border);
-            border-radius: 12px; padding: 1.1rem 1.3rem;
+            border-radius: 12px; padding: 1.5rem;
             cursor: pointer; transition: all .2s; text-align: left;
-            font-family: 'Cabinet Grotesk', sans-serif;
             color: var(--text); width: 100%;
         }
-        .choice-btn:hover { border-color: var(--accent); background: rgba(59,158,255,.04); }
-        .choice-btn-icon { font-size: 1.5rem; flex-shrink: 0; }
-        .choice-btn-text strong { display: block; font-size: .98rem; font-weight: 700; }
-        .choice-btn-text span { font-size: .82rem; color: var(--muted); }
-
-        .tip {
-            background: rgba(251,191,36,.06); border-left: 3px solid var(--yellow);
-            border-radius: 8px; padding: 1rem 1.1rem;
-            font-size: .86rem; color: var(--muted); line-height: 1.6;
-            margin-top: 1rem;
-        }
-        .tip a { color: var(--accent); }
-
-        .resources-box {
-            margin-top: 1.5rem; padding: 1.2rem;
-            background: rgba(59,158,255,.05);
-            border: 2px dashed var(--accent);
-            border-radius: 12px; text-align: center;
-        }
-        .resources-box h4 { margin-bottom: 0.8rem; font-weight: 600; color: var(--text); }
-        .resources-box p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
-        .resource-links { display: flex; flex-direction: column; gap: 0.5rem; }
-        .resource-link {
-            display: flex; align-items: center; justify-content: center;
-            gap: 0.5rem; background: var(--bg);
-            border: 1px solid var(--border); border-radius: 8px;
-            padding: 0.7rem 1rem; color: var(--text);
-            text-decoration: none; font-size: 0.9rem;
-            transition: border-color .2s, transform .2s;
-        }
-        .resource-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .choice-btn:hover { border-color: var(--accent); background: rgba(59,158,255,.05); transform: translateY(-2px); }
+        .choice-btn-content { flex: 1; }
+        .choice-btn-content strong { display: block; font-family: 'Clash Display', sans-serif; font-size: 1.2rem; margin-bottom: 0.3rem;}
+        .choice-btn-content span { font-size: .9rem; color: var(--muted); line-height: 1.4; display: block;}
+        .choice-btn-arrow { font-size: 1.5rem; color: var(--accent); font-weight: 700;}
 
         .success-domain {
             background: var(--bg); border: 1px solid var(--green);
@@ -520,11 +304,6 @@
             border-radius: 5px; border: 1px solid var(--border);
             font-family: 'Courier New', monospace;
         }
-        .img-ref {
-            max-width: 100%; border-radius: 7px;
-            margin-top: .6rem; border: 1px solid var(--border); display: block;
-        }
-        .img-fallback { display: none; font-size: .78rem; color: var(--muted); margin-top: .4rem; }
 
         .loader-wrap { text-align: center; padding: 1.5rem 0; }
         .spinner {
@@ -535,50 +314,20 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        .modal-overlay {
-            position: fixed; inset: 0;
-            background: rgba(0,0,0,0.85);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 1000; padding: 1rem;
-            opacity: 0; visibility: hidden; transition: all 0.3s ease;
-        }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: var(--radius); max-width: 650px;
-            width: 100%; max-height: 90vh; overflow-y: auto;
-            padding: 2rem; position: relative;
-        }
-        .modal-close {
-            position: absolute; top: 1rem; right: 1rem;
-            background: var(--border); border: none; border-radius: 50%;
-            width: 32px; height: 32px; color: var(--text);
-            cursor: pointer; font-size: 1.2rem;
-            display: flex; align-items: center; justify-content: center;
-            transition: background 0.2s;
-        }
-        .modal-close:hover { background: var(--accent); }
-        .modal h3 {
+        /* SECCIONES SECUNDARIAS */
+        .section { position: relative; z-index: 1; padding: 4rem 1.5rem; max-width: 800px; margin: 0 auto; }
+        .section-title {
             font-family: 'Clash Display', sans-serif;
-            font-size: 1.4rem; margin-bottom: 1rem; color: var(--text);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 700; text-align: center;
+            letter-spacing: -1px; margin-bottom: 1rem;
         }
-        .modal ol, .modal ul {
-            padding-left: 1.5rem; color: var(--muted); line-height: 1.8;
-        }
-        .modal li { margin-bottom: 0.8rem; }
-        .modal code {
-            background: var(--bg); color: var(--accent);
-            padding: 2px 6px; border-radius: 4px;
-        }
-        .modal a { color: var(--accent); }
-        .modal-screenshot {
-            width: 100%; border-radius: 8px; border: 1px solid var(--border);
-            margin: 1rem 0; background: var(--bg); min-height: 150px;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--muted); font-size: 0.9rem; text-align: center; padding: 1rem;
+        .section-desc {
+            text-align: center; color: var(--muted); font-size: 1rem;
+            max-width: 600px; margin: 0 auto 3rem; line-height: 1.65;
         }
 
-        .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 700px; margin: 0 auto; }
+        .faq-list { display: flex; flex-direction: column; gap: .75rem; }
         .faq-item {
             background: var(--surface); border: 1px solid var(--border);
             border-radius: 12px; overflow: hidden; transition: border-color .2s;
@@ -616,66 +365,57 @@
         .footer-logo {
             font-family: 'Clash Display', sans-serif;
             font-size: 1.3rem; font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; margin-bottom: .5rem;
+            color: var(--text); margin-bottom: .5rem;
         }
         .footer-desc { color: var(--muted); font-size: .88rem; margin-bottom: 1.5rem; line-height: 1.6; }
         .footer-contact {
             display: inline-flex; align-items: center; gap: .5rem;
-            color: var(--muted); font-size: .88rem; text-decoration: none;
-            border: 1px solid var(--border); padding: .5rem 1rem;
-            border-radius: 99px; transition: all .2s; margin-bottom: 1rem;
+            color: var(--text); font-size: .95rem; font-weight: 600; text-decoration: none;
+            background: rgba(59,158,255,.1); border: 1px solid rgba(59,158,255,.2); 
+            padding: .6rem 1.2rem; border-radius: 99px; transition: all .2s; margin-bottom: 1rem;
         }
-        .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
-        .footer-legal {
-            font-size: .75rem; color: var(--muted); margin: 1rem 0;
-        }
-        .footer-legal a {
-            color: var(--muted); text-decoration: none;
-            margin: 0 0.5rem; transition: color 0.2s;
-        }
-        .footer-legal a:hover { color: var(--accent); }
-        .footer-recovery {
-            font-size: .85rem; color: var(--muted); margin-top: 1rem;
-        }
-        .footer-recovery a { color: var(--accent); text-decoration: none; }
-        .footer-recovery a:hover { text-decoration: underline; }
+        .footer-contact:hover { border-color: var(--accent); background: rgba(59,158,255,.15); }
         .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; margin-top: 1.5rem; }
 
-        .divider {
-            position: relative; z-index: 1; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-            margin: 0 2rem;
+        /* MODAL (Rediseñado para ser el centro de aprendizaje) */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; padding: 1rem; opacity: 0; visibility: hidden; transition: all 0.3s ease;
         }
-
-        .help-float {
-            position: fixed; bottom: 2rem; right: 2rem;
-            width: 60px; height: 60px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white; display: flex; align-items: center;
-            justify-content: center; font-size: 1.5rem;
-            cursor: pointer; box-shadow: 0 4px 20px rgba(59,158,255,0.4);
-            z-index: 999; transition: transform .2s, box-shadow .2s;
-            text-decoration: none;
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); max-width: 600px; width: 100%; 
+            max-height: 90vh; overflow-y: auto; padding: 2.5rem; position: relative;
         }
-        .help-float:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(59,158,255,0.6); }
+        .modal-close {
+            position: absolute; top: 1rem; right: 1rem;
+            background: var(--border); border: none; border-radius: 50%;
+            width: 32px; height: 32px; color: var(--text); cursor: pointer; font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+        }
+        .modal-close:hover { background: var(--accent); }
+        .modal h3 { font-family: 'Clash Display', sans-serif; font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--text); }
+        
+        .resource-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem; 
+            background: var(--bg); border: 1px solid var(--accent); border-radius: 8px;
+            padding: 0.8rem 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 600;
+            transition: all .2s; margin: 1.5rem 0;
+        }
+        .resource-btn:hover { background: var(--accent); color: #fff; }
 
         @media (max-width: 600px) {
             nav { padding: .9rem 1rem; }
-            .nav-links { gap: .8rem; }
             .nav-links a:not(.nav-cta) { display: none; }
-            .hero { padding: 4rem 1rem 3rem; }
-            .stats { gap: 2rem; }
-            .section { padding: 3.5rem 1rem; }
-            .modal { padding: 1.5rem; margin: 1rem; }
-            .help-float { width: 50px; height: 50px; font-size: 1.2rem; }
+            .hero { padding: 4rem 1rem 1rem; }
+            .card { padding: 2rem 1.2rem; }
+            .modal { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
-
-<a href="#registrate" class="skip-link">Saltar al formulario</a>
 
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
@@ -683,213 +423,54 @@
 <nav>
     <div class="nav-logo">Tecnosofia</div>
     <div class="nav-links">
-        <a href="#aprende">Aprende</a>
-        <a href="#como-funciona">¿Cómo funciona?</a>
-        <a href="#ejemplos">Ejemplos</a>
         <a href="#faq">FAQ</a>
-        <a href="#registrate" class="nav-cta">Obtener mi enlace →</a>
+        <a href="#registrate" class="nav-cta">Comenzar →</a>
     </div>
 </nav>
 
 <section class="hero">
-    <div class="hero-badge">✨ 100% Gratis — Aprende y publica</div>
     <h1>Tu propio espacio<br>en <span>internet</span></h1>
-    <p class="hero-sub">Te enseñamos paso a paso a publicar tu página web gratis con GitHub y Vercel. Luego te damos un subdominio profesional tipo <strong>tunombre.tecnosofia.xyz</strong>.</p>
+    <p class="hero-sub">Te damos un subdominio profesional y gratuito para tu página web. Sin costos ocultos, diseñado para estudiantes y creadores.</p>
 
     <div class="domain-preview">
         <span class="typing" id="hero-typing"></span>
         <span class="suffix">.tecnosofia.xyz</span>
     </div>
-
-    <div class="hero-btns">
-        <a href="#aprende" class="btn-hero-primary">📚 Empezar a aprender</a>
-        <a href="#registrate" class="btn-hero-secondary">Obtener mi enlace →</a>
-    </div>
 </section>
-
-<div class="stats">
-    <div class="stat">
-        <div class="stat-num"><span>100%</span></div>
-        <div class="stat-label">Gratuito para siempre</div>
-    </div>
-    <div class="stat">
-        <div class="stat-num"><span>0</span></div>
-        <div class="stat-label">Conocimientos técnicos previos</div>
-    </div>
-    <div class="stat">
-        <div class="stat-num"><span>3</span></div>
-        <div class="stat-label">Pasos simples</div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- ✨ NUEVA SECCIÓN: APRENDE -->
-<section class="section" id="aprende">
-    <p class="section-label">Educación</p>
-    <h2 class="section-title">¿Qué herramientas usaremos?</h2>
-    <p class="section-desc">No te preocupes si nunca has escuchado estos nombres. Te explicamos cada uno de forma sencilla.</p>
-
-    <div class="tools-grid">
-        <div class="tool-card">
-            <div class="tool-icon" style="background:rgba(59,158,255,.1);"></div>
-            <h3>GitHub</h3>
-            <p>Es como un "Google Drive" pero para código. Ahí guardarás los archivos de tu página web de forma segura y gratuita.</p>
-            <a href="https://github.com" target="_blank" class="tool-link">Crear cuenta gratis →</a>
-        </div>
-        <div class="tool-card">
-            <div class="tool-icon" style="background:rgba(124,111,255,.1);">▲</div>
-            <h3>Vercel</h3>
-            <p>Es la plataforma que PUBLICA tu página en internet. Toma los archivos de GitHub y los hace visibles para todo el mundo.</p>
-            <a href="https://vercel.com" target="_blank" class="tool-link">Crear cuenta gratis →</a>
-        </div>
-        <div class="tool-card">
-            <div class="tool-icon" style="background:rgba(52,211,153,.1);">🌐</div>
-            <h3>Tecnosofia</h3>
-            <p>Te damos un subdominio personalizado bonito. En lugar de un enlace largo, tendrás algo como tunombre.tecnosofia.xyz.</p>
-            <a href="#registrate" class="tool-link">Obtener subdominio →</a>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section" id="como-funciona">
-    <p class="section-label">Proceso</p>
-    <h2 class="section-title">En 3 pasos simples</h2>
-    <p class="section-desc">No necesitas saber programar. Te enseñamos cada paso del camino.</p>
-
-    <div class="steps-grid">
-        <div class="step-card">
-            <div class="step-icon">📚</div>
-            <div class="step-num-badge">1</div>
-            <h3>Aprende (opcional)</h3>
-            <p>Descarga nuestra guía PDF o sigue el tutorial paso a paso. No necesitas experiencia previa.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-icon">✏️</div>
-            <div class="step-num-badge">2</div>
-            <h3>Elige tu nombre</h3>
-            <p>Escoge cómo quieres que se llame tu enlace. Verificamos en tiempo real que esté disponible.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-icon">🔗</div>
-            <div class="step-num-badge">3</div>
-            <h3>Conecta y comparte</h3>
-            <p>En minutos tendrás tu propio espacio en internet listo para compartir con el mundo.</p>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section" id="ejemplos">
-    <p class="section-label">Comunidad</p>
-    <h2 class="section-title">Páginas que ya existen</h2>
-    <p class="section-desc">Estos son ejemplos del tipo de proyectos que puedes publicar con tu subdominio gratuito.</p>
-
-    <div class="examples-grid">
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(59,158,255,.1);">🧑‍</div>
-            <div class="example-info">
-                <div class="example-domain">carlos.tecnosofia.xyz</div>
-                <div class="example-type">Portafolio personal</div>
-            </div>
-        </div>
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(52,211,153,.1);">🍕</div>
-            <div class="example-info">
-                <div class="example-domain">pizzeria-roma.tecnosofia.xyz</div>
-                <div class="example-type">Negocio local</div>
-            </div>
-        </div>
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(251,191,36,.1);"></div>
-            <div class="example-info">
-                <div class="example-domain">arte-sofia.tecnosofia.xyz</div>
-                <div class="example-type">Galería de arte</div>
-            </div>
-        </div>
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(124,111,255,.1);">📚</div>
-            <div class="example-info">
-                <div class="example-domain">proyecto-escolar.tecnosofia.xyz</div>
-                <div class="example-type">Proyecto estudiantil</div>
-            </div>
-        </div>
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(248,113,113,.1);">💼</div>
-            <div class="example-info">
-                <div class="example-domain">cv-miguel.tecnosofia.xyz</div>
-                <div class="example-type">Currículum en línea</div>
-            </div>
-        </div>
-        <div class="example-card">
-            <div class="example-avatar" style="background:rgba(59,158,255,.1);">🚀</div>
-            <div class="example-info">
-                <div class="example-domain">mi-startup.tecnosofia.xyz</div>
-                <div class="example-type">Landing page</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
 
 <section class="form-section" id="registrate">
     <div class="form-wrap">
-        <div class="form-header">
-            <h2>Obtén tu enlace ahora</h2>
-            <p>Gratis, en minutos, sin complicaciones</p>
-        </div>
-
         <div class="card">
-            <div class="progress-wrap">
-                <div class="progress-bar">
-                    <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
-                </div>
-                <span class="progress-text" id="progress-text">Paso 1 de 3</span>
-            </div>
-
+            
             <div id="step-1" class="step active">
-                <p class="step-title">¿Ya tienes tu página en Vercel? 🤔</p>
-                <p class="step-desc">Para darte tu subdominio, primero necesitas tener tu página subida a Vercel.</p>
+                <p class="step-title">¿Cómo quieres empezar?</p>
+                <p class="step-desc">Elige la opción que mejor describa tu situación.</p>
 
                 <div class="choice-btns">
                     <button class="choice-btn" onclick="irAlPaso(2)">
-                        <span class="choice-btn-icon">✅</span>
-                        <div class="choice-btn-text">
-                            <strong>Sí, ya tengo mi página en Vercel</strong>
-                            <span>Tengo un enlace que termina en .vercel.app</span>
+                        <div class="choice-btn-content">
+                            <strong>✅ Ya tengo una página web</strong>
+                            <span>Tengo un enlace que termina en .vercel.app y quiero mi subdominio personalizado.</span>
                         </div>
+                        <div class="choice-btn-arrow">→</div>
                     </button>
+                    
                     <button class="choice-btn" onclick="abrirModalVercel()">
-                        <span class="choice-btn-icon"></span>
-                        <div class="choice-btn-text">
-                            <strong>No sé cómo, enséñame</strong>
-                            <span>Guía paso a paso con video y PDF</span>
+                        <div class="choice-btn-content">
+                            <strong>📚 No sé cómo, enséñame</strong>
+                            <span>No tengo conocimientos previos. Enséñame paso a paso cómo subir una página a internet gratis.</span>
                         </div>
+                        <div class="choice-btn-arrow">→</div>
                     </button>
-                </div>
-
-                <div class="resources-box">
-                    <h4>🎁 Recursos gratuitos para empezar</h4>
-                    <p>Descarga lo que necesites. Todo listo para usar.</p>
-                    <div class="resource-links">
-                        <a href="/plantilla-basica.zip" class="resource-link" download>
-                            📦 Descargar plantilla HTML (ZIP)
-                        </a>
-                        <a href="/guia-vercel-2026.pdf" class="resource-link" download>
-                            📄 Descargar guía PDF actualizada
-                        </a>
-                        <a href="#" class="resource-link" onclick="abrirModalVercel(); return false;">
-                            🎬 Ver tutorial paso a paso
-                        </a>
-                    </div>
                 </div>
             </div>
 
             <div id="step-2" class="step">
+                <div class="progress-wrap">
+                    <div class="progress-bar"><div class="progress-bar-fill" style="width:50%"></div></div>
+                    <span class="progress-text">Paso 1 de 2</span>
+                </div>
+
                 <p class="step-title">Elige tu nombre ✏️</p>
                 <p class="step-desc">Solo letras, números y guiones. Sin espacios.</p>
 
@@ -898,40 +479,41 @@
                     <div class="input-wrap">
                         <input type="text" id="subdomain" class="has-suffix"
                             placeholder="ejemplo: mateo" maxlength="30" autocomplete="off"
-                            oninput="alEscribirSubdominio()" aria-describedby="subdomain-hint"
-                            aria-label="Nombre de tu subdominio">
+                            oninput="alEscribirSubdominio()">
                         <span class="input-suffix">.tecnosofia.xyz</span>
                     </div>
                     <div class="char-counter" id="char-count">0 / 30</div>
-                    <div id="subdomain-hint" class="field-hint" role="status">Entre 3 y 30 caracteres.</div>
+                    <div id="subdomain-hint" class="field-hint">Entre 3 y 30 caracteres.</div>
                     <div class="live-preview" id="live-preview">
                         ✨ Tu enlace será: <strong id="preview-domain"></strong>
                     </div>
-                    <div id="avail-status" role="status" aria-live="polite"></div>
+                    <div id="avail-status"></div>
                 </div>
 
                 <div class="fg">
                     <label for="email">Tu correo electrónico <span style="color:var(--muted);font-weight:400;text-transform:none;">(opcional)</span></label>
-                    <input type="email" id="email" placeholder="tú@ejemplo.com"
-                        autocomplete="email" aria-describedby="email-hint"
-                        aria-label="Correo electrónico (opcional)">
-                    <div class="field-hint" id="email-hint">Te enviaremos las instrucciones. 🔒 Nunca compartimos tu email.</div>
+                    <input type="email" id="email" placeholder="tú@ejemplo.com">
+                    <div class="field-hint">Te enviaremos tus accesos. 🔒 Nunca compartimos tu email.</div>
                 </div>
 
-                <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente </button>
+                <button class="btn btn-primary" id="btn-paso2" onclick="validarPaso2()" disabled>Siguiente paso</button>
                 <button class="btn btn-text" onclick="irAlPaso(1)"> Volver atrás</button>
             </div>
 
             <div id="step-3" class="step">
+                <div class="progress-wrap">
+                    <div class="progress-bar"><div class="progress-bar-fill" style="width:100%"></div></div>
+                    <span class="progress-text">Paso 2 de 2</span>
+                </div>
+
                 <p class="step-title">Conecta tu página 🔗</p>
-                <p class="step-desc">Pega el enlace temporal que te dio Vercel. Debe terminar en <code>.vercel.app</code>.</p>
+                <p class="step-desc">Pega el enlace temporal que te dio Vercel.</p>
 
                 <div class="fg">
                     <label for="target">Enlace de Vercel</label>
                     <input type="text" id="target" placeholder="mi-proyecto.vercel.app"
-                        autocomplete="off" oninput="validarTarget()"
-                        aria-describedby="target-hint" aria-label="Enlace de tu proyecto en Vercel">
-                    <div id="target-hint" class="field-hint" role="status">Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code></div>
+                        autocomplete="off" oninput="validarTarget()">
+                    <div id="target-hint" class="field-hint">Pega tu enlace completo y nosotros lo acomodamos.</div>
                 </div>
 
                 <button class="btn btn-primary" id="btn-crear" onclick="crearDominio()" disabled>🪄 ¡Crear mi página web!</button>
@@ -955,91 +537,51 @@
                     <button class="copy-btn" id="copy-btn" onclick="copiarDominio()">📋 Copiar</button>
                 </div>
 
-                <p class="step-title" style="font-size:1rem;margin-bottom:.5rem;">⚠️ Último paso obligatorio en Vercel</p>
-                <p class="step-desc" style="margin-bottom:1rem;font-size:.88rem;">Sin este paso tu página mostrará <strong>Error 404</strong>. Es rápido:</p>
+                <p class="step-title" style="font-size:1rem;margin-bottom:.5rem;">⚠️ Último paso en Vercel</p>
+                <p class="step-desc" style="margin-bottom:1rem;font-size:.88rem;">Para evitar un Error 404, entra a tu proyecto en Vercel:</p>
 
                 <ol class="steps-list">
-                    <li><span class="step-num">1</span><span>Abre <strong>Vercel</strong> y entra a tu proyecto.</span></li>
-                    <li><span class="step-num">2</span><span>En el menú izquierdo selecciona <strong>Domains</strong>.</span></li>
+                    <li><span class="step-num">1</span><span>Ve a la pestaña <strong>Domains</strong>.</span></li>
                     <li>
-                        <span class="step-num">3</span>
+                        <span class="step-num">2</span>
                         <span>
-                            Clic en <strong>Add Existing</strong> y escribe exactamente:<br>
-                            <code id="domain-in-instructions">...</code>
-                            <img src="Adddomain.png" alt="Botón Add Existing en Vercel" class="img-ref"
-                                onerror="this.style.display='none';document.getElementById('img-fallback').style.display='block';">
-                            <span id="img-fallback" class="img-fallback">Busca el botón "Add Existing" en la sección Domains de tu proyecto en Vercel.</span>
+                            Clic en <strong>Add Existing</strong> y escribe:<br>
+                            <code id="domain-in-instructions" style="margin-top: 5px; display: inline-block;">...</code>
                         </span>
                     </li>
-                    <li><span class="step-num">4</span><span>Elige añadir <strong>únicamente tu subdominio exacto</strong>. ¡Palomitas azules = listo! ✅</span></li>
+                    <li><span class="step-num">3</span><span>Elige añadir únicamente tu subdominio. ¡Listo! ✅</span></li>
                 </ol>
 
-                <div class="tip">
-                    💡 ¿Tienes dudas? Escríbenos a <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> y te ayudamos.
-                </div>
-
-                <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="reiniciar()">Registrar otro subdominio</button>
+                <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="reiniciar()">Crear otro subdominio</button>
             </div>
 
             <div id="step-error" class="step">
                 <div style="text-align:center;font-size:2.5rem;margin-bottom:.8rem;">😕</div>
                 <p class="step-title">Ocurrió un problema</p>
-                <p class="step-desc" id="error-msg">No pudimos crear el enlace. Revisa que la información sea correcta.</p>
+                <p class="step-desc" id="error-msg">Revisa que la información sea correcta.</p>
                 <button class="btn btn-secondary" onclick="volverDesdeError()">Intentar de nuevo</button>
             </div>
+
         </div>
     </div>
 </section>
 
-<div class="divider"></div>
-
 <section class="section" id="faq">
-    <p class="section-label">Preguntas frecuentes</p>
-    <h2 class="section-title">¿Tienes dudas?</h2>
-    <p class="section-desc">Aquí respondemos las preguntas más comunes.</p>
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <p class="section-desc">Resolvemos tus dudas rápidamente.</p>
 
     <div class="faq-list">
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Es gratis para siempre?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes y personas que quieren tener presencia en internet sin gastar dinero.</div>
+            <button class="faq-q" onclick="toggleFaq(this)">¿Es gratis para siempre? <span class="faq-arrow">▼</span></button>
+            <div class="faq-a">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes a tener presencia en internet.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Qué es GitHub y Vercel?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a"><strong>GitHub</strong> es donde guardas tus archivos (como Google Drive pero para código). <strong>Vercel</strong> es la plataforma que publica tu página en internet. Ambos son gratuitos y los usamos juntos para que tu página esté online. <a href="#aprende">Lee más aquí →</a></div>
+            <button class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si me equivoco al conectar? <span class="faq-arrow">▼</span></button>
+            <div class="faq-a">No pasa nada. Si tu página muestra un error 404, simplemente asegúrate de haber agregado el dominio correctamente en tu panel de Vercel (Pestaña Domains > Add Existing). Si sigues atorado, escríbenos al correo de soporte.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Puedo cambiar mi página después?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a">Sí. Tu subdominio apunta a tu proyecto en Vercel, así que puedes actualizar el contenido de tu página las veces que quieras desde Vercel sin necesidad de cambiar nada aquí.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Qué pasa si el nombre que quiero ya está tomado?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a">Te avisamos en tiempo real mientras escribes. Si tu nombre favorito ya está ocupado, puedes probar variaciones como agregar tu apellido, un guión o un número. Por ejemplo: <code>mateo-dev</code> o <code>mateo2</code>.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Necesito saber programar?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a">No necesariamente. Solo necesitas tener algún archivo HTML subido a Vercel. Si tienes una página hecha con cualquier herramienta (incluso un simple index.html), Tecnosofia te da el subdominio. Descarga nuestra <a href="/plantilla-basica.zip">plantilla gratuita</a> para empezar.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-                ¿Olvidé mi subdominio, puedo recuperarlo?
-                <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-a">¡Sí! Escríbenos a <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">hola@tecnosofia.xyz</a> con el correo que usaste al registrarte y te ayudaremos a recuperar tu enlace.</div>
+            <button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber programar? <span class="faq-arrow">▼</span></button>
+            <div class="faq-a">No necesariamente. Si haces clic en el botón "Enséñame" del inicio, te daremos una guía paso a paso y una plantilla gratuita para que subas tu primera página en 10 minutos.</div>
         </div>
     </div>
 </section>
@@ -1050,58 +592,29 @@
     <a href="mailto:hola@tecnosofia.xyz" class="footer-contact">
         ✉️ hola@tecnosofia.xyz
     </a>
-    <div class="footer-legal">
-        <a href="/privacidad.html">Política de Privacidad</a> • 
-        <a href="/terminos.html">Términos de Uso</a>
-    </div>
-    <div class="footer-recovery">
-        ¿Olvidaste tu subdominio? 
-        <a href="mailto:hola@tecnosofia.xyz?subject=Recuperar%20mi%20subdominio">Recupéralo aquí</a>
-    </div>
     <p class="footer-copy">© 2026 Tecnosofia — Hecho con ❤️ para estudiantes y creadores</p>
 </footer>
 
-<div class="modal-overlay" id="modal-vercel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-overlay" id="modal-vercel">
     <div class="modal">
-        <button class="modal-close" onclick="cerrarModalVercel()" aria-label="Cerrar guía">&times;</button>
-        <h3 id="modal-title">📚 Guía: Publica tu página en internet</h3>
-        <p style="color:var(--muted);margin-bottom:1rem;">Sigue estos pasos. No necesitas saber programar.</p>
+        <button class="modal-close" onclick="cerrarModalVercel()">&times;</button>
+        <h3>📚 Aprende desde cero</h3>
+        <p style="color:var(--muted); line-height: 1.6;">No necesitas saber programar. Hemos preparado una guía visual en PDF que te llevará de la mano en cada clic.</p>
         
-        <div class="resources-box" style="margin-bottom:1rem;">
-            <h4> Descarga la guía completa</h4>
-            <p>PDF con capturas de pantalla paso a paso</p>
-            <a href="/guia-vercel-2026.pdf" class="resource-link" download>
-                📄 Descargar PDF gratuito
-            </a>
-        </div>
+        <a href="/guia-vercel-2026.pdf" class="resource-btn" download>
+            📄 Descargar guía paso a paso (PDF)
+        </a>
         
-        <ol>
-            <li><strong>Crea cuenta en GitHub</strong>: <a href="https://github.com" target="_blank">github.com</a> → Sign up → Llena el formulario</li>
-            <li><strong>Crea un repositorio</strong>: En GitHub, clic en "+" → "New repository" → Nombre: mi-pagina</li>
-            <li><strong>Sube tus archivos</strong>: Clic en "uploading an existing file" → Arrastra tu index.html</li>
-            <li><strong>Crea cuenta en Vercel</strong>: <a href="https://vercel.com" target="_blank">vercel.com</a> → Sign up → Continue with GitHub</li>
-            <li><strong>Importa tu proyecto</strong>: En Vercel → Add New → Project → Import tu repositorio → Deploy</li>
-            <li><strong>Copia tu enlace</strong>: Verás algo como mi-pagina.vercel.app</li>
-            <li><strong>Regresa a Tecnosofia</strong>: Pega tu enlace y elige tu subdominio</li>
-        </ol>
-        
-        <div class="tip" style="margin-top:1rem;">
-            💡 ¿Te trabaste en algún paso? Escríbenos a 
-            <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a> 
-            y te ayudamos personalmente.
-        </div>
+        <p style="color:var(--muted); font-size: 0.9rem; margin-top: 1.5rem;">
+            Una vez que termines la guía y Vercel te dé tu enlace temporal, regresa a esta página y selecciona la opción <strong>"Ya tengo una página web"</strong>.
+        </p>
     </div>
 </div>
 
-<a href="#faq" class="help-float" title="¿Necesitas ayuda?">💬</a>
-
 <script>
-    const state = {
-        subdomain: '', target: '', email: '',
-        availResult: null, checkTimer: null,
-    };
+    const state = { subdomain: '', target: '', email: '', availResult: null, checkTimer: null };
 
-    const words = ['tunombre', 'maria', 'portafolio', 'mi-negocio', 'carlos-dev', 'proyecto'];
+    const words = ['tunombre', 'maria', 'portafolio', 'negocio', 'carlos-dev'];
     let wi = 0, ci = 0, deleting = false;
     const typingEl = document.getElementById('hero-typing');
     function typeLoop() {
@@ -1120,16 +633,8 @@
     function mostrarStep(id) {
         document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        actualizarProgreso(id);
     }
     function irAlPaso(n) { mostrarStep('step-' + n); }
-
-    function actualizarProgreso(stepId) {
-        const mapa = { 'step-1': 0, 'step-2': 33, 'step-3': 66, 'step-loading': 90, 'step-success': 100, 'step-error': 66 };
-        const textos = { 'step-1': 'Paso 1 de 3', 'step-2': 'Paso 2 de 3', 'step-3': 'Paso 3 de 3', 'step-loading': 'Creando...', 'step-success': '¡Listo!', 'step-error': 'Paso 3 de 3' };
-        document.getElementById('progress-fill').style.width = (mapa[stepId] ?? 0) + '%';
-        document.getElementById('progress-text').textContent = textos[stepId] ?? '';
-    }
 
     function abrirModalVercel() {
         document.getElementById('modal-vercel').classList.add('active');
@@ -1142,15 +647,11 @@
     document.getElementById('modal-vercel').addEventListener('click', function(e) {
         if (e.target === this) cerrarModalVercel();
     });
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') cerrarModalVercel();
-    });
 
     function alEscribirSubdominio() {
         const raw = document.getElementById('subdomain').value;
         const val = raw.toLowerCase().replace(/[^a-z0-9-]/g, '');
-        if (document.getElementById('subdomain').value !== val)
-            document.getElementById('subdomain').value = val;
+        if (document.getElementById('subdomain').value !== val) document.getElementById('subdomain').value = val;
 
         state.subdomain = val;
         state.availResult = null;
@@ -1202,7 +703,7 @@
                 state.availResult = true;
                 btn.disabled = false;
             } else {
-                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con: <code>' + sub + '-dev</code></span>';
+                avail.innerHTML = '<span class="avail-badge taken">❌ Ya está en uso. Prueba con otro.</span>';
                 state.availResult = false;
             }
         } catch {
@@ -1215,12 +716,8 @@
     function validarPaso2() {
         state.email = document.getElementById('email').value.trim();
         state.subdomain = document.getElementById('subdomain').value.trim().toLowerCase();
-        if (!state.subdomain || state.subdomain.length < 3) { 
-            alert('Escribe un nombre de al menos 3 caracteres.'); return; 
-        }
-        if (state.availResult === false) { 
-            alert('Ese nombre ya está en uso. Elige otro.'); return; 
-        }
+        if (!state.subdomain || state.subdomain.length < 3) { alert('Escribe un nombre válido.'); return; }
+        if (state.availResult === false) { alert('Ese nombre ya está en uso.'); return; }
         irAlPaso(3);
     }
 
@@ -1229,8 +726,9 @@
         state.target = raw;
         const btn = document.getElementById('btn-crear');
         const hint = document.getElementById('target-hint');
+        
         if (!raw) { 
-            hint.innerHTML = 'Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code>'; 
+            hint.innerHTML = 'Pega tu enlace completo y nosotros lo acomodamos.'; 
             hint.className = 'field-hint'; btn.disabled = true; return; 
         }
         if (!raw.endsWith('.vercel.app')) { 
@@ -1256,14 +754,12 @@
                 document.getElementById('final-link').textContent = dominio;
                 document.getElementById('domain-in-instructions').textContent = dominio;
                 mostrarStep('step-success');
-                history.replaceState(null, '', `?sub=${encodeURIComponent(state.subdomain)}`);
             } else {
-                const errorMsg = data.error || 'Nombre no disponible o problema al crear.';
-                document.getElementById('error-msg').innerHTML = `Error: ${errorMsg}<br><small>¿Problemas? <a href="mailto:hola@tecnosofia.xyz">hola@tecnosofia.xyz</a></small>`;
+                document.getElementById('error-msg').innerHTML = `Error: ${data.error}`;
                 mostrarStep('step-error');
             }
         } catch {
-            document.getElementById('error-msg').innerHTML = 'Problema de conexión. Intenta de nuevo.<br><small><a href="mailto:hola@tecnosofia.xyz">Contáctanos</a></small>';
+            document.getElementById('error-msg').innerHTML = 'Problema de conexión. Intenta de nuevo.';
             mostrarStep('step-error');
         }
     }
@@ -1271,11 +767,7 @@
     function copiarDominio() {
         const texto = document.getElementById('final-link').textContent;
         const btn = document.getElementById('copy-btn');
-        navigator.clipboard.writeText(texto).catch(() => {
-            const ta = document.createElement('textarea');
-            ta.value = texto; ta.style.position = 'fixed'; ta.style.opacity = '0';
-            document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-        }).finally(() => {
+        navigator.clipboard.writeText(texto).catch(() => {}).finally(() => {
             btn.textContent = '✅ Copiado';
             setTimeout(() => { btn.textContent = '📋 Copiar'; }, 2000);
         });
@@ -1291,32 +783,18 @@
         ['subdomain','email','target'].forEach(id => document.getElementById(id).value = '');
         document.getElementById('avail-status').innerHTML = '';
         document.getElementById('live-preview').classList.remove('visible');
-        document.getElementById('char-count').textContent = '0 / 30';
-        document.getElementById('subdomain-hint').textContent = 'Entre 3 y 30 caracteres.';
-        document.getElementById('subdomain-hint').className = 'field-hint';
-        document.getElementById('target-hint').innerHTML = 'Solo la parte después de https://. Ej: <code>mi-web.vercel.app</code>';
-        document.getElementById('target-hint').className = 'field-hint';
         document.getElementById('btn-paso2').disabled = true;
         document.getElementById('btn-crear').disabled = true;
-        history.replaceState(null, '', window.location.pathname);
         irAlPaso(1);
     }
 
     function toggleFaq(btn) {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-            i.classList.remove('open');
-            i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-            item.classList.add('open');
-            btn.setAttribute('aria-expanded', 'true');
-        }
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
     }
 </script>
-
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3ee458cf7fd94fa08f18220a6f4191e3"}'></script>
 
 </body>
 </html>
