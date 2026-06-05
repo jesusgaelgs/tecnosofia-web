@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnosofia — Aprende y publica tu página gratis</title>
-    <meta name="description" content="Obtén tu subdominio personalizado gratuito para tu página de Vercel. Ideal para estudiantes y creadores.">
+    <title>Subdominios y Dominios Gratis para Estudiantes — Tecnosofia</title>
+    <meta name="description" content="¿Buscas dominios gratis? Obtén tu subdominio personalizado .tecnosofia.xyz 100% gratuito. Publica tu portafolio o proyecto web con GitHub y Vercel en minutos.">
     
     <meta property="og:title" content="Tecnosofia — Tu propio espacio en internet">
     <meta property="og:description" content="Subdominios gratuitos para estudiantes y desarrolladores.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tecnosofia.xyz">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tecnosofia",
+      "url": "https://tecnosofia.xyz",
+      "description": "Educación digital gratuita + subdominios para estudiantes",
+      "nonprofit": true,
+      "email": "hola@tecnosofia.xyz"
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -246,7 +258,6 @@
         .btn-text { background: transparent; color: var(--muted); font-size: .88rem; padding: .4rem; }
         .btn-text:hover { color: var(--text); text-decoration: underline; }
 
-        /* NUEVO DISEÑO BIFURCACIÓN */
         .choice-btns { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;}
         .choice-btn {
             display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -314,7 +325,6 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* SECCIONES SECUNDARIAS */
         .section { position: relative; z-index: 1; padding: 4rem 1.5rem; max-width: 800px; margin: 0 auto; }
         .section-title {
             font-family: 'Clash Display', sans-serif;
@@ -377,7 +387,6 @@
         .footer-contact:hover { border-color: var(--accent); background: rgba(59,158,255,.15); }
         .footer-copy { color: var(--muted); font-size: .78rem; opacity: .6; margin-top: 1.5rem; }
 
-        /* MODAL (Rediseñado para ser el centro de aprendizaje) */
         .modal-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.85);
             display: flex; align-items: center; justify-content: center;
@@ -402,7 +411,7 @@
             display: flex; align-items: center; justify-content: center; gap: 0.5rem; 
             background: var(--bg); border: 1px solid var(--accent); border-radius: 8px;
             padding: 0.8rem 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 600;
-            transition: all .2s; margin: 1.5rem 0;
+            transition: all .2s;
         }
         .resource-btn:hover { background: var(--accent); color: #fff; }
 
@@ -572,6 +581,10 @@
 
     <div class="faq-list">
         <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es la diferencia entre estos dominios gratis y un .com? <span class="faq-arrow">▼</span></button>
+            <div class="faq-a">Los dominios tradicionales como <code>.com</code> o <code>.org</code> requieren un pago anual. En <strong>Tecnosofia</strong> te regalamos un <strong>subdominio gratuito</strong> (<code>.tecnosofia.xyz</code>). Para el buscador de Google y para tu currículum, funciona exactamente igual: tu página estará en vivo en internet, será segura (HTTPS) y lucirá completamente profesional sin que tengas que gastar un solo centavo.</div>
+        </div>
+        <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">¿Es gratis para siempre? <span class="faq-arrow">▼</span></button>
             <div class="faq-a">Sí, completamente gratis. No hay planes de pago, no pedimos tarjeta de crédito y no hay costos ocultos. Tecnosofia es un proyecto creado para ayudar a estudiantes a tener presencia en internet.</div>
         </div>
@@ -609,12 +622,6 @@
                 📄 Descargar guía paso a paso (PDF)
             </a>
         </div>
-        
-        <p style="color:var(--muted); font-size: 0.9rem; margin-top: 1.5rem;">
-            Una vez que termines la guía y Vercel te dé tu enlace temporal, regresa a esta página y selecciona la opción <strong>"Ya tengo una página web"</strong>.
-        </p>
-    </div>
-</div>
         
         <p style="color:var(--muted); font-size: 0.9rem; margin-top: 1.5rem;">
             Una vez que termines la guía y Vercel te dé tu enlace temporal, regresa a esta página y selecciona la opción <strong>"Ya tengo una página web"</strong>.
