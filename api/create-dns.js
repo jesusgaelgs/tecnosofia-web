@@ -156,8 +156,8 @@ function plantillaCorreo({ subdomain, fullDomain, target }) {
               <table width="100%" cellpadding="0" cellspacing="0">
                 ${[
                     ['1', 'Abre tu panel de <strong style="color:#f0f6ff;">Vercel</strong> y entra a tu proyecto.'],
-                    ['2', 'En el menú de la izquierda selecciona <strong style="color:#f0f6ff;">Domains</strong>.'],
-                    ['3', `Haz clic en <strong style="color:#f0f6ff;">Add Existing</strong> y escribe exactamente:<br><code style="background:#080e1a;color:#38bdf8;padding:3px 8px;border-radius:5px;border:1px solid #1e3a5f;font-size:15px;">${fullDomain}</code>`],
+                    ['2', 'En el menú izquierdo haz clic en <strong style="color:#f0f6ff;">Domains</strong>.'],
+                    ['3', `Haz clic en <strong style="color:#f0f6ff;">Add</strong> y pega exactamente:<br><code style="background:#080e1a;color:#38bdf8;padding:3px 8px;border-radius:5px;border:1px solid #1e3a5f;font-size:15px;">${fullDomain}</code>`],
                     ['4', 'Si Vercel pregunta por redirecciones, elige añadir <strong style="color:#f0f6ff;">únicamente tu subdominio exacto</strong>. ¡Aparecerán palomitas azules y habrás terminado! ✅'],
                 ].map(([n, texto]) => `
                 <tr>
