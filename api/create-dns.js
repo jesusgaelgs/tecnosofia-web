@@ -52,7 +52,7 @@ export default async function handler(req, res) {
                     name:    subdomain,       // Cloudflare agrega el dominio raíz automáticamente
                     content: target,
                     ttl:     1,              // 1 = automático en Cloudflare
-                    proxied: true,           // true para activar el proxy de Cloudflare y automatizar el encabezado Host
+                    proxied: false,          // false para que Vercel pueda verificar el dominio
                 }),
             }
         );
